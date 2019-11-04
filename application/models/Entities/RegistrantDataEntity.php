@@ -241,7 +241,7 @@ class RegistrantDataEntity {
 	 *
 	 * @var string
 	 */
-	protected $skhunNUmber;
+	protected $skhunNumber;
 
 	/**
 	 * @Column(type="boolean", nullable=TRUE)
@@ -489,9 +489,9 @@ class RegistrantDataEntity {
     /**
      * @return string
      */
-    public function getSkhunNUmber()
+    public function getSkhunNumber()
     {
-        return $this->skhunNUmber;
+        return $this->skhunNumber;
     }
 
     /**
@@ -764,13 +764,13 @@ class RegistrantDataEntity {
     }
 
     /**
-     * @param string $skhunNUmber
+     * @param string $skhunNumber
      *
      * @return self
      */
-    public function setSkhunNUmber($skhunNUmber)
+    public function setSkhunNumber($skhunNumber)
     {
-        $this->skhunNUmber = $skhunNUmber;
+        $this->skhunNumber = $skhunNumber;
 
         return $this;
     }

@@ -25,7 +25,7 @@ php seeder.php
 cd application/tests/
 
 # Call PHPUNIT
-../../vendor/phpunit/phpunit/phpunit --verbose
+../../vendor/bin/phpunit --verbose --process-isolation
 
 # Back to ppdb
 cd ../..

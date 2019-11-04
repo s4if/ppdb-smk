@@ -20,8 +20,6 @@ class Pendaftar_test extends TestCase
 	{
 		$output = $this->request('GET', ['Pendaftar', 'lihat']);
 		$this->assertContains('Data Pendaftar Ikhwan', $output);
-                $output2 = $this->request('GET', 'lihat/P');
-		$this->assertContains('Data Pendaftar Akhwat', $output2);
 	}
         
         public function test_beranda_blocked()
