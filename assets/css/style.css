@@ -1,0 +1,10 @@
+body.login { padding-top: 70px; }
+cust-center {
+    alignment-adjust: central;
+}
+.layar-utama {
+    min-height: 600px
+}
+td {
+    vertical-align: middle;
+}
