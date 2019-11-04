@@ -41,11 +41,11 @@ class Model_1_registrant_test extends TestCase {
         $this->setUp();
         $data = [
             'password' => 'qwerty',
-            'name' => 'Fatimah',
-            'username' => 'fatimah',
+            'name' => 'Zaid Zulkarnaen',
+            'username' => 'zaidd',
             'nisn' => '0943292385234',
-            'gender' => 'P',
-            'prev_school' => 'SMPIT Ihsanul Fikri Kt Magelang',
+            'gender' => 'L',
+            'prev_school' => 'SMPIT Ihsanul Fikri Kota Magelang',
             'cp' => '084738172839',
             'program' => 'IPA Tahfidz'
         ];
@@ -54,16 +54,16 @@ class Model_1_registrant_test extends TestCase {
         $this->setUp();
         $this->assertFalse($this->obj->insertData($data));
         $this->setUp();
-        $data['username'] = 'fatim';
+        $data['username'] = 'zaid';
         $this->assertTrue($this->obj->insertData($data));
-        $data['username'] = 'fatim2';
+        $data['username'] = 'zaid2';
         $this->obj->insertData($data);
         
         //test edit registrant
         $this->setUp();
         $data['id'] = '0000';
         $this->assertFalse($this->obj->updateData($data));
-        $arr_reg =  $this->obj->getData('P');
+        $arr_reg =  $this->obj->getData('L');
         $data['id'] = end($arr_reg)->getId();
         $data['prev_school'] = 'SMPIT Ihsanul Fikri Kota Magelang';
         $this->assertTrue($this->obj->updateData($data));
@@ -78,7 +78,7 @@ class Model_1_registrant_test extends TestCase {
     public function test_finalization_registrant(){
         // FInalisasi
         $this->setUp();
-        $arr_reg =  $this->obj->getData('P');
+        $arr_reg =  $this->obj->getData('L');
         $data['id'] = end($arr_reg)->getId();
         $data['initial_cost'] = '11000000';
         $data['subscription_cost'] = '1250000';
@@ -95,7 +95,7 @@ class Model_1_registrant_test extends TestCase {
     public function test_upload_receipt(){
         // FInalisasi
         $this->setUp();
-        $arr_reg =  $this->obj->getData('P');
+        $arr_reg =  $this->obj->getData('L');
         $id = end($arr_reg)->getId();
         $data['payment_date'] = '19-2-2017';
         $data['amount'] = '200000';
@@ -109,7 +109,7 @@ class Model_1_registrant_test extends TestCase {
     public function test_get_kode_registrant(){
         // FInalisasi
         $this->setUp();
-        $arr_reg =  $this->obj->getData('P');
+        $arr_reg =  $this->obj->getData('L');
         $id = end($arr_reg)->getId();
         $gender = end($arr_reg)->getGender();
         $this->setUp();
@@ -118,9 +118,9 @@ class Model_1_registrant_test extends TestCase {
 //    
     public function test_get_data_registrant()
     {
-        $registrant = $this->obj->getData('P')[0];
+        $registrant = $this->obj->getData('L')[0];
         $registrants = $this->obj->getData();
-        $registrants_2 = $this->obj->getData('P');
+        $registrants_2 = $this->obj->getData('L');
         $attributes = ['id', 'regId', 'name', 'gender', 'previousSchool', 'nisn', 'program', 'deleted', 'registrationTime', 'registrantData',
                 'father', 'mother', 'guardian', 'paymentData', 'initialCost', 'relToIPS', 'relToRegular',
                 'subscriptionCost', 'landDonation', 'qurban' ];
@@ -142,7 +142,7 @@ class Model_1_registrant_test extends TestCase {
     public function test_crud_data_registrant_detail(){
         
         //$registrant = $this->obj->getData(null, '20141201001');
-        $arr_reg =  $this->obj->getData('P');
+        $arr_reg =  $this->obj->getData('L');
         $id = end($arr_reg)->getId();
         
         // test delete registrant
@@ -189,13 +189,16 @@ class Model_1_registrant_test extends TestCase {
     public function test_get_data_registrant_detail()
     {
         $this->setUp();
-        $arr_reg =  $this->obj->getData('P');
+        $arr_reg =  $this->obj->getData('L');
         $registrant = end($arr_reg);
         $registrantData = $registrant->getRegistrantData();
         $attributes = ['id', 'registrant','nik','nkk','nak', 'birthPlace', 'birthDate', 'street', 
-            'RT', 'RW', 'village', 'district', 'city', 'province', 'postalCode', 
+            'RT', 'RW', 'village', 'district', 'city', 'province', 'country', 'postalCode', 
             'familyCondition', 'nationality', 'religion', 'height', 'weight', 'childOrder', 'siblingsCount',
-            'stayWith', 'physicalAbnormalities', 'hospitalSheets', 'hobbies', 'achievements'];
+            'stayWith', 'physicalAbnormalities', 'hospitalSheets', 'hobbies', 'achievements',
+            'UNNumber', 'ijazahNumber', 'skhunNumber', 'isKIPReceiver', 'KIPNumber', 'nameInKIP',
+            'isKKSReceiver', 'KKSNumber', 'KKSBankName', 'KKSBankNumber', 'KKSNameInBank'
+        ];
         foreach ($attributes as $attributeName){
             $this->assertObjectHasAttribute($attributeName, $registrantData);
         }
@@ -213,7 +216,7 @@ class Model_1_registrant_test extends TestCase {
     
     public function test_upload()
     {
-        $arr_reg =  $this->obj->getData('P');
+        $arr_reg =  $this->obj->getData('L');
         $id = end($arr_reg)->getId();
         $data = [
             'payment_date' => '11-12-2015',
@@ -231,9 +234,7 @@ class Model_1_registrant_test extends TestCase {
     
     public function test_export(){
         $this->setUp();
-        $this->assertTrue($this->obj->export('Coba', 'P', false, true));
         $this->assertTrue($this->obj->export('Coba', 'L', false, true));
-        $this->assertTrue($this->obj->export('Coba', 'P', true, true));
         $this->assertTrue($this->obj->export('Coba', 'L', true, true));
     }
     
@@ -244,7 +245,7 @@ class Model_1_registrant_test extends TestCase {
     }
     
     public function test_certificate(){
-        $arr_reg =  $this->obj->getData('P');
+        $arr_reg =  $this->obj->getData('L');
         $id = end($arr_reg)->getId();
         $this->setUp();
         $data = [
@@ -260,7 +261,7 @@ class Model_1_registrant_test extends TestCase {
         ];
         $this->assertFalse($this->obj->addCertificate(-99, $data, FCPATH.'assets/test/gambar1.png'));
         $this->assertTrue($this->obj->addCertificate($id, $data, FCPATH.'assets/test/gambar1.png'));
-        $arr_reg2 =  $this->obj->getData('P');
+        $arr_reg2 =  $this->obj->getData('L');
         $reg = end($arr_reg2);
         $cert = $reg->getCertificates()->first();
         $cert_id = $cert->getId();

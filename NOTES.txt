@@ -1,0 +1,8 @@
+TODO:
+---- 1st Step ----
+- Ubah Data
+- Ubah Model
+- Ubah Controller
+---- 2nd Step ----
+- Ubah View
+- Rebranding

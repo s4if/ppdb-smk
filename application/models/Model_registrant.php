@@ -291,7 +291,8 @@ class Model_registrant extends CI_Model {
         if (!empty($data['village'])) : $this->registrantData->setVillage($data['village']); endif;
         if (!empty($data['district'])) : $this->registrantData->setDistrict($data['district']); endif;
         if (!empty($data['city'])) : $this->registrantData->setCity($data['city']); endif;
-        if (!empty($data['province'])) : $this->registrantData->setProvince($data['province']); endif;        
+        if (!empty($data['province'])) : $this->registrantData->setProvince($data['province']); endif;  
+        if (!empty($data['country'])) : $this->registrantData->setProvince($data['country']); endif;        
         if (!empty($data['postal_code'])) : $this->registrantData->setPostalCode($data['postal_code']); endif;
         if (!empty($data['family_condition'])) : $this->registrantData->setFamilyCondition($data['family_condition']); endif;
         if (!empty($data['nationality'])) : $this->registrantData->setNationality($data['nationality']); endif;
@@ -299,6 +300,18 @@ class Model_registrant extends CI_Model {
         if (!empty($data['height'])) : $this->registrantData->setHeight($data['height']); endif;
         if (!empty($data['weight'])) : $this->registrantData->setWeight($data['weight']); endif;
         if (!empty($data['stay_with'])) : $this->registrantData->setStayWith($data['stay_with']); endif;
+        // ---------------- SMK --------------------------//
+        if (!empty($data['un_number'])) : $this->registrantData->setUNNumber($data['un_number']); endif;
+        if (!empty($data['ijazah_number'])) : $this->registrantData->setIjazahNumber($data['ijazah_number']); endif;
+        if (!empty($data['skhun_number'])) : $this->registrantData->setSkhunNumber($data['skhun_number']); endif;
+        if (!empty($data['is_kip_receiver'])) : $this->registrantData->setIsKIPReceiver($data['is_kip_receiver']); endif;
+        if (!empty($data['kip_number'])) : $this->registrantData->setKIPNumber($data['kip_number']); endif;
+        if (!empty($data['name_in_kip'])) : $this->registrantData->setNameInKIP($data['name_in_kip']); endif;
+        if (!empty($data['is_kks_receiver'])) : $this->registrantData->setIsKKSReceiver($data['setIsKKSReceiver']); endif;
+        if (!empty($data['kks_number'])) : $this->registrantData->setKKSNumber($data['kks_number']); endif;
+        if (!empty($data['kks_bank_name'])) : $this->registrantData->setKKSBankName($data['kks_bank_name']); endif;
+        if (!empty($data['kks_bank_number'])) : $this->registrantData->setKKSBankNumber($data['kks_bank_number']); endif;
+        if (!empty($data['kks_name_in_bank'])) : $this->registrantData->setKKSNameInBank($data['kks_name_in_bank']); endif;
     }
     
     public function ajaxValidation($data){
