@@ -139,6 +139,13 @@ class RegistrantDataEntity {
 	protected $province;
 
 	/**
+	 * @Column(type="string", nullable=TRUE)
+	 *
+	 * @var string
+	 */
+	protected $country;
+
+	/**
 	 * @Column(type="string", nullable=FALSE)
 	 *
 	 * @var string
@@ -215,6 +222,83 @@ class RegistrantDataEntity {
 	 */
 	protected $achievements;
 
+	/**
+	 * @Column(type="string", nullable=TRUE)
+	 *
+	 * @var string
+	 */
+	protected $UNNumber;
+
+	/**
+	 * @Column(type="string", nullable=TRUE)
+	 *
+	 * @var string
+	 */
+	protected $ijazahNumber;
+
+	/**
+	 * @Column(type="string", nullable=TRUE)
+	 *
+	 * @var string
+	 */
+	protected $skhunNumber;
+
+	/**
+	 * @Column(type="boolean", nullable=TRUE)
+	 *
+	 * @var boolean
+	 */
+	protected $isKIPReceiver; // Kartu Indonesia Pintar
+
+	/**
+	 * @Column(type="string", nullable=TRUE)
+	 *
+	 * @var string
+	 */
+	protected $KIPNumber;
+
+	/**
+	 * @Column(type="string", nullable=TRUE)
+	 *
+	 * @var string
+	 */
+	protected $nameInKIP;
+
+	/**
+	 * @Column(type="string", nullable=TRUE)
+	 *
+	 * @var string
+	 */
+	protected $isKKSReceiver; // Kartu Keluarga Sejahtera
+
+	/**
+	 * @Column(type="string", nullable=TRUE)
+	 *
+	 * @var string
+	 */
+	protected $KKSNumber;
+
+	/**
+	 * @Column(type="string", nullable=TRUE)
+	 *
+	 * @var string
+	 */
+	protected $KKSBankName;
+
+	/**
+	 * @Column(type="string", nullable=TRUE)
+	 *
+	 * @var string
+	 */
+	protected $KKSBankNumber;
+
+	/**
+	 * @Column(type="string", nullable=TRUE)
+	 *
+	 * @var string
+	 */
+	protected $KKSNameInBank;
+
 	public function __construct() {
 	}
 
@@ -272,6 +356,10 @@ class RegistrantDataEntity {
 
 	public function getProvince() {
 		return $this->province;
+	}
+
+	public function getCountry() {
+		return $this->country;
 	}
 
 	public function getPostalCode() {
@@ -382,6 +470,94 @@ class RegistrantDataEntity {
         return $this->siblingsCount;
     }
 
+    /**
+     * @return string
+     */
+    public function getUNNumber()
+    {
+        return $this->UNNumber;
+    }
+
+    /**
+     * @return string
+     */
+    public function getIjazahNumber()
+    {
+        return $this->ijazahNumber;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSkhunNumber()
+    {
+        return $this->skhunNumber;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function isIsKIPReceiver()
+    {
+        return $this->isKIPReceiver;
+    }
+
+    /**
+     * @return string
+     */
+    public function getKIPNumber()
+    {
+        return $this->KIPNumber;
+    }
+
+    /**
+     * @return string
+     */
+    public function getNameInKIP()
+    {
+        return $this->nameInKIP;
+    }
+
+    /**
+     * @return string
+     */
+    public function getIsKKSReceiver()
+    {
+        return $this->isKKSReceiver;
+    }
+
+    /**
+     * @return string
+     */
+    public function getKKSNumber()
+    {
+        return $this->KKSNumber;
+    }
+
+    /**
+     * @return string
+     */
+    public function getKKSBankName()
+    {
+        return $this->KKSBankName;
+    }
+
+    /**
+     * @return string
+     */
+    public function getKKSBankNumber()
+    {
+        return $this->KKSBankNumber;
+    }
+
+    /**
+     * @return string
+     */
+    public function getKKSNameInBank()
+    {
+        return $this->KKSNameInBank;
+    }
+
     public function setChildOrder($childOrder) {
         $this->childOrder = $childOrder;
         return $this;
@@ -460,6 +636,12 @@ class RegistrantDataEntity {
 
 	public function setProvince($province) {
 		$this->province = $province;
+
+		return $this;
+	}
+
+	public function setCountry($country) {
+		$this->country = $country;
 
 		return $this;
 	}
@@ -556,4 +738,136 @@ class RegistrantDataEntity {
 
 		return $this;
 	}
+
+    /**
+     * @param string $nationaExamNumber
+     *
+     * @return self
+     */
+    public function setUNNumber($UNNumber)
+    {
+        $this->UNNumber = $UNNumber;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ijazahNumber
+     *
+     * @return self
+     */
+    public function setIjazahNumber($ijazahNumber)
+    {
+        $this->ijazahNumber = $ijazahNumber;
+
+        return $this;
+    }
+
+    /**
+     * @param string $skhunNumber
+     *
+     * @return self
+     */
+    public function setSkhunNumber($skhunNumber)
+    {
+        $this->skhunNumber = $skhunNumber;
+
+        return $this;
+    }
+
+    /**
+     * @param boolean $isKIPReceiver
+     *
+     * @return self
+     */
+    public function setIsKIPReceiver($isKIPReceiver)
+    {
+        $this->isKIPReceiver = $isKIPReceiver;
+
+        return $this;
+    }
+
+    /**
+     * @param string $KIPNumber
+     *
+     * @return self
+     */
+    public function setKIPNumber($KIPNumber)
+    {
+        $this->KIPNumber = $KIPNumber;
+
+        return $this;
+    }
+
+    /**
+     * @param string $nameInKIP
+     *
+     * @return self
+     */
+    public function setNameInKIP($nameInKIP)
+    {
+        $this->nameInKIP = $nameInKIP;
+
+        return $this;
+    }
+
+    /**
+     * @param string $isKKSReceiver
+     *
+     * @return self
+     */
+    public function setIsKKSReceiver($isKKSReceiver)
+    {
+        $this->isKKSReceiver = $isKKSReceiver;
+
+        return $this;
+    }
+
+    /**
+     * @param string $KKSNumber
+     *
+     * @return self
+     */
+    public function setKKSNumber($KKSNumber)
+    {
+        $this->KKSNumber = $KKSNumber;
+
+        return $this;
+    }
+
+    /**
+     * @param string $KKSBankName
+     *
+     * @return self
+     */
+    public function setKKSBankName($KKSBankName)
+    {
+        $this->KKSBankName = $KKSBankName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $KKSBankNumber
+     *
+     * @return self
+     */
+    public function setKKSBankNumber($KKSBankNumber)
+    {
+        $this->KKSBankNumber = $KKSBankNumber;
+
+        return $this;
+    }
+
+    /**
+     * @param string $KKSNameInBank
+     *
+     * @return self
+     */
+    public function setKKSNameInBank($KKSNameInBank)
+    {
+        $this->KKSNameInBank = $KKSNameInBank;
+
+        return $this;
+    }
 }

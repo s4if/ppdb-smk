@@ -20,8 +20,6 @@ class Pendaftar_test extends TestCase
 	{
 		$output = $this->request('GET', ['Pendaftar', 'lihat']);
 		$this->assertContains('Data Pendaftar Ikhwan', $output);
-                $output2 = $this->request('GET', 'lihat/P');
-		$this->assertContains('Data Pendaftar Akhwat', $output2);
 	}
         
         public function test_beranda_blocked()
@@ -124,6 +122,7 @@ class Pendaftar_test extends TestCase
                 'district' => 'Mungkid', 
                 'city' => 'Kab. Magelang', 
                 'province' => 'Jawa Tengah', 
+                'country' => 'Indonesia',
                 'postal_code' => 56551,
                 'family_condition' => 'Yatim', 
                 'nationality' => 'WNI', 
@@ -137,6 +136,8 @@ class Pendaftar_test extends TestCase
                 'achievements' => ['Juara 1 OSN Fisika SMP'],
                 'physical_abnormalities' => ['Jentik kaki kiri diamputasi'],
                 'hospital_sheets' => ['Pernah kecelakaan'],
+                'is_kks_receiver' => false,
+                'is_kip_receiver' => false,
                 //father
                 'father_name' => "Suraji", 
                 'father_status' => 'Hidup', 
