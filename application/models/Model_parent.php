@@ -136,7 +136,8 @@ class Model_parent extends CI_Model{
         if (!empty($data['village'])) : $this->$var->setVillage($data['village']); endif;
         if (!empty($data['district'])) : $this->$var->setDistrict($data['district']); endif;
         if (!empty($data['city'])) : $this->$var->setCity($data['city']); endif;
-        if (!empty($data['province'])) : $this->$var->setProvince($data['province']); endif;        
+        if (!empty($data['province'])) : $this->$var->setProvince($data['province']); endif;   
+        if (!empty($data['country'])) : $this->$var->setCountry($data['country']); endif;       
         if (!empty($data['postal_code'])) : $this->$var->setPostalCode($data['postal_code']); endif;
         if (!is_null($data['contact'])) : $this->$var->setContact($data['contact']); endif;
         if (!is_null($data['relation'])) : $this->$var->setRelation($data['relation']); endif;

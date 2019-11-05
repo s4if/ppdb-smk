@@ -13,13 +13,13 @@ class Pendaftar_test extends TestCase
 	public function test_index()
 	{
 		$output = $this->request('GET', ['Login', 'index']);
-		$this->assertContains('<title>Registrasi PPDB SMAIT Ihsanul Fikri</title>', $output);
+		$this->assertContains('<title>Registrasi PPDB SMKIT Ihsanul Fikri</title>', $output);
 	}
         
         public function test_lihat()
 	{
 		$output = $this->request('GET', ['Pendaftar', 'lihat']);
-		$this->assertContains('Data Pendaftar Ikhwan', $output);
+		$this->assertContains('Data Pendaftar', $output);
 	}
         
         public function test_beranda_blocked()
@@ -85,7 +85,7 @@ class Pendaftar_test extends TestCase
                 'cp_prefix'=> '+62',
                 'cp_suffix' => '89483726156',
                 'prev_school' => 'SMPN 1 Mungkid',
-                'program' => 'IPA Reguler',
+                'program' => 'Kelas Reguler',
                 'captcha' => 'SALAH'
             ];
             // Gagal

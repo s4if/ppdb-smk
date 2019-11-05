@@ -61,6 +61,7 @@ class Model_2_parent_test extends TestCase{
             'district' => 'Mungkid', 
             'city' => 'Kab. Magelang', 
             'province' => 'Jawa Tengah', 
+            'Country' => 'Indonesia', 
             'postal_code' => 56551,
             'contact' => '08965478865', 
             'relation' => 'Kandung', //Kandung, Tiri, Angkat (ayah & ibu pake radio, tapi wali pake input teks)

@@ -120,6 +120,13 @@ class ParentEntity {
 	protected $province;
 
 	/**
+	 * @Column(type="string", nullable=TRUE)
+	 *
+	 * @var string
+	 */
+	protected $country;
+
+	/**
 	 * @Column(type="string", nullable=FALSE)
 	 *
 	 * @var string
@@ -299,6 +306,8 @@ class ParentEntity {
 		return (empty($this->burdenCount)) ? '0' : $this->burdenCount;
 	}
 
+	
+
 	public function setType($type) {
 		$this->type = $type;
 
@@ -436,4 +445,44 @@ class ParentEntity {
 
 		return $this;
 	}
+
+    /**
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param int $id
+     *
+     * @return self
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCountry()
+    {
+        return $this->country;
+    }
+
+    /**
+     * @param string $country
+     *
+     * @return self
+     */
+    public function setCountry($country)
+    {
+        $this->country = $country;
+
+        return $this;
+    }
 }

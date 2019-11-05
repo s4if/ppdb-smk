@@ -292,7 +292,7 @@ class Model_registrant extends CI_Model {
         if (!empty($data['district'])) : $this->registrantData->setDistrict($data['district']); endif;
         if (!empty($data['city'])) : $this->registrantData->setCity($data['city']); endif;
         if (!empty($data['province'])) : $this->registrantData->setProvince($data['province']); endif;  
-        if (!empty($data['country'])) : $this->registrantData->setProvince($data['country']); endif;        
+        if (!empty($data['country'])) : $this->registrantData->setCountry($data['country']); endif; //hanya smk 
         if (!empty($data['postal_code'])) : $this->registrantData->setPostalCode($data['postal_code']); endif;
         if (!empty($data['family_condition'])) : $this->registrantData->setFamilyCondition($data['family_condition']); endif;
         if (!empty($data['nationality'])) : $this->registrantData->setNationality($data['nationality']); endif;
