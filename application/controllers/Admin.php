@@ -37,7 +37,6 @@ class Admin extends MY_Controller {
         $this->load->model('Model_registrant','reg');
         $this->load->model('Model_parent','parent');
         $this->load->model('Model_admin','admin');
-        $this->load->model('Model_rapor','rapor');
     }
     
     public function index(){
