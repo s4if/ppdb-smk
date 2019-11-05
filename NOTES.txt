@@ -6,3 +6,10 @@ TODO:
 ---- 2nd Step ----
 - Ubah View
 - Rebranding
+
+
+------------------
+---
+Minta scan2an surat yang ada kop-nya
+---
+------------------
