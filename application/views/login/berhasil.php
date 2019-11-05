@@ -8,7 +8,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Registrasi PPDB SMAIT Ihsanul Fikri</title>
+<title>Registrasi PPDB SMKIT Ihsanul Fikri</title>
 
 <!-- Di server, jangan lupa untuk diganti menjadi CDN -->
 
@@ -26,7 +26,7 @@
 <style>
 body {
     padding-top: 120px;
-    background-image: url("<?php echo base_url().'assets/images/bg-login-2021.png';?>");
+    background-image: url("<?php echo base_url().'assets/images/bg-login-2021.jpg';?>");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -169,15 +169,15 @@ body {
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand brand-shifted" href="http://smait.ihsanulfikri.sch.id/">PPDB SMAIT Ihsanul Fikri</a>
+                    <a class="navbar-brand brand-shifted" href="http://smkit.ihsanulfikri.sch.id/">PPDB SMKIT Ihsanul Fikri</a>
                 </div>
                 <!-- Navbar collapse -->
                 <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-right shifted">
-                            <li class=""><a href="http://smait.ihsanulfikri.sch.id/info-ppdb-2020-2021/">
+                            <li class=""><a href="http://smkit.ihsanulfikri.sch.id/info-ppdb-2020-2021/">
                             Petunjuk Pendaftaran
                         </a></li>
-                        <!--<li class=""><a href="http://smait.ihsanulfikri.sch.id/ppdb-smait-ihsanul-fikri-mungkid-jalur-beasiswa-unggulan-dan-prestasi/">
+                        <!--<li class=""><a href="http://smkit.ihsanulfikri.sch.id/ppdb-smkit-ihsanul-fikri-mungkid-jalur-beasiswa-unggulan-dan-prestasi/">
                             Petunjuk Jalur Beasiswa dan Prestasi
                         </a></li>-->
                         <li class=""><a href="<?=  base_url().'login/admin'?>">Admin</a></li>
@@ -232,7 +232,7 @@ body {
                         <div class="row">
                             <div class="col-lg-12">
                                 <p style="text-align: center;">
-                                    Registrasi tahap pertama PPDB SMAIT Ihsanul Fikri Mungkid telah berhasil. 
+                                    Registrasi tahap pertama PPDB SMKIT Ihsanul Fikri Mungkid telah berhasil. 
                                     Data yang ter-input adalah sebagai berikut :
                                 </p>
                                 <table class="table table-responsive table-condensed table-borderless">

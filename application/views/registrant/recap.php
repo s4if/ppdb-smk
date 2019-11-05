@@ -283,70 +283,6 @@
     </div>
     <?php endif; ?>
     <?php endforeach; ?>
-    
-    <?php if (!is_null($registrant->getRapor())) :?>
-    <div class="page-content">
-        <h2 class="header-section">Data Rapor</h2>
-        <table class="table table-striped table-bordered">
-            <thead>
-                <tr>
-                    <td rowspan="2">Mapel</td>
-                    <td colspan="2">Semester 1</td>
-                    <td colspan="2">Semester 2</td>
-                    <td colspan="2">Semester 3</td>
-                    <td colspan="2">Semester 4</td>
-                </tr>
-                <tr>
-                    <td>KKM</td>
-                    <td>Nilai</td>
-                    <td>KKM</td>
-                    <td>Nilai</td>
-                    <td>KKM</td>
-                    <td>Nilai</td>
-                    <td>KKM</td>
-                    <td>Nilai</td>                    
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Matematika</td>
-                    <?php for($i = 1; $i <=4; $i++):?>
-                    <td><?php echo $registrant->getRapor()->get('mtk','kkm',$i);?></td>
-                    <td><?php echo $registrant->getRapor()->get('mtk','nilai',$i);?></td>
-                    <?php endfor;?>
-                </tr>
-                <tr>
-                    <td>IPA</td>
-                    <?php for($i = 1; $i <=4; $i++):?>
-                    <td><?php echo $registrant->getRapor()->get('ipa','kkm',$i);?></td>
-                    <td><?php echo $registrant->getRapor()->get('ipa','nilai',$i);?></td>
-                    <?php endfor;?>
-                </tr>
-                <tr>
-                    <td>IPS</td>
-                    <?php for($i = 1; $i <=4; $i++):?>
-                    <td><?php echo $registrant->getRapor()->get('ips','kkm',$i);?></td>
-                    <td><?php echo $registrant->getRapor()->get('ips','nilai',$i);?></td>
-                    <?php endfor;?>
-                </tr>
-                <tr>
-                    <td>Bahasa Indonesia</td>
-                    <?php for($i = 1; $i <=4; $i++):?>
-                    <td><?php echo $registrant->getRapor()->get('ind','kkm',$i);?></td>
-                    <td><?php echo $registrant->getRapor()->get('ind','nilai',$i);?></td>
-                    <?php endfor;?>
-                </tr>
-                <tr>
-                    <td>Bahasa Inggris</td>
-                    <?php for($i = 1; $i <=4; $i++):?>
-                    <td><?php echo $registrant->getRapor()->get('ing','kkm',$i);?></td>
-                    <td><?php echo $registrant->getRapor()->get('ing','nilai',$i);?></td>
-                    <?php endfor;?>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <?php endif;?>
 
     <?php if (!is_null($registrant->getRegistrantData())) :?>
     <div class="page-content">
@@ -423,7 +359,7 @@
         <hr />
     </div>
     <?php endif;?>
-    <?php if((!$registrant->getFinalized())&&(!is_null($registrant->getPaymentData()))&&(!is_null($registrant->getRapor()))) :?>
+    <?php if((!$registrant->getFinalized())&&(!is_null($registrant->getPaymentData()))) :?>
     <a class="btn btn-success <?php echo ($registrant->getCompleted())?'':'disabled';?>" data-toggle="modal" data-target="#ModalFinalized">
         <span class="glyphicon glyphicon-registration-mark"></span>
         Finalisasi
@@ -444,7 +380,7 @@
 
             </div>
             <div class="modal-body">
-                <p>Terimakasih karena telah mendaftar di SMAIT Ihsanul Fikri Mungkid</p>
+                <p>Terimakasih karena telah mendaftar di SMKIT Ihsanul Fikri Mungkid</p>
                 <p>Pengisian data telah selesai, silahkan cek kembali data yang dimasukkan. 
                     Jika telah benar, silahkan klik finalisasi untuk menyelesaikan pendaftaran.</p>
                 <p><strong class="red">Ingat, data yang sudah di-finalisasi tidak bisa diubah kembali!</strong></p>

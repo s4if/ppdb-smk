@@ -8,7 +8,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Admin PPDB SMA</title>
+<title>Admin PPDB SMK</title>
 
 <!-- Di server, jangan lupa untuk diganti menjadi CDN -->
 
@@ -165,7 +165,7 @@ body {
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand brand-shifted" href="http://smait.ihsanulfikri.sch.id/">PPDB SMAIT Ihsanul Fikri</a>
+                <a class="navbar-brand brand-shifted" href="http://smait.ihsanulfikri.sch.id/">PPDB SMKIT Ihsanul Fikri</a>
             </div>
             <!-- Navbar collapse -->
             <div class="navbar-collapse collapse">

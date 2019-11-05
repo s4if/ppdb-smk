@@ -47,7 +47,7 @@ class Model_1_registrant_test extends TestCase {
             'gender' => 'L',
             'prev_school' => 'SMPIT Ihsanul Fikri Kota Magelang',
             'cp' => '084738172839',
-            'program' => 'IPA Tahfidz'
+            'program' => 'Kelas Industri'
         ];
         // test insert registrant
         $this->assertTrue($this->obj->insertData($data));

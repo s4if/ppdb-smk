@@ -34,7 +34,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#"><b>PPDB SMAIT Ihsanul Fikri Mungkid</b></a>
+        <a class="navbar-brand" href="#"><b>PPDB SMKIT Ihsanul Fikri Mungkid</b></a>
     </div>
     <!-- Top Menu Items -->
     <ul class="nav navbar-right top-nav">
@@ -70,9 +70,6 @@
             </li>
             <li id="navWali">
                 <a href="<?=  base_url().$id.'/wali'?>">Isi Wali</a>
-            </li>
-            <li id="navRapor">
-                <a href="<?=  base_url().$id.'/rapor'?>">Isi Rapor</a>
             </li>
             <li id="navLetter">
                 <a href="<?=  base_url().$id.'/surat'?>">Surat Pernyataan</a>

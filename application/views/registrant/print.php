@@ -8,7 +8,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Registrasi PPDB SMAIT Ihsanul Fikri</title>
+<title>Registrasi PPDB SMKIT Ihsanul Fikri</title>
 
 <!-- Di server, jangan lupa untuk diganti menjadi CDN -->
 
@@ -54,7 +54,7 @@ img.foto-profil {
                         <div class="row">
                             <div class="col-sm-12">
                                 <p style="text-align: center;">
-                                    Registrasi PPDB SMAIT Ihsanul Fikri Mungkid TA:2020/2021 telah berhasil.<br />
+                                    Registrasi PPDB SMKIT Ihsanul Fikri Mungkid TA:2020/2021 telah berhasil.<br />
                                     Data yang ter-input adalah sebagai berikut :
                                 </p>
                                 <table class="table table-responsive table-condensed table-borderless">

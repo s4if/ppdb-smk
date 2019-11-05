@@ -23,6 +23,7 @@ php seeder.php
 
 # Pindah Ke Direktori Test
 cd application/tests/
+rm _ci_phpunit_test/tmp/cache/autoload.php
 
 # Call PHPUNIT
 ../../vendor/bin/phpunit --verbose --process-isolation

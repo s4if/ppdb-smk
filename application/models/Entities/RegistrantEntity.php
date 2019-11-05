@@ -140,12 +140,6 @@ class RegistrantEntity
     protected $paymentData;
     
     /**
-     * @OneToOne(targetEntity="RaporEntity", inversedBy="registrant")
-     * @JoinColumn(name="rapor_id", referencedColumnName="id")
-     */
-    private $rapor;
-
-    /**
      * @Column(type="bigint", nullable=TRUE)
      *
      * @var string
@@ -211,7 +205,7 @@ class RegistrantEntity
         $this->certificates = new Doctrine\Common\Collections\ArrayCollection();
     }
 
-    public function getArray($vars = ['id', 'regId', 'name', 'gender', 'previousSchool', 'nisn', 'program', 'deleted', 'rapor', 'registrationTime', 'registrantData',
+    public function getArray($vars = ['id', 'regId', 'name', 'gender', 'previousSchool', 'nisn', 'program', 'deleted', 'registrationTime', 'registrantData',
                 'father', 'mother', 'guardian', 'paymentData', 'initialCost', 'subscriptionCost', 'boardingKit', 'landDonation', ])
     {
         $arrData = [];
@@ -373,15 +367,6 @@ class RegistrantEntity
         return $this->relToIPS;
     }
     
-    public function getRapor() {
-        return $this->rapor;
-    }
-    
-    public function deleteRapor(){
-        $this->rapor = null;
-        return $this;
-    }
-    
     public function getQurban() {
         return $this->qurban;
     }
@@ -413,11 +398,6 @@ class RegistrantEntity
 
     public function setQurban($qurban) {
         $this->qurban = $qurban;
-        return $this;
-    }
-
-    public function setRapor(RaporEntity $rapor) {
-        $this->rapor = $rapor;
         return $this;
     }
 

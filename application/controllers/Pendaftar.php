@@ -6,8 +6,7 @@ class Pendaftar extends MY_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->model('Model_registrant','reg');
-        $this->load->model('Model_parent','parent');
-        $this->load->model('Model_rapor','rapor');
+        $this->load->model('Model_parent','parent');   
     }
     
     // ================= AFTER LOGIN ===========================
@@ -236,7 +235,7 @@ class Pendaftar extends MY_Controller {
             }
             if($res){
                 $this->session->set_flashdata("notices", [0 => "Data Sudah berhasil disimpan"]);
-                redirect($id.'/rapor');
+                redirect($id.'/surat');
             } else {
                 $this->session->set_flashdata("errors", [0 => "Maaf, Terjadi Kesalahan, silahkan diulangi lagi..."]);
                 redirect($id.'/wali');
@@ -289,53 +288,6 @@ class Pendaftar extends MY_Controller {
         $final_result = $res['registrant'] && $agg_res;
         $errored = array_merge($val['registrant']['errored'], $val['father']['errored'], $val['mother']['errored']);
         return ['success'=>$final_result,'errorred'=>$errored];
-    }
-    
-    public function isi_rapor($id){
-        $this->blockUnloggedOne($id);
-        $this->blockNonPayers($this->session->registrant);
-        $reg = $this->reg->getData(null, $this->session->registrant->getId());
-        $reg_rapor = $reg->getRapor();
-        if(is_null($reg_rapor)){
-            $reg_rapor = $this->rapor->create();
-        }
-        $nameset = [
-            'ind' => 'Bahasa Indonesia', 
-            'ing' => 'Bahasa Inggris',
-            'mtk' => 'Matematika', 
-            'ipa' => 'IPA', 
-            'ips' => 'IPS', 
-            ];
-        $data = [
-            'title' => 'Formulir Rapor',
-            'username' => $this->session->registrant->getName(),
-            'id' => $this->session->registrant->getId(),
-            'registrant' => $this->session->registrant,
-            'nameset' => $nameset,
-            'rapor' => $reg_rapor,
-            'nav_pos' => 'rapor',
-        ];
-        $this->CustomView('registrant/rapor', $data);
-    }
-    
-    public function edit_rapor($id){
-        $this->blockUnloggedOne($id);
-        $data = $this->input->post(null, true);
-        $registrant = $this->reg->getData(null, $id);
-        $res = false;
-        if(!is_null($registrant)){
-            $res = $this->rapor->updateData($data, $registrant);
-        } else {
-            $res = false;
-        }
-        if($res){
-            $this->session->set_userdata('registrant', $registrant);
-            $this->session->set_flashdata("notices", [0 => "Data Sudah berhasil disimpan"]);
-            redirect($id.'/surat');
-        } else {
-            $this->session->set_flashdata("errors", [0 => "Maaf, Terjadi Kesalahan, silahkan diulangi lagi..."]);
-            redirect($id.'/rapor');
-        }
     }
 
     public function finalisasi($id, $finalized){

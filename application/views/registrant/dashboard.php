@@ -50,9 +50,9 @@
     <?php elseif($registrant->getFinalized()) :?>
     <h1>Selamat, anda telah menyelesaikan pendaftaran!</h1>
     <p>
-        Terimakasih telah mendaftar di SMAIT Ihsanul Fikri.<br/>
-        Tes akan dilaksanakan tanggal 12 Januari 2020<br/>
-        Hasil tes akan diumumkan tanggal 27 Januari 2020<br/>
+        Terimakasih telah mendaftar di SMKIT Ihsanul Fikri.<br/>
+        Tes akan dilaksanakan tanggal [belum]<br/>
+        Hasil tes akan diumumkan tanggal [belum]<br/>
         Silahkan Unduh dan cetak form pendaftaran dan kartu pendaftaran.
     </p>        
     <a class="btn btn-primary" href="<?=  base_url().'pendaftar/print_data_pendaftaran/'.$id;?>">
@@ -62,13 +62,13 @@
         Upload Persyaratan Jalur Prestasi/Beasiswa Unggulan
     </a>
     <?php elseif(is_null($registrant->getPaymentData())) :?>
-    <h1>Selamat Datang di Sistem PPDB SMAIT Ihsanul Fikri Mungkid</h1>
+    <h1>Selamat Datang di Sistem PPDB SMKIT Ihsanul Fikri Mungkid</h1>
     <p>
-        Ini adalah sistem pendaftaran peserta didik baru (PPDB) SMAIT Ihsanul Fikri Mungkid.
+        Ini adalah sistem pendaftaran peserta didik baru (PPDB) SMKIT Ihsanul Fikri Mungkid.
         Sebelum anda mengisi data pribadi, silahkan mentransfer telebih dahulu biaya pendaftaran peserta 
-        sebesar <strong>Rp. 300.000,-</strong> ditambah <strong>nomor unik (Contoh = 300.123)</strong> di rekening 
-        <strong>Bank Syariah Mandiri</strong> dengan <strong>No. 70930 70938</strong> atas nama 
-        <strong>PPDB  SMAIT IHSANUL FIKRI</strong>. <br /> Kode unik bisa diminta dengan mengeklik tombol :
+        sebesar <strong>Rp. 200.000,-</strong> ditambah <strong>nomor unik (Contoh = 200.123)</strong> di rekening 
+        <strong>Bank BRI Syariah Kanca Magelang</strong> dengan <strong>No. 10 33 88 13 43</strong> atas nama 
+        <strong>BMT Makmur Gemilang</strong>. <br /> Kode unik bisa diminta dengan mengeklik tombol :
     </p>
     <p><a class="btn btn-primary" id="btn-gen" role="button" onclick="kodeUnik()">Minta kode unik</a></p>
     <h1 id="kode-unik"></h1>
