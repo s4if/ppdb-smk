@@ -67,7 +67,7 @@
                 dapat <strong>menghapus dan mengupload kembali</strong> dokumen yang dimaksud.
             </li>
         </ol>
-        <p>Hormat kami, Tim PPDB SMAIT Ihsanul Fikri Mungkid Tahun Ajaran 2019-2020</p>
+        <p>Hormat kami, Tim PPDB SMKIT Ihsanul Fikri Mungkid Tahun Ajaran 2019-2020</p>
         <a class="btn btn-sm btn-primary" data-toggle="modal" data-target="#ModalImport">
             <span class="glyphicon glyphicon-upload"></span>
             Tambah Dokumen Sertifikat/Surat

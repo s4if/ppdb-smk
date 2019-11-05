@@ -8,7 +8,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Registrasi PPDB SMAIT Ihsanul Fikri</title>
+<title>Registrasi PPDB SMKIT Ihsanul Fikri</title>
 
 <!-- Di server, jangan lupa untuk diganti menjadi CDN -->
 
@@ -26,7 +26,7 @@
 <style>
 body {
     padding-top: 120px;
-    background-image: url("<?php echo base_url().'assets/images/bg-login-2021.png';?>");
+    background-image: url("<?php echo base_url().'assets/images/bg-login-2021.jpg';?>");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -169,15 +169,15 @@ body {
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand brand-shifted" href="http://smait.ihsanulfikri.sch.id/">PPDB SMAIT Ihsanul Fikri</a>
+                <a class="navbar-brand brand-shifted" href="http://smkit.ihsanulfikri.sch.id/">PPDB SMKIT Ihsanul Fikri</a>
             </div>
             <!-- Navbar collapse -->
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right shifted">
-                    <li class=""><a href="http://smait.ihsanulfikri.sch.id/info-ppdb-2020-2021/">
+                    <li class=""><a href="http://smkit.ihsanulfikri.sch.id/info-ppdb-2020-2021/">
                         Petunjuk Pendaftaran
                     </a></li>
-                    <!--<li class=""><a href="http://smait.ihsanulfikri.sch.id/ppdb-smait-ihsanul-fikri-mungkid-jalur-beasiswa-unggulan-dan-prestasi/">
+                    <!--<li class=""><a href="http://smkit.ihsanulfikri.sch.id/ppdb-smkit-ihsanul-fikri-mungkid-jalur-beasiswa-unggulan-dan-prestasi/">
                         Petunjuk Jalur Beasiswa dan Prestasi
                     </a></li>-->
                     <li class=""><a href="<?=  base_url().'login/admin'?>">Admin</a></li>
@@ -224,15 +224,15 @@ body {
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <p class=" text-center"><strong>Pengumuman:</strong><br/>
                 Mohon maaf, pendaftaran telah ditutup pada tanggal 10 Februari 2017 Pukul 23:59 WIB <br/>
-                <i>Hormat kami, Tim PPDB SMAIT Ihsanul Fikri Mungkid.</i></p>
+                <i>Hormat kami, Tim PPDB SMKIT Ihsanul Fikri Mungkid.</i></p>
             </div>-->
 
             <div class="alert alert-info alert-dismissible">
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4><b>Langkah Mendaftar PPDB SMAIT Ihsanul Fikri</b></h4>
+                <h4><b>Langkah Mendaftar PPDB SMKIT Ihsanul Fikri</b></h4>
                 <ol>
                     <li>
-                        Buat Akun PPDB SMAIT IF dengan pilih <b>Daftar</b>
+                        Buat Akun PPDB SMKIT IF dengan pilih <b>Daftar</b>
                     </li>
                     <li>
                         Isikan data yang diminta
@@ -244,7 +244,7 @@ body {
                         Gunakan <b>username</b> dan <b>password</b> tersebut pada saat <b>Masuk</b> ke akun Anda untuk proses pendaftaran Online selanjutnya (Mengisi & Mengedit data pada formulir online)
                     </li>
                     <li>
-                        Jika lupa <b>username</b> atau <b>password</b> silahkan menghubungi nomor <u>0812 3723 8858</u> (ustadzah Iis)
+                        Jika lupa <b>username</b> atau <b>password</b> silahkan menghubungi nomor <u>+62 857-2962-9508</u> (ust Mahfud)
                     </li>
                 </ol>
             </div>
@@ -338,37 +338,21 @@ body {
                                     <label class=" control-label">Program :</label>
                                     <div class="">
                                         <select class="form-control" name="program">
-                                            <option value="IPA Reguler"
+                                            <option value="Kelas Reguler"
                                                     <?php if(array_key_exists('program', $registrant)):?>
-                                                        <?php if($registrant['program']=='IPA Reguler'): ?>
+                                                        <?php if($registrant['program']=='Kelas Reguler'): ?>
                                                                 selected
                                                         <?php endif;?>
                                                     <?php endif;?>>
-                                                IPA Reguler
+                                                Kelas Reguler
                                             </option>
-                                            <option value="IPS Reguler"
+                                            <option value="Kelas Industri"
                                                     <?php if(array_key_exists('program', $registrant)):?>
-                                                        <?php if($registrant['program']=='IPS Reguler'): ?>
+                                                        <?php if($registrant['program']=='Kelas Industri'): ?>
                                                                 selected
                                                         <?php endif;?>
                                                     <?php endif;?>>
-                                                IPS Reguler
-                                            </option>
-                                            <option value="IPA Tahfidz"
-                                                    <?php if(array_key_exists('program', $registrant)):?>
-                                                        <?php if($registrant['program']=='IPA Tahfidz'): ?>
-                                                                selected
-                                                        <?php endif;?>
-                                                    <?php endif;?>>
-                                                IPA Tahfidz
-                                            </option>
-                                            <option value="IPS Tahfidz" 
-                                                    <?php if(array_key_exists('program', $registrant)):?>
-                                                        <?php if($registrant['program']=='IPS Tahfidz'): ?>
-                                                                selected
-                                                        <?php endif;?>
-                                                    <?php endif;?>>
-                                                IPS Tahfidz
+                                                Kelas Industri
                                             </option>
                                         </select>
                                     </div>
@@ -414,14 +398,10 @@ body {
             </div>
             <div class="modal-body">
                 <p style="text-align: left;"><em>Assalaamu&#8217;alaykum.wr.wb. </em></p>
-                <p>Seperti yang telah disampaikan sebelumnya bahwa seluruh peserta Tes PPDB SMAIT Ihsanul Fikri (baik program Reguler atau Tahfidz) wajib mengikuti tes Qur&#8217;an berupa Tahsin dan Hafalan Juz 30 yang dijadwalkan pada pukul 10.00 sd 12.00 beriringan dengan pengukuran seragam.</p>
-                <p><strong>KHUSUS </strong>untuk pendaftar PROGRAM TAHFIDZ, ada tes tambahan yaitu hafalan <strong>SURAH MARYAM</strong> dari <strong>ayat 77 sd SELESAI</strong> pada pukul 13.00 sd 15.00.</p>
-                <p>Demikian kami beritahukan. Wassalaamualaykum. Wr.wb.</p>
-                <p>&nbsp;</p>
-                <p>Panitia PPDB SMAITIF 2017/2018</p>
+                <p>Panitia PPDB SMKITIF 2017/2018</p>
             </div>
             <div class="modal-footer">
-                <a href="http://smait.ihsanulfikri.sch.id/program-tahfidz-tes-tambahan-untuk-program-tahfidz/" class="btn btn-info">Info Lebih Lanjut</a>
+                <a href="http://smkit.ihsanulfikri.sch.id/program-tahfidz-tes-tambahan-untuk-program-tahfidz/" class="btn btn-info">Info Lebih Lanjut</a>
                 <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
             </div>
         </div>

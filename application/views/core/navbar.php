@@ -34,7 +34,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#"><b>PPDB SMAIT Ihsanul Fikri Mungkid</b></a>
+        <a class="navbar-brand" href="#"><b>PPDB SMKIT Ihsanul Fikri Mungkid</b></a>
     </div>
     <!-- Top Menu Items -->
     <ul class="nav navbar-right top-nav">

@@ -56,12 +56,12 @@
                 <p>Dengan ini menyatakan bahwa:</p>
                 <ol>
                     <li class="pernyataan">
-                        Jika anak saya diterima sebagai siswa SMAIT Ihsanul Fikri Mungkid, saya menyerahkan anak saya dan siap bekerja sama 
-                        dalam hal pembinaan diri selama berstatus sebagai siswa SMAIT Ihsanul Fikri Mungkid, bersedia menerima segala konsekuensi
+                        Jika anak saya diterima sebagai siswa SMKIT Ihsanul Fikri Mungkid, saya menyerahkan anak saya dan siap bekerja sama 
+                        dalam hal pembinaan diri selama berstatus sebagai siswa SMKIT Ihsanul Fikri Mungkid, bersedia menerima segala konsekuensi
                         akibat peraturan yang berlaku di dalamnya, dan tidak menuntut apapun yang menjadi keputusan sekolah.
                     </li>
                     <li class="pernyataan">
-                        Jika anak saya diterima sebagai siswa SMAIT Ihsanul Fikri Mungkid, saya akan melunasi  
+                        Jika anak saya diterima sebagai siswa SMKIT Ihsanul Fikri Mungkid, saya akan melunasi  
                         pembiayaan sesuai dengan kesanggupan saya:
                     </li>
                     <table class="table-bordered table-responsive">
@@ -125,7 +125,7 @@
                         untuk kelas reguler Rp.1.000.000,-.</span>
                     
                     <li class="pernyataan">
-                        Bersedia mengikuti program Qurban minimal 1 kali selama menjadi siswa SMAIT Ihsanul 
+                        Bersedia mengikuti program Qurban minimal 1 kali selama menjadi siswa SMKIT Ihsanul 
                         Fikri Mungkid pada Hari Raya Idul Adha tahun 2020/2021/2022 (Tahun dapat dipilih).
                     </li>
                     <li class="pernyataan">
@@ -375,7 +375,7 @@
             <div class="form-group">
                 <div class="col-sm-4 col-sm-offset-3">
                     <label class="text-center">
-                        Bersedia mengikuti program Qurban minimal 1 kali selama menjadi siswa SMAIT 
+                        Bersedia mengikuti program Qurban minimal 1 kali selama menjadi siswa SMKIT 
                         Ihsanul Fikri Mungkid pada Hari Raya Idul Adha tahun 2020/2021/2022.
                     </label>
                 </div>

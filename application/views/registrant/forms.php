@@ -187,6 +187,12 @@
             </div>
         </div>
         <div class="form-group">
+            <label class="col-sm-4 control-label">Country<strong class="red">*</strong> :</label>
+            <div class="col-sm-5">
+                <input type="text" required name="country" class="form-control" placeholder="Masukkan Negara" value="<?=(empty($reg_data->getCountry()))?'Indonesia':$reg_data->getCountry();?>">
+            </div>
+        </div>
+        <div class="form-group">
             <label class="col-sm-4 control-label">Kode Pos<strong class="red">*</strong> :</label>
             <div class="col-sm-4">
                 <input type="number" required name="postal_code" class="form-control" placeholder="Masukkan Kode Pos" value="<?=$reg_data->getPostalCode();?>">
@@ -549,37 +555,21 @@
             <label class="col-sm-3 control-label ">Program :</label>
             <div class="col-sm-8">
                 <select class="form-control" name="program">
-                    <option value="IPA Reguler"
+                    <option value="Kelas Reguler"
                             <?php if (array_key_exists('program', $registrant)): ?>
-                                <?php if ($registrant['program'] == 'IPA Reguler'): ?>
+                                <?php if ($registrant['program'] == 'Kelas Reguler'): ?>
                                         selected
                                 <?php endif;?>
                             <?php endif;?>>
-                        IPA Reguler
+                        Kelas Reguler
                     </option>
-                    <option value="IPS Reguler"
+                    <option value="Kelas Industri"
                             <?php if (array_key_exists('program', $registrant)): ?>
-                                <?php if ($registrant['program'] == 'IPS Reguler'): ?>
+                                <?php if ($registrant['program'] == 'Kelas Industri'): ?>
                                         selected
                                 <?php endif;?>
                             <?php endif;?>>
-                        IPS Reguler
-                    </option>
-                    <option value="IPA Tahfidz"
-                            <?php if (array_key_exists('program', $registrant)): ?>
-                                <?php if ($registrant['program'] == 'IPA Tahfidz'): ?>
-                                        selected
-                                <?php endif;?>
-                            <?php endif;?>>
-                        IPA Tahfidz
-                    </option>
-                    <option value="IPS Tahfidz"
-                            <?php if (array_key_exists('program', $registrant)): ?>
-                                <?php if ($registrant['program'] == 'IPS Tahfidz'): ?>
-                                        selected
-                                <?php endif;?>
-                            <?php endif;?>>
-                        IPS Tahfidz
+                        Kelas Industri
                     </option>
                 </select>
             </div>
@@ -640,7 +630,7 @@
                 <div class="center-block">
                     <div class="col-md-8 col-md-offset-2">
                         <div class="btn-group" role="group">
-                            <a class="btn btn-success" href="<?=base_url() . $id . '/rapor'?>">
+                            <a class="btn btn-success" href="<?=base_url() . $id . '/surat'?>">
                                 Lanjut
                             </a>
                             <a class="btn btn-warning" href="<?=base_url() . $id . '/wali'?>">
@@ -932,6 +922,7 @@ function isi_alamat(tipe){
     $('input[name='+tipe+'_district]').val($('input[name=district]').val());
     $('input[name='+tipe+'_city]').val($('input[name=city]').val());
     $('input[name='+tipe+'_province]').val($('input[name=province]').val());
+    $('input[name='+tipe+'_country]').val($('input[name=country]').val());
     $('input[name='+tipe+'_postal_code]').val($('input[name=postal_code]').val());
 }
 

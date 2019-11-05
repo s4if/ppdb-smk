@@ -143,7 +143,7 @@
             </tr>
         </table>
         <p>Orang tua / wali dari calon peserta didik baru 
-            SMAIT Ihsanul Fikri Mungkid:</p>
+            SMKIT Ihsanul Fikri Mungkid:</p>
         <table style="width: 100%; border-style: none">
             <tr>
                 <td style="width: 8%; text-align: left">&nbsp;</td>
@@ -173,12 +173,12 @@
         <p>Dengan ini menyatakan bahwa:</p>
         <ol>
             <li class="pernyataan">
-                Jika anak saya diterima sebagai peserta didik SMAIT Ihsanul Fikri Mungkid, saya menyerahkan anak saya dan siap bekerja sama 
-                dalam hal pembinaan diri selama berstatus sebagai peserta didik SMAIT Ihsanul Fikri Mungkid, bersedia menerima segala konsekuensi
+                Jika anak saya diterima sebagai peserta didik SMKIT Ihsanul Fikri Mungkid, saya menyerahkan anak saya dan siap bekerja sama 
+                dalam hal pembinaan diri selama berstatus sebagai peserta didik SMKIT Ihsanul Fikri Mungkid, bersedia menerima segala konsekuensi
                 akibat peraturan yang berlaku di dalamnya, dan tidak menuntut apapun yang menjadi keputusan sekolah.
             </li>
             <li class="pernyataan">
-                Jika anak saya diterima sebagai peserta didik SMAIT Ihsanul Fikri Mungkid, saya akan melunasi Infaq Pendidikan
+                Jika anak saya diterima sebagai peserta didik SMKIT Ihsanul Fikri Mungkid, saya akan melunasi Infaq Pendidikan
                 sesuai dengan kesanggupan saya:
             </li>
             <table class="utama">
@@ -272,7 +272,7 @@
             ?>
             <li class="pernyataan">
                 <strong><u>Bersedia mengikuti program Qurban <?=count($arr_tahun)?> kali</u></strong> 
-                selama menjadi peserta didik SMAIT Ihsanul Fikri Mungkid pada Hari Raya Idul Adha tahun 
+                selama menjadi peserta didik SMKIT Ihsanul Fikri Mungkid pada Hari Raya Idul Adha tahun 
                 <strong><u><?=$str_tahun;?></u></strong>.
             </li>
             <?php endif;?>
@@ -299,7 +299,7 @@
                 <td style="width: 45%; text-align: center">Magelang, <?php echo tgl_indo($date->format('Y m d'));?></td>
             </tr>
             <tr>
-                <td style="width: 35%; text-align: center">Kepala SMAIT Ihsanul Fikri</td>
+                <td style="width: 35%; text-align: center">Kepala SMKIT Ihsanul Fikri</td>
                 <td style="width: 30%; text-align: center">Pewawancara</td>
                 <td style="width: 35%; text-align: center">Orang tua / wali calon peserta didik</td>
             </tr>

@@ -24,7 +24,7 @@
 <style>
 body {
     padding-top: 120px;
-    background-image: url("<?php echo base_url().'assets/images/bg-login-2021.png';?>");
+    background-image: url("<?php echo base_url().'assets/images/bg-login-2021.jpg';?>");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -167,12 +167,12 @@ body {
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand brand-shifted" href="http://smait.ihsanulfikri.sch.id/">PPDB SMAIT Ihsanul Fikri</a>
+                    <a class="navbar-brand brand-shifted" href="http://smkit.ihsanulfikri.sch.id/">PPDB SMKIT Ihsanul Fikri</a>
                 </div>
                 <!-- Navbar collapse -->
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right shifted">
-                        <li class=""><a href="http://smait.ihsanulfikri.sch.id/info-ppdb-2020-2021/">
+                        <li class=""><a href="http://smkit.ihsanulfikri.sch.id/info-ppdb-2020-2021/">
                             Petunjuk Pendaftaran
                         </a></li>
                         <!--<li class=""><a href="http://smait.ihsanulfikri.sch.id/ppdb-smait-ihsanul-fikri-mungkid-jalur-beasiswa-unggulan-dan-prestasi/">
@@ -222,8 +222,8 @@ body {
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <p class=" text-center"><strong>Pengumuman:</strong>
                     Data yang tertampil pada halaman ini adalah data peserta yang telah melakukan pendaftaran sampai selesai.<br/>
-                Segera lengkapi data pendaftaran anda untuk bisa bergabung dengan keluarga besar SMAIT Ihsanul Fikri Mungkid.<br/>
-                <i>Hormat kami, Tim PPDB SMAIT Ihsanul Fikri Mungkid.</i></p>
+                Segera lengkapi data pendaftaran anda untuk bisa bergabung dengan keluarga besar SMKIT Ihsanul Fikri Mungkid.<br/>
+                <i>Hormat kami, Tim PPDB SMKIT Ihsanul Fikri Mungkid.</i></p>
             </div>-->
 </div>
         </div>
@@ -233,10 +233,7 @@ body {
                     <div class="panel-heading ">
                         <div class="row">
                             <div class="col-xs-6">
-                                <a id="btn_ikhwan" onclick="ikhwan()" class="active" href="#" >Data Pendaftar Ikhwan</a>
-                            </div>
-                            <div class="col-xs-6">
-                                <a id="btn_akhwat" onclick="akhwat()" href="#" >Data Pendaftar Akhwat</a>
+                                <a id="btn_ikhwan" onclick="ikhwan()" class="active" href="#" >Data Pendaftar</a>
                             </div>
                         </div>
                         <hr>
@@ -280,14 +277,14 @@ body {
             </div>
             <div class="modal-body">
                 <p style="text-align: left;"><em>Assalaamu&#8217;alaykum.wr.wb. </em></p>
-                <p>Seperti yang telah disampaikan sebelumnya bahwa seluruh peserta Tes PPDB SMAIT Ihsanul Fikri (baik program Reguler atau Tahfidz) wajib mengikuti tes Qur&#8217;an berupa Tahsin dan Hafalan Juz 30 yang dijadwalkan pada pukul 10.00 sd 12.00 beriringan dengan pengukuran seragam.</p>
+                <p>Seperti yang telah disampaikan sebelumnya bahwa seluruh peserta Tes PPDB SMKIT Ihsanul Fikri (baik program Reguler atau Tahfidz) wajib mengikuti tes Qur&#8217;an berupa Tahsin dan Hafalan Juz 30 yang dijadwalkan pada pukul 10.00 sd 12.00 beriringan dengan pengukuran seragam.</p>
                 <p><strong>KHUSUS </strong>untuk pendaftar PROGRAM TAHFIDZ, ada tes tambahan yaitu hafalan <strong>SURAH MARYAM</strong> dari <strong>ayat 77 sd SELESAI</strong> pada pukul 13.00 sd 15.00.</p>
                 <p>Demikian kami beritahukan. Wassalaamualaykum. Wr.wb.</p>
                 <p>&nbsp;</p>
                 <p>Panitia PPDB SMAITIF 2017/2018</p>
             </div>
             <div class="modal-footer">
-                <a href="http://smait.ihsanulfikri.sch.id/program-tahfidz-tes-tambahan-untuk-program-tahfidz/" class="btn btn-info">Info Lebih Lanjut</a>
+                <a href="http://smkit.ihsanulfikri.sch.id/program-tahfidz-tes-tambahan-untuk-program-tahfidz/" class="btn btn-info">Info Lebih Lanjut</a>
                 <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
             </div>
         </div>

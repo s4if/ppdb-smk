@@ -380,7 +380,7 @@
 
             </div>
             <div class="modal-body">
-                <p>Terimakasih karena telah mendaftar di SMAIT Ihsanul Fikri Mungkid</p>
+                <p>Terimakasih karena telah mendaftar di SMKIT Ihsanul Fikri Mungkid</p>
                 <p>Pengisian data telah selesai, silahkan cek kembali data yang dimasukkan. 
                     Jika telah benar, silahkan klik finalisasi untuk menyelesaikan pendaftaran.</p>
                 <p><strong class="red">Ingat, data yang sudah di-finalisasi tidak bisa diubah kembali!</strong></p>

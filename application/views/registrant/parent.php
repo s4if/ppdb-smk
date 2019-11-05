@@ -189,6 +189,12 @@
             </div>
         </div>
         <div class="form-group">
+            <label class="col-sm-4 control-label">Country<strong class="red">*</strong> :</label>
+            <div class="col-sm-5">
+                <input type="text" required="true" name="<?= $type.'_';?>country" class="form-control" placeholder="Masukkan Negara" value="<?=$parent_data->getCountry();?>">
+            </div>
+        </div>
+        <div class="form-group">
             <label class="col-sm-4 control-label">Kode Pos<strong class="red">*</strong> :</label>
             <div class="col-sm-4">
                 <input type="number" required="true" name="<?= $type.'_';?>postal_code" class="form-control" placeholder="Masukkan Kode Pos" value="<?=$parent_data->getPostalCode();?>">
