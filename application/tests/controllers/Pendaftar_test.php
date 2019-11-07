@@ -129,6 +129,7 @@ class Pendaftar_test extends TestCase
                 'religion' => 'Islam', 
                 'height' => 176, 
                 'weight' => 57, 
+                'head_size' => 56, 
                 'child_order' => 3,
                 'siblings_count' => 3,
                 'stay_with' => 'Ortu',

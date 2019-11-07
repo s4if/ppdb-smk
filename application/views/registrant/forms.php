@@ -351,15 +351,21 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-4 control-label">Tinggi<strong class="red">*</strong> :</label>
+            <label class="col-sm-4 control-label">Tinggi (dalam cm)<strong class="red">*</strong> :</label>
             <div class="col-sm-6">
-                <input type="number" required name="height" id="birth_date" tabindex="1" class="form-control" placeholder="Tinggi Badan" value="<?=$reg_data->getHeight();?>">
+                <input type="number" required name="height" id="height" tabindex="1" class="form-control" placeholder="Tinggi Badan" value="<?=$reg_data->getHeight();?>">
             </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-4 control-label">Berat<strong class="red">*</strong> :</label>
+            <label class="col-sm-4 control-label">Berat (dalam kg)<strong class="red">*</strong> :</label>
             <div class="col-sm-6">
-                <input type="number" required name="weight" id="birth_date" tabindex="1" class="form-control" placeholder="Berat Badan" value="<?=$reg_data->getWeight();?>">
+                <input type="number" required name="weight" id="weight" tabindex="1" class="form-control" placeholder="Berat Badan" value="<?=$reg_data->getWeight();?>">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-4 control-label">Lingkar Kepala (dalam cm)<strong class="red">*</strong> :</label>
+            <div class="col-sm-6">
+                <input type="number" required name="head_size" id="head_size" tabindex="1" class="form-control" placeholder="Lingkar Kepala" value="<?=$reg_data->getHeadSize();?>">
             </div>
         </div>
         <!-- TODO: Riwayat Penyakit -->

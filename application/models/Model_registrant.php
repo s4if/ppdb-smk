@@ -213,8 +213,6 @@ class Model_registrant extends CI_Model {
         if (!empty($data['initial_cost'])) : $this->registrant->setInitialCost($data['initial_cost']); endif;
         if (!empty($data['finalized'])) : $this->registrant->setFinalized($data['finalized']); endif;
         if (!empty($data['qurban'])) : $this->registrant->setQurban($data['qurban']); endif;
-        if (!empty($data['rel_to_regular'])) : $this->registrant->setRelToRegular($data['rel_to_regular']); endif;
-        if (!empty($data['rel_to_ips'])) : $this->registrant->setRelToIPS($data['rel_to_ips']); endif;
         if (!empty($data['subscription_cost'])) : $this->registrant->setSubscriptionCost($data['subscription_cost']); endif;
         if (!empty($data['land_donation'])) : $this->registrant->setLandDonation($data['land_donation']); endif;
         if (!empty($data['main_parent'])) : $this->registrant->setMainParent($data['main_parent']); endif;
@@ -299,6 +297,7 @@ class Model_registrant extends CI_Model {
         if (!empty($data['religion'])) : $this->registrantData->setReligion($data['religion']); endif;
         if (!empty($data['height'])) : $this->registrantData->setHeight($data['height']); endif;
         if (!empty($data['weight'])) : $this->registrantData->setWeight($data['weight']); endif;
+        if (!empty($data['head_size'])) : $this->registrantData->setHeadSize($data['head_size']); endif;
         if (!empty($data['stay_with'])) : $this->registrantData->setStayWith($data['stay_with']); endif;
         // ---------------- SMK --------------------------//
         if (!empty($data['un_number'])) : $this->registrantData->setUNNumber($data['un_number']); endif;

@@ -122,7 +122,7 @@ class Model_1_registrant_test extends TestCase {
         $registrants = $this->obj->getData();
         $registrants_2 = $this->obj->getData('L');
         $attributes = ['id', 'regId', 'name', 'gender', 'previousSchool', 'nisn', 'program', 'deleted', 'registrationTime', 'registrantData',
-                'father', 'mother', 'guardian', 'paymentData', 'initialCost', 'relToIPS', 'relToRegular',
+                'father', 'mother', 'guardian', 'paymentData', 'initialCost',
                 'subscriptionCost', 'landDonation', 'qurban' ];
         foreach ($attributes as $attributeName){
             $this->assertObjectHasAttribute($attributeName, $registrant);
@@ -169,7 +169,8 @@ class Model_1_registrant_test extends TestCase {
             'nationality' => 'WNI', 
             'religion' => 'Islam', 
             'height' => 176, 
-            'weight' => 57, 
+            'weight' => 57,
+            'head_size' => '55' ,
             'stay_with' => 'Ortu',
             'hobbies' => ['makan', 'tidur', 'baca komik'],
             'achievements' => ['Juara 1 OSN Fisika SMP'],
@@ -194,8 +195,8 @@ class Model_1_registrant_test extends TestCase {
         $registrantData = $registrant->getRegistrantData();
         $attributes = ['id', 'registrant','nik','nkk','nak', 'birthPlace', 'birthDate', 'street', 
             'RT', 'RW', 'village', 'district', 'city', 'province', 'country', 'postalCode', 
-            'familyCondition', 'nationality', 'religion', 'height', 'weight', 'childOrder', 'siblingsCount',
-            'stayWith', 'physicalAbnormalities', 'hospitalSheets', 'hobbies', 'achievements',
+            'familyCondition', 'nationality', 'religion', 'height', 'weight', 'headSize', 'childOrder', 
+            'siblingsCount', 'stayWith', 'physicalAbnormalities', 'hospitalSheets', 'hobbies', 'achievements',
             'UNNumber', 'ijazahNumber', 'skhunNumber', 'isKIPReceiver', 'KIPNumber', 'nameInKIP',
             'isKKSReceiver', 'KKSNumber', 'KKSBankName', 'KKSBankNumber', 'KKSNameInBank'
         ];

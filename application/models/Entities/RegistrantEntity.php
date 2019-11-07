@@ -79,20 +79,6 @@ class RegistrantEntity
      * @var string
      */
     protected $program; // NOTE: IPA Reguler, IPS Reguler, IPA Tahfidz, IPS Tahfidz
-    
-    /**
-     * @Column(type="string", length=6, nullable=TRUE)
-     *
-     * @var string
-     */
-    protected $relToRegular; // semi boolean
-    
-    /**
-     * @Column(type="string", length=6, nullable=TRUE)
-     *
-     * @var string
-     */
-    protected $relToIPS; // semi boolean (true/false)
 
     /**
      * @Column(type="datetime", nullable=FALSE)
@@ -358,14 +344,6 @@ class RegistrantEntity
     public function getLandDonation() {
         return $this->landDonation;
     }
-
-    public function getRelToRegular() {
-        return $this->relToRegular;
-    }
-
-    public function getRelToIPS() {
-        return $this->relToIPS;
-    }
     
     public function getQurban() {
         return $this->qurban;
@@ -398,16 +376,6 @@ class RegistrantEntity
 
     public function setQurban($qurban) {
         $this->qurban = $qurban;
-        return $this;
-    }
-
-    public function setRelToRegular($relToRegular) {
-        $this->relToRegular = $relToRegular;
-        return $this;
-    }
-
-    public function setRelToIPS($relToIPS) {
-        $this->relToIPS = $relToIPS;
         return $this;
     }
     

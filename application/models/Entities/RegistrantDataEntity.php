@@ -201,6 +201,14 @@ class RegistrantDataEntity {
 	 */
 	protected $weight;
 
+
+	/**
+	 * @Column(type="integer", nullable=FALSE)
+	 *
+	 * @var int
+	 */
+	protected $headSize;
+
 	/**
 	 * @Column(type="string", nullable=FALSE)
 	 *
@@ -867,6 +875,26 @@ class RegistrantDataEntity {
     public function setKKSNameInBank($KKSNameInBank)
     {
         $this->KKSNameInBank = $KKSNameInBank;
+
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getHeadSize()
+    {
+        return $this->headSize;
+    }
+
+    /**
+     * @param int $headSize
+     *
+     * @return self
+     */
+    public function setHeadSize($headSize)
+    {
+        $this->headSize = $headSize;
 
         return $this;
     }
