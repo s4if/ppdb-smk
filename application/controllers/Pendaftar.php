@@ -205,6 +205,7 @@ class Pendaftar extends MY_Controller {
             $parent_data = [
                 'type' => $type,
                 'name' => $data[$type.'_name'],
+                'nik' => $data[$type.'_nik'],
                 'status' => $data[$type.'_status'], 
                 'birth_place' => $data[$type.'_birth_place'],
                 'birth_date'=> $data[$type.'_birth_date'],
@@ -215,6 +216,7 @@ class Pendaftar extends MY_Controller {
                 'district' => $data[$type.'_district'],
                 'city' => $data[$type.'_city'],
                 'province' => $data[$type.'_province'],
+                'country' => $data[$type.'_country'],
                 'postal_code' => $data[$type.'_postal_code'],
                 'contact' => $data[$type.'_contact'],
                 'relation' => $data[$type.'_relation'],
@@ -251,6 +253,7 @@ class Pendaftar extends MY_Controller {
             $parent_data = [
                 'type' => $type,
                 'name' => $data[$type.'_name'],
+                'nik' => $data[$type.'_nik'],
                 'status' => $data[$type.'_status'], 
                 'birth_place' => $data[$type.'_birth_place'],
                 'birth_date'=> $data[$type.'_birth_date'],
@@ -261,6 +264,7 @@ class Pendaftar extends MY_Controller {
                 'district' => $data[$type.'_district'],
                 'city' => $data[$type.'_city'],
                 'province' => $data[$type.'_province'],
+                'country' => $data[$type.'_country'],
                 'postal_code' => $data[$type.'_postal_code'],
                 'contact' => $data[$type.'_contact'],
                 'relation' => $data[$type.'_relation'],

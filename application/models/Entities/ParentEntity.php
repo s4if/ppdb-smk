@@ -50,6 +50,13 @@ class ParentEntity {
 	protected $name;
 
 	/**
+	 * @Column(type="integer", nullable=FALSE)
+	 *
+	 * @var int
+	 */
+	protected $nik; 
+
+	/**
 	 * @Column(type="string", nullable=FALSE)
 	 *
 	 * @var string
@@ -482,6 +489,26 @@ class ParentEntity {
     public function setCountry($country)
     {
         $this->country = $country;
+
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getNik()
+    {
+        return $this->nik;
+    }
+
+    /**
+     * @param int $nik
+     *
+     * @return self
+     */
+    public function setNik($nik)
+    {
+        $this->nik = $nik;
 
         return $this;
     }
