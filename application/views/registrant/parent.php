@@ -8,6 +8,12 @@
             </div>
         </div>
         <div class="form-group">
+            <label class="col-sm-4 control-label">NIK<strong class="red">*</strong> :</label>
+            <div class="col-sm-6">
+                <input type="number" required="true" name="<?= $type.'_';?>nik" class="form-control" placeholder="Masukkan NIK" value="<?=$parent_data->getNik();?>">
+            </div>
+        </div>
+        <div class="form-group">
             <label class="col-sm-4 control-label">Status<strong class="red">*</strong> :</label>
             <div class="col-sm-6">
                 <div class="radio">

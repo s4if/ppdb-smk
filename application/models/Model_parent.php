@@ -121,12 +121,13 @@ class Model_parent extends CI_Model{
 //    }
     
     //jika ada error yang berkaitan dengan set data, lihat urutan pemberian data pada fungsi
-    // ['id', 'type', 'name', 'status', 'birthPlace', 'birthDate', 'address', 'contact', 'relation',
+    // ['id', 'type', 'name', 'nik', 'status', 'birthPlace', 'birthDate', 'address', 'contact', 'relation',
     // 'nationality', 'religion', 'educationLevel', 'speciality', 'job', 'position', 'company',
     // 'companyAddress', 'income', 'burdenCount']
     protected function setData($data, $var){
         if (!is_null($var)) : $this->$var->setType($var); endif;
         if (!is_null($data['name'])) : $this->$var->setName($data['name']); endif;
+        if (!empty($data['nik'])) : $this->$var->setNik($data['nik']); endif;
         if (!is_null($data['status'])) : $this->$var->setStatus($data['status']); endif;
         if (!is_null($data['birth_place'])) : $this->$var->setBirthPlace($data['birth_place']); endif;
         if (!is_null($data['birth_date'])) : $this->$var->setBirthDate($data['birth_date']); endif;
@@ -155,7 +156,7 @@ class Model_parent extends CI_Model{
     public function ajaxValidation($data, $type){
         $input_error = [];
         $valid = true;
-        $arr_required =  ['name', 'status', 'birth_place', 'birth_date', 'street', 'village', 'district', 
+        $arr_required =  ['name', 'nik', 'status', 'birth_place', 'birth_date', 'street', 'village', 'district', 
             'city', 'province', 'postal_code', 'contact', 'relation',
             'nationality', 'religion', 'education_level', 'job'];
         foreach ($arr_required as $required){

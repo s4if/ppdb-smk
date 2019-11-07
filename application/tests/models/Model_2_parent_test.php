@@ -49,7 +49,8 @@ class Model_2_parent_test extends TestCase{
         $this->setUp();
         $data = [
             'type' => 'father', 
-            'name' => "Arikunto", 
+            'name' => "Arikunto",
+            'nik' => 330829299399293, 
             'status' => 'Hidup',  //Cerai, Hidup, Almarhum
             'birth_place' => 'Blora', 
             'birth_date' => '1981', 
@@ -80,6 +81,7 @@ class Model_2_parent_test extends TestCase{
         $data['type'] = 'mother';
         $data['name'] = 'Suharsimi';
         $data['status'] = 'Almarhum';
+        $data['nik'] = 33083929993819;
         $data['birth_date'] = '1983';
         $data['job'] = null;
         $data['income'] = 0;
@@ -87,6 +89,7 @@ class Model_2_parent_test extends TestCase{
         
         // test insert Wali
         $data['type'] = 'guardian';
+        $data['nik'] = 33083929991839;
         $data['name'] = 'Danny Sutanto';
         $data['status'] = 'Hidup';
         $data['birth_date'] = '1990';

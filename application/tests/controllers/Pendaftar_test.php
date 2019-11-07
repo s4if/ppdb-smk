@@ -129,6 +129,7 @@ class Pendaftar_test extends TestCase
                 'religion' => 'Islam', 
                 'height' => 176, 
                 'weight' => 57, 
+                'head_size' => 56, 
                 'child_order' => 3,
                 'siblings_count' => 3,
                 'stay_with' => 'Ortu',
@@ -140,6 +141,7 @@ class Pendaftar_test extends TestCase
                 'is_kip_receiver' => false,
                 //father
                 'father_name' => "Suraji", 
+                'father_nik' => 3392883899299303,
                 'father_status' => 'Hidup', 
                 'father_birth_place' => 'Blora', 
                 'father_birth_date' => '1981',
@@ -150,6 +152,7 @@ class Pendaftar_test extends TestCase
                 'father_district' => 'Mungkid', 
                 'father_city' => 'Kab. Magelang', 
                 'father_province' => 'Jawa Tengah', 
+                'father_country' => 'Indonesia', 
                 'father_postal_code' => 56551,
                 'father_contact' => '08965478865', 
                 'father_relation' => 'Kandung', 
@@ -162,7 +165,8 @@ class Pendaftar_test extends TestCase
                 'father_income' => '300000', 
                 'father_burden_count' => 4,
                 //mother
-                'mother_name' => "Suharsah", 
+                'mother_name' => "Suharsah",
+                'mother_nik' => 3302030030003, 
                 'mother_status' => 'Hidup', 
                 'mother_birth_place' => 'Blora', 
                 'mother_birth_date' => '1982',
@@ -173,6 +177,7 @@ class Pendaftar_test extends TestCase
                 'mother_district' => 'Mungkid', 
                 'mother_city' => 'Kab. Magelang', 
                 'mother_province' => 'Jawa Tengah', 
+                'mother_country' => 'Indonesia', 
                 'mother_postal_code' => 56551,
                 'mother_contact' => '08965478865', 
                 'mother_relation' => 'Kandung', 
@@ -215,40 +220,41 @@ class Pendaftar_test extends TestCase
             $this->assertContains('"kode":"001"', $output);
         }
         
-//        public function test_isi_Guardian(){
-//            $this->request('POST', ['Login', 'do_login'],[
-//                'username' => 'hanan',
-//                'password' => 'zaraki'
-//            ]);
-//            $this->assertRedirect('1/beranda');
-//            $data = [
-//            'type' => 'guardian', 
-//            'name' => "Rizaki Al Farisi", 
-//            'status' => 'Hidup', 
-//            'birth_place' => 'Blora', 
-//            'birth_date' => '15-11-1991',
-//            'street' => 'Sukarno No. 43', 
-//            'RT' => 1,
-//            'RW' => 3, 
-//            'village' => 'Kramat Utara', 
-//            'district' => 'Kramat', 
-//            'city' => 'Jakarta Utara', 
-//            'province' => 'DKI Jakarta', 
-//            'postal_code' => 56551,
-//            'contact' => '08965468864', 
-//            'relation' => 'Sepupu', 
-//            'nationality' => 'WNI', 
-//            'religion' => 'ISLAM', 
-//            'education_level' => 'S1', 
-//            'job' => 'Programmer', 
-//            'position' => 'Junior Programmer', 
-//            'company' => 'Google Indonesia',
-//            'income' => '7000000', 
-//            'burden_count' => 1
-//            ];
-//            $output = $this->ajaxRequest('POST', 'pendaftar/ajax_edit_parent/1/guardian', $data);
-//            $this->assertContains('"status":true', $output);
-//        }
+        public function test_isi_Guardian(){
+            $this->request('POST', ['Login', 'do_login'],[
+                'username' => 'hanan',
+                'password' => 'zaraki'
+            ]);
+            $this->assertRedirect('1/beranda');
+            $data = [
+            'guardian_nik' => 3302030030003, 
+            'guardian_name' => "Rizaki Al Farisi", 
+            'guardian_status' => 'Hidup', 
+            'guardian_birth_place' => 'Blora', 
+            'guardian_birth_date' => '15-11-1991',
+            'guardian_street' => 'Sukarno No. 43', 
+            'guardian_RT' => 1,
+            'guardian_RW' => 3, 
+            'guardian_village' => 'Kramat Utara', 
+            'guardian_district' => 'Kramat', 
+            'guardian_city' => 'Jakarta Utara', 
+            'guardian_province' => 'DKI Jakarta', 
+            'guardian_country' => 'Indonesia', 
+            'guardian_postal_code' => 56551,
+            'guardian_contact' => '08965468864', 
+            'guardian_relation' => 'Sepupu', 
+            'guardian_nationality' => 'WNI', 
+            'guardian_religion' => 'ISLAM', 
+            'guardian_education_level' => 'S1', 
+            'guardian_job' => 'Programmer', 
+            'guardian_position' => 'Junior Programmer', 
+            'guardian_company' => 'Google Indonesia',
+            'guardian_income' => '7000000', 
+            'guardian_burden_count' => 1
+            ];
+            $this->request('POST', 'pendaftar/do_edit_guardian/1', $data);
+            $this->assertRedirect('1/surat');
+        }
                 
         public function test_isi_Pernyataan(){
             $this->request('POST', ['Login', 'do_login'],[

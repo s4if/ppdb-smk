@@ -227,9 +227,9 @@
                 <td> <?php echo ucfirst($data->getReligion());?> </td>
             </tr>
             <tr>
-                <td> Tinggi / Berat </td>
+                <td> Tinggi / Berat / Lingkar Kepala </td>
                 <td> &nbsp;:&nbsp; </td>
-                <td> <?php echo $data->getHeight().' cm / '.$data->getWeight();?> kg</td>
+                <td> <?php echo $data->getHeight().' cm / '.$data->getWeight().' kg / '.$data->getHeadSize();?> cm</td>
             </tr>
             <tr>
                 <td> Tinggal Bersama </td>
