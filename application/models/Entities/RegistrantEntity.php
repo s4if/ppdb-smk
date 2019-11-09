@@ -25,13 +25,6 @@ class RegistrantEntity
     protected $regId; // Nomor pendaftaran
 
     /**
-     * @Column(type="string", length=4, nullable=TRUE, unique=TRUE)
-     *
-     * @var string
-     */
-    protected $kode; // Nomor Unik
-
-    /**
      * @Column(type="string", nullable=FALSE)
      *
      * @var string
@@ -331,7 +324,7 @@ class RegistrantEntity
 
     public function getKode()
     {
-        return $this->kode;
+        return sprintf("%03d", $this->id);
     }
     public function getVerified()
     {
@@ -439,9 +432,8 @@ class RegistrantEntity
 
     private function setRegId()
     {
-        $prefix = ($this->gender == 'L') ? 'I' : 'A';
-        $prefix2 = ($this->program == 'IPA Tahfidz' || $this->program == 'IPS Tahfidz') ? 'T' : 'R';
-        $this->regId = $prefix.$prefix2.$this->kode;
+        $prefix = ($this->program == 'Kelas Industri') ? 'I' : 'R';
+        $this->regId = $prefix.$this->getKode();
     }
 
     public function setPassword($password)
