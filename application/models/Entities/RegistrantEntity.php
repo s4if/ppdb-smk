@@ -39,6 +39,13 @@ class RegistrantEntity
     protected $name;
 
     /**
+     * @Column(type="string", nullable=TRUE)
+     *
+     * @var string
+     */
+    protected $uploadDir;
+
+    /**
      * @Column(type="string", length=10, nullable=FALSE)
      *
      * @var string
@@ -184,8 +191,9 @@ class RegistrantEntity
         $this->certificates = new Doctrine\Common\Collections\ArrayCollection();
     }
 
-    public function getArray($vars = ['id', 'regId', 'name', 'gender', 'previousSchool', 'nisn', 'program', 'deleted', 'registrationTime', 'registrantData',
-                'father', 'mother', 'guardian', 'paymentData', 'initialCost', 'subscriptionCost', 'boardingKit', 'landDonation', ])
+    public function getArray($vars = ['id', 'regId', 'name', 'gender', 'previousSchool', 'nisn', 'program', 
+        'deleted', 'registrationTime', 'registrantData', 'father', 'mother', 
+        'guardian', 'paymentData', 'initialCost', 'subscriptionCost', 'boardingKit', 'landDonation', ])
     {
         $arrData = [];
         foreach ($vars as $var) {
@@ -411,7 +419,6 @@ class RegistrantEntity
             }
         } else {
             $this->finalized = false;
-
             return 0;
         }
     }
@@ -551,6 +558,62 @@ class RegistrantEntity
     public function setDeleted($deleted)
     {
         $this->deleted = $deleted;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getUploadDir()
+    {
+        return $this->uploadDir;
+    }
+
+    /**
+     * @param string $uploadDir
+     *
+     * @return self
+     */
+    public function setUploadDir($uploadDir)
+    {
+        $this->uploadDir = $uploadDir;
+
+        return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isVerified()
+    {
+        return $this->verified;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isFinalized()
+    {
+        return $this->finalized;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isDeleted()
+    {
+        return $this->deleted;
+    }
+
+    /**
+     * @param mixed $certificates
+     *
+     * @return self
+     */
+    public function setCertificates($certificates)
+    {
+        $this->certificates = $certificates;
 
         return $this;
     }
