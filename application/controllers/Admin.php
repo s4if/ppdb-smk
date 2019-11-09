@@ -286,14 +286,16 @@ class Admin extends MY_Controller {
     
     private function getImgLink($id){
         $this->load->helper('file');
-        $img_link = '';
-        $file = read_file(FCPATH.'data/foto/'.$id.'.png');
+        $registrant = $this->reg->getRegistrant($id);
+        $img_link = "";
+        $file = read_file(FCPATH.'data/'.$registrant->getUploadDir().'/foto.png');
         $datetime = new DateTime('now');
         if($file == false){
             $img_link = base_url().'assets/images/default.png';
         }  else {
             $img_link = base_url().'pendaftar/getFoto/'.$id.'/'.hash('md2', $datetime->format('Y-m-d H:i:s'));
         }
+        $img_link = $file;
         return $img_link;
     }
     

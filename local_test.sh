@@ -9,13 +9,15 @@ touch application/db.sqlite
 vendor/doctrine/orm/bin/doctrine orm:schema-tool:create
 
 # Recreate data
-rm -fRv data/foto/
-rm -fRv data/receipt/
-rm -fRv data/sertifikat/
-mkdir -p data/foto/
+#rm -fRv data/foto/
+#rm -fRv data/receipt/
+#rm -fRv data/sertifikat/
+rm -Rv data
 mkdir -p data/receipt/
 mkdir -p data/sertifikat/
-cp application/tests/assets/foto.png data/foto/1.png
+
+mkdir -p data/001-ardiyan_hananto
+cp application/tests/assets/foto.png data/001-ardiyan_hananto/foto.png
 cp application/tests/assets/foto.png data/receipt/1.png
 
 # Seeding data

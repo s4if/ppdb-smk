@@ -218,16 +218,21 @@ class Model_1_registrant_test extends TestCase {
     public function test_upload()
     {
         $arr_reg =  $this->obj->getData('L');
-        $id = $arr_reg[1]->getId();
+        $registrant = end($arr_reg);
+        $id = $registrant->getId();
+        $uploadDir = $registrant->getKode().'-'. strtolower(str_replace(' ', '_', str_replace("'", "", $registrant->getName())));
+        $registrant->setUploadDir($uploadDir);
         $data = [
             'payment_date' => '11-12-2015',
             'transfer_destination' => 'SMAIT Ihsanul Fikri BNI Syariah',
             'amount' => 250003
         ];
+        $upload_dir = FCPATH.'data/'.$registrant->getUploadDir();
         // Setup
         $this->setUp();
-        $this->assertFalse($this->obj->uploadFoto(APPPATH.'tests/assets/failed.txt', $id));
-        $this->assertTrue($this->obj->uploadFoto(APPPATH.'tests/assets/foto.png', $id));
+        $this->assertFalse($this->obj->uploadFoto(APPPATH.'tests/assets/failed.txt', $upload_dir));
+        $this->assertTrue($this->obj->uploadFoto(APPPATH.'tests/assets/foto.png', $upload_dir));
+        $this->assertTrue($this->obj->uploadFoto(APPPATH.'tests/assets/foto.png', FCPATH.'data/testing'));
         $this->assertFalse($this->obj->uploadReceipt(APPPATH.'tests/assets/failed.txt', $id, $data));
         $this->assertTrue($this->obj->uploadReceipt(APPPATH.'tests/assets/receipt.jpg', $id, $data));
     }

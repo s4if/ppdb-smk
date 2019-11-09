@@ -89,8 +89,9 @@ class Pendaftar extends MY_Controller {
     
     private function getImgLink($id){
         $this->load->helper('file');
+        $registrant = $this->reg->getRegistrant($id);
         $img_link = [];
-        $file = read_file(FCPATH.'data/foto/'.$id.'.png');
+        $file = read_file(FCPATH.'data/'.$registrant->getUploadDir().'/foto.png');
         $datetime = new DateTime('now');
         if($file == false){
             $img_link[0] = base_url().'assets/images/default.png';
@@ -103,8 +104,9 @@ class Pendaftar extends MY_Controller {
     
     public function getFoto($id, $hash){
         $this->blockUnloggedOne($id, true);
+        $registrant = $this->reg->getRegistrant($id);
         $imagine = new Imagine\Gd\Imagine();
-        $image = $imagine->open(FCPATH.'data/foto/'.$id.'.png');
+        $image = $imagine->open(FCPATH.'data/'.$registrant->getUploadDir().'/foto.png');
         $this->session->set_userdata('random_hash', $hash);
         $image->show('png');
     }
@@ -311,8 +313,13 @@ class Pendaftar extends MY_Controller {
 
     public function upload_foto($id) {
         $this->blockUnloggedOne($id);
-        $fileUrl = $_FILES['file']["tmp_name"];
-        $res = $this->reg->uploadFoto($fileUrl, $id);
+        $registrant = $this->reg->getRegistrant($id);
+        $res = false;
+        //if (!is_null($registrant->getUploadDir())) {
+            $fileUrl = $_FILES['file']["tmp_name"];
+            $upload_dir = FCPATH.'data/'.$registrant->getUploadDir();
+            $res = $this->reg->uploadFoto($fileUrl, $upload_dir);
+        //}
         if ($res) {
             $this->session->set_flashdata("notices", [0 => "Upload Foto Berhasil!"]);
             redirect($id.'/formulir');

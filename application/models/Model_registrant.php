@@ -134,11 +134,11 @@ class Model_registrant extends CI_Model {
     }
     
     // Xperimental
-    public function getRegistrant(RegistrantEntity $reg = null) {
-        if(is_null($reg)){
+    public function getRegistrant($id = null) {
+        if(is_null($id)){
             return $this->registrant;
         } else {
-            $registrant = $this->doctrine->em->find('RegistrantEntity', $reg->getId());
+            $registrant = $this->doctrine->em->find('RegistrantEntity', $id);
             return $registrant;
         }
     }
@@ -146,9 +146,13 @@ class Model_registrant extends CI_Model {
     
     // generate Id berdasarkan counter
     public function genKode($id, $gender, $flush = true){
-        $registrant = $this->doctrine->em->find('RegistrantEntity', $id);
-        $kode = $registrant->getKode();
-        // nanti ditambah dengan generate variabel uploadDir
+        $this->registrant = $this->doctrine->em->find('RegistrantEntity', $id);
+        $kode = $this->registrant->getKode();
+        // generate variabel uploadDir
+        $uploadDir = $kode.'-'. strtolower(str_replace(' ', '_', str_replace("'", "", $this->registrant->getName())));
+        $this->registrant->setUploadDir($uploadDir);
+        $this->doctrine->em->persist($this->registrant);
+        $this->doctrine->em->flush();
         return ['status' => true, 'kode' => $kode];
     }
     
@@ -352,13 +356,16 @@ class Model_registrant extends CI_Model {
         }
     }
     
-    public function uploadFoto($file_url, $id){
+    public function uploadFoto($file_url, $upload_dir){
         try {
             $imagine = new Imagine\Gd\Imagine();
             $image = $imagine->open($file_url);
             $box = new Imagine\Image\Box(300, 400);
+            if(!is_dir($upload_dir)){
+                mkdir($upload_dir, 0777);
+            }
             $image->resize($box);
-            $image->save(FCPATH.'data/foto/'.$id.'.png');
+            $image->save($upload_dir.'/foto.png');
             return true;
         } catch (Imagine\Exception\RuntimeException $e){
             return false;

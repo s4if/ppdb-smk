@@ -46,6 +46,7 @@ $reg->setName('Ardiyan Hananto');
 $reg->setGender('L');
 $reg->setNisn('2010249129310');
 $reg->setCp('085738271625');
+$reg->setUploadDir('001-ardiyan_hananto');
 $reg->setPassword(password_hash('qwerty', PASSWORD_BCRYPT));
 $reg->setPreviousSchool('SMPIT Ihsanul FIkri Mungkid');
 $reg->setProgram('Kelas Reguler');
