@@ -87,7 +87,7 @@ class Model_registrant extends CI_Model {
     public function getArrayData($gender = NULL, $vars = [], $completed = false){
         $data = $this->getData($gender, null, $completed);
         if (empty($vars)){
-            $vars = ['id','regId', 'kode', 'username', 'name','gender','previousSchool','nisn', 'cp', 'program', 'finalized'];
+            $vars = ['id','regId', 'username', 'name','gender','previousSchool','nisn', 'cp', 'program', 'finalized'];
         }
         $arrData = [];
         foreach ($data as $registrant){
@@ -146,29 +146,10 @@ class Model_registrant extends CI_Model {
     
     // generate Id berdasarkan counter
     public function genKode($id, $gender, $flush = true){
-        $counter = $this->doctrine->em->find('CounterEntity', 1);
         $registrant = $this->doctrine->em->find('RegistrantEntity', $id);
-        $kode = "";
-        if (is_null($registrant->getKode()) && $gender == $registrant->getGender()){
-            if($gender == 'P'){
-                $counter->addFemaleCount();
-                $kode = sprintf("%03d", 500 + $counter->getFemaleCount()); //nilai asli 500
-                $registrant->setKode($kode);
-            } else {
-                $counter->addMaleCount();
-                $kode = sprintf("%03d", $counter->getMaleCount()); //nilai asli 0
-                $registrant->setKode($kode);
-            }
-            $this->doctrine->em->persist($counter);
-            $this->doctrine->em->persist($registrant);
-            if ($flush) {
-                $this->doctrine->em->flush();
-            }
-            return ['status' => true, 'kode' => $kode];
-        } else {
-            $kode = $registrant->getKode();
-            return ['status' => true, 'kode' => $kode];
-        }
+        $kode = $registrant->getKode();
+        // nanti ditambah dengan generate variabel uploadDir
+        return ['status' => true, 'kode' => $kode];
     }
     
     public function updateData($data){

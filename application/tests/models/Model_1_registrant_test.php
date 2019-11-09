@@ -218,7 +218,7 @@ class Model_1_registrant_test extends TestCase {
     public function test_upload()
     {
         $arr_reg =  $this->obj->getData('L');
-        $id = end($arr_reg)->getId();
+        $id = $arr_reg[1]->getId();
         $data = [
             'payment_date' => '11-12-2015',
             'transfer_destination' => 'SMAIT Ihsanul Fikri BNI Syariah',
