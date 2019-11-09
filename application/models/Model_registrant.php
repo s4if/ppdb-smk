@@ -372,11 +372,14 @@ class Model_registrant extends CI_Model {
         }
     }
     
-    public function uploadReceipt($file_url, $id, $data){
+    public function uploadReceipt($file_url, $upload_dir, $id, $data){
         try {
             $imagine = new Imagine\Gd\Imagine();
             $image = $imagine->open($file_url);
-            $image->save(FCPATH.'data/receipt/'.$id.'.png');
+            if(!is_dir($upload_dir)){
+                mkdir($upload_dir, 0777);
+            }
+            $image->save($upload_dir.'/kwitansi.png');
             $this->receipt_data($id, $data);
             return true;
         } catch (Imagine\Exception\RuntimeException $e){

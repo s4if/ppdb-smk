@@ -233,8 +233,8 @@ class Model_1_registrant_test extends TestCase {
         $this->assertFalse($this->obj->uploadFoto(APPPATH.'tests/assets/failed.txt', $upload_dir));
         $this->assertTrue($this->obj->uploadFoto(APPPATH.'tests/assets/foto.png', $upload_dir));
         $this->assertTrue($this->obj->uploadFoto(APPPATH.'tests/assets/foto.png', FCPATH.'data/testing'));
-        $this->assertFalse($this->obj->uploadReceipt(APPPATH.'tests/assets/failed.txt', $id, $data));
-        $this->assertTrue($this->obj->uploadReceipt(APPPATH.'tests/assets/receipt.jpg', $id, $data));
+        $this->assertFalse($this->obj->uploadReceipt(APPPATH.'tests/assets/failed.txt', $upload_dir, $id, $data));
+        $this->assertTrue($this->obj->uploadReceipt(APPPATH.'tests/assets/receipt.jpg', $upload_dir, $id, $data));
     }
     
     

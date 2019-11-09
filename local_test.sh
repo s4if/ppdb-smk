@@ -13,12 +13,12 @@ vendor/doctrine/orm/bin/doctrine orm:schema-tool:create
 #rm -fRv data/receipt/
 #rm -fRv data/sertifikat/
 rm -Rv data
-mkdir -p data/receipt/
+mkdir data/
 mkdir -p data/sertifikat/
 
 mkdir -p data/001-ardiyan_hananto
 cp application/tests/assets/foto.png data/001-ardiyan_hananto/foto.png
-cp application/tests/assets/foto.png data/receipt/1.png
+cp application/tests/assets/foto.png data/001-ardiyan_hananto/kwitansi.png
 
 # Seeding data
 php seeder.php

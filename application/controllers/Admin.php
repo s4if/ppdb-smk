@@ -489,8 +489,9 @@ class Admin extends MY_Controller {
     
     private function getImgReceipt($id){
         $this->load->helper('file');
+        $registrant = $this->reg->getRegistrant($id);
         $img_link = '';
-        $file = read_file(FCPATH.'data/receipt/'.$id.'.png');
+        $file = read_file(FCPATH.'data/'.$registrant->getUploadDir().'/kwitansi.png');
         $datetime = new DateTime('now');
         if($file == false){
             $img_link = null;
