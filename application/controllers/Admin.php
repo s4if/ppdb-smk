@@ -277,26 +277,11 @@ class Admin extends MY_Controller {
                 'arr_parent' => $this->parent->getData($id, ['father', 'mother', 'guardian']),
                 'parents' => ['father', 'mother', 'guardian']
             ]),
-            'img_link' => $this->getImgLink($id),
+            'img_link' => $this->getImgLink($id, 'foto'),
             'status' => $this->reg->cek_status($reg_data),
             'nav_pos' => 'registrantAdmin'
         ];
         $this->CustomView('admin/profile_registrant', $data);
-    }
-    
-    private function getImgLink($id){
-        $this->load->helper('file');
-        $registrant = $this->reg->getRegistrant($id);
-        $img_link = "";
-        $file = read_file(FCPATH.'data/'.$registrant->getUploadDir().'/foto.png');
-        $datetime = new DateTime('now');
-        if($file == false){
-            $img_link = base_url().'assets/images/default.png';
-        }  else {
-            $img_link = base_url().'pendaftar/getFoto/'.$id.'/'.hash('md2', $datetime->format('Y-m-d H:i:s'));
-        }
-        $img_link = $file;
-        return $img_link;
     }
     
     public function do_password_registrant($id){
@@ -410,7 +395,7 @@ class Admin extends MY_Controller {
             'username' => $this->session->admin->getUsername(),
             'admin' => $this->session->admin,
             'resi' => $resi,
-            'img_receipt' => $this->getImgReceipt($id_registrant),
+            'img_receipt' => $this->getImgLink($id_registrant, 'kwitansi'),
             'nav_pos' => 'paymentAdmin'
         ];
         $this->CustomView('admin/verifikasi_pembayaran', $data);
@@ -485,20 +470,6 @@ class Admin extends MY_Controller {
         $pdf->addPage($data_sertifikat);
         $res = $pdf->send('Dokumen Prestasi '.$registrant->getRegId().' .pdf');
         if (!$res) { echo $pdf->getError(); }
-    }
-    
-    private function getImgReceipt($id){
-        $this->load->helper('file');
-        $registrant = $this->reg->getRegistrant($id);
-        $img_link = '';
-        $file = read_file(FCPATH.'data/'.$registrant->getUploadDir().'/kwitansi.png');
-        $datetime = new DateTime('now');
-        if($file == false){
-            $img_link = null;
-        }  else {
-            $img_link = base_url().'pendaftar/getReceipt/'.$id.'/'.hash('md2', $datetime->format('Y-m-d H:i:s'));
-        }
-        return $img_link;
     }
     
     public function verifikasi($id, $isValid){

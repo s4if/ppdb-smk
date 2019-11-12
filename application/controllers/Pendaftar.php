@@ -21,7 +21,7 @@ class Pendaftar extends MY_Controller {
             'username' => $username,
             'id' => $this->session->registrant->getId(),
             'registrant' => $registrant,
-            'img_receipt' => $this->getImgReceipt($id),
+            'img_receipt' => $this->getImgLink($id, 'kwitansi'),
             'status' => $this->reg->cek_status($this->session->registrant),
             'nav_pos' => 'home'
         ];
@@ -87,21 +87,6 @@ class Pendaftar extends MY_Controller {
         }
     }
     
-    private function getImgLink($id){
-        $this->load->helper('file');
-        $registrant = $this->reg->getRegistrant($id);
-        $img_link = [];
-        $file = read_file(FCPATH.'data/'.$registrant->getUploadDir().'/foto.png');
-        $datetime = new DateTime('now');
-        if($file == false){
-            $img_link[0] = base_url().'assets/images/default.png';
-        }  else {
-            $img_link[0] = base_url().'pendaftar/getFoto/'.$id.'/'.hash('md2', $datetime->format('Y-m-d H:i:s'));
-        }
-        $img_link[1] = $file;
-        return $img_link;
-    }
-    
     public function getFoto($id, $hash){
         $this->blockUnloggedOne($id, true);
         $registrant = $this->reg->getRegistrant($id);
@@ -143,7 +128,7 @@ class Pendaftar extends MY_Controller {
             'reg_data' => $reg_data,
             'parent_form' => $parent_form,
             'nav_pos' => 'formulir',
-            'img_link' => $this->getImgLink($id)[0],
+            'img_link' => $this->getImgLink($id),
         ];
         $this->CustomView('registrant/forms', $data);
     }
@@ -336,6 +321,7 @@ class Pendaftar extends MY_Controller {
         $res = false;
         $registrant = $this->reg->getRegistrant($id);
         if (!is_null($registrant->getUploadDir())) {
+            $upload_dir = FCPATH.'data/'.$registrant->getUploadDir();
             $res = $this->reg->uploadReceipt($fileUrl, $upload_dir, $id, $data);
         }
         if ($res) {
@@ -380,7 +366,7 @@ class Pendaftar extends MY_Controller {
             'username' => $this->session->registrant->getName(),
             'id' => $this->session->registrant->getId(),
             'nav_pos' => 'recap',
-            'img_link' => $this->getImgLink($id)[0],
+            'img_link' => $this->getImgLink($id),
             'registrant' => $this->session->registrant,
         ];
         $this->CustomView('registrant/recap', $data);
@@ -399,7 +385,7 @@ class Pendaftar extends MY_Controller {
             'username' => $registrant->getName(),
             'id' => $registrant->getId(),
             'nav_pos' => 'recap',
-            'img_link' => $this->getImgLink($id)[0],
+            'img_link' => $this->getImgLink($id),
             'registrant' => $registrant,
         ];
         $reg_data = $this->load->view('registrant/print/registrant_data', $data, TRUE);
