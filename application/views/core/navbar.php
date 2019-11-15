@@ -75,6 +75,9 @@
                 <a href="<?=  base_url().$id.'/surat'?>">Surat Pernyataan</a>
             </li>
             <?php endif;?>
+            <li id="navDocuments">
+                <a href="<?=  base_url().$id.'/dokumen'?>">Upload Dokumen </a>
+            </li>
             <li id="navRecap">
                 <a href="<?=  base_url().$id.'/rekap'?>">Rekap</a>
             </li>
@@ -85,9 +88,6 @@
             </li>
             <li id="navRegistrantAdmin">
                 <a href="<?=  base_url().'admin/lihat/'?>">Lihat Pendaftar</a>
-            </li>
-            <li id="navNilaiAdmin">
-                <a href="<?=  base_url().'admin/nilai/'?>">Lihat Nilai</a>
             </li>
             <li id="navPaymentAdmin">
                 <a href="<?=  base_url().'admin/pembayaran/'?>">Lihat Pembayaran</a>

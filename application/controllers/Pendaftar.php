@@ -296,7 +296,7 @@ class Pendaftar extends MY_Controller {
         }
     }
 
-    public function upload_foto($id) {
+    public function upload_foto($id, $redirUrl = 'formulir') {
         $this->blockUnloggedOne($id);
         $fileUrl = $_FILES['file']["tmp_name"];
         $registrant = $this->reg->getRegistrant($id);
@@ -307,10 +307,10 @@ class Pendaftar extends MY_Controller {
         }
         if ($res) {
             $this->session->set_flashdata("notices", [0 => "Upload Foto Berhasil!"]);
-            redirect($id.'/formulir');
+            redirect($id.'/'.$redirUrl);
         } else {
             $this->session->set_flashdata("errors", [0 => "Upload Foto Gagal!"]);
-            redirect($id.'/formulir');
+            redirect($id.'/'.$redirUrl);
         }
     }
     
@@ -330,6 +330,44 @@ class Pendaftar extends MY_Controller {
         } else {
             $this->session->set_flashdata("errors", [0 => "Upload Kiwtansi Gagal!"]);
             redirect($id.'/beranda');
+        }
+    }
+
+    public function upload_dokumen_gambar($id, $type = 'akte')
+    {
+        $this->blockUnloggedOne($id);
+        $fileUrl = $_FILES['file']["tmp_name"];
+        $registrant = $this->reg->getRegistrant($id);
+        $res = false;
+        if (!is_null($registrant->getUploadDir())) {
+            $upload_dir = FCPATH.'data/'.$registrant->getUploadDir();
+            $res = $this->reg->uploadDocumentImage($fileUrl, $upload_dir, $type);
+        }
+        if ($res) {
+            $this->session->set_flashdata("notices", [0 => "Upload Foto Berhasil!"]);
+            redirect($id.'/dokumen');
+        } else {
+            $this->session->set_flashdata("errors", [0 => "Upload Foto Gagal!"]);
+            redirect($id.'/dokumen');
+        }
+    }
+
+    public function upload_dokumen_pdf($id, $type)
+    {
+        $registrant = $this->reg->getRegistrant($id);
+        $config['upload_path'] = $upload_dir = FCPATH.'data/'.$registrant->getUploadDir();
+        $config['allowed_types'] = 'pdf';
+        $config['file_name'] = $type.'.pdf';
+        $this->load->library('upload', $config);
+        if (!$this->upload->do_upload('file'))
+        {
+            $this->session->set_flashdata("errors", [0 => "Upload PDF Gagal!"]);
+            redirect($id.'/dokumen');
+        }
+        else
+        {
+            $this->session->set_flashdata("notices", [0 => "Upload PDF Berhasil!"]);
+            redirect($id.'/dokumen');
         }
     }
     
@@ -374,7 +412,7 @@ class Pendaftar extends MY_Controller {
     
     public function print_data_pendaftaran($id, $action = 'download'){
         $this->blockUnloggedOne($id);
-        $registrant = $this->reg->getData(null, $id);
+        $registrant = $this->reg->getRegistrant($id);
         $this->session->set_userdata('registrant', $registrant);
         $pdf = new mikehaertl\wkhtmlto\Pdf();
         $pdf->setOptions($this->pdfOption());
@@ -395,7 +433,7 @@ class Pendaftar extends MY_Controller {
             $pdf->addPage($reg_letter);
         }
         if ($action == 'download'){
-            $res = $pdf->send('Data Pendaftaran '.$id.' .pdf');
+            $res = $pdf->send('Data Pendaftaran '.$registrant->getUploadDir().' .pdf');
         } else {
             $res = $pdf->send();
         }
@@ -502,6 +540,23 @@ class Pendaftar extends MY_Controller {
             $this->session->set_flashdata("errors", [0 => "Maaf, Anda tidak boleh melihat halaman ini lagi!"]);
             redirect('login/index');
         }
+    }
+
+    public function halaman_dokumen($id)
+    {
+        // tambahi scan dir!!
+        $this->blockUnloggedOne($id);
+        $registrant = $this->reg->getRegistrant($id);
+        $upload_dir = FCPATH.'data/'.$registrant->getUploadDir();
+        $data = [
+            'title' => 'Upload Sertifikat',
+            'username' => $this->session->registrant->getName(),
+            'id' => $this->session->registrant->getId(),
+            'registrant' => $this->reg->getRegistrant($this->session->registrant),
+            'nav_pos' => 'documents',
+            'status_upload' => $this->reg->scanRegDir($upload_dir)
+        ];
+        $this->CustomView('registrant/documents', $data);
     }
     
     // =========================================================

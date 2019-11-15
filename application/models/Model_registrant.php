@@ -386,6 +386,53 @@ class Model_registrant extends CI_Model {
             return false;
         }
     }
+
+    public function uploadDocumentImage($file_url, $upload_dir, $type){
+        try {
+            $imagine = new Imagine\Gd\Imagine();
+            $image = $imagine->open($file_url);
+            if(!is_dir($upload_dir)){
+                mkdir($upload_dir, 0777);
+            }
+            $image->save($upload_dir.'/'.$type.'.png');
+            return true;
+        } catch (Imagine\Exception\RuntimeException $e){
+            return false;
+        }
+    }
+
+    public function scanRegDir($upload_dir)
+    {
+        $status = [
+            'foto' => false,
+            'akte' => false,
+            'sksekolah' => false,
+            'sksehat' => false,
+            'skbn' => false,
+            'ijazah' => false,
+            'skhun' => false,
+            'jamkes' => false,
+            'sktm' => false,
+            'scandir_error' => false
+        ];
+        try {
+            if(!is_dir($upload_dir)){
+                mkdir($upload_dir, 0777);
+            }
+            $reg_files = scandir($upload_dir);
+            foreach ($status as $key => $value) {
+                foreach ($reg_files as $file) {
+                    if(preg_match("/{$key}/i", $file)) {
+                        $status[$key] = true;
+                    }
+                }
+            }
+        } catch (Exception $e) {
+            $status['scandir_error'] =  true;
+        } finally {
+            return $status;
+        }
+    }
     
     public function receipt_data($id, $data){
         $this->registrant = $this->doctrine->em->find('RegistrantEntity', $id);
