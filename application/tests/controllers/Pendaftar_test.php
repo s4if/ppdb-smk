@@ -275,7 +275,7 @@ class Pendaftar_test extends TestCase
                 'main_parent' => 'father'
             ];
             $this->request('POST', 'pendaftar/isi_pernyataan/1', $data);
-            $this->assertRedirect('1/rekap');
+            $this->assertRedirect('1/dokumen');
         }
         
         public function test_finalisasi(){
