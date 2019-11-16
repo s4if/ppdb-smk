@@ -63,9 +63,15 @@
                 <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> </button>';?></td>
                 <td>Wajib</td>
                 <td>
-                    <a class="btn btn-primary" onclick="modal_upload('foto')">Upload</a>
-                    <a class="btn btn-info" onclick="modal_view('foto')">Lihat</a>
-                    <a class="btn btn-danger" onclick="modal_delete('foto')">Hapus</a>
+                    <?php if (!$registrant->getFinalized()) :?>
+                        <a class="btn btn-primary" onclick="modal_upload('foto')">Upload</a>
+                    <?php endif;
+                    if($status_upload['foto']) :?>
+                        <a class="btn btn-info" onclick="modal_view('foto')">Lihat</a>
+                        <?php if (!$registrant->getFinalized()) :?>
+                            <a class="btn btn-danger" onclick="modal_delete('foto')">Hapus</a>
+                        <?php endif;
+                    endif;?>
                 </td>
             </tr>
             <tr>
@@ -77,9 +83,15 @@
                 <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> </button>';?></td>
                 <td>Wajib</td>
                 <td>
-                    <a class="btn btn-primary" onclick="modal_upload('akte')">Upload</a>
-                    <a class="btn btn-info" onclick="modal_view('akte')">Lihat</a>
-                    <a class="btn btn-danger" onclick="modal_delete('akte')">Hapus</a>
+                    <?php if (!$registrant->getFinalized()) :?>
+                        <a class="btn btn-primary" onclick="modal_upload('akte')">Upload</a>
+                    <?php endif;
+                    if($status_upload['akte']) :?>
+                        <a class="btn btn-info" onclick="modal_view('akte')">Lihat</a>
+                        <?php if (!$registrant->getFinalized()) :?>
+                            <a class="btn btn-danger" onclick="modal_delete('akte')">Hapus</a>
+                        <?php endif;
+                    endif;?>
                 </td>
             </tr>
             <tr>
@@ -91,9 +103,15 @@
                 <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> </button>';?></td>
                 <td>Wajib</td>
                 <td>
-                    <a class="btn btn-primary" onclick="modal_upload('sksekolah')">Upload</a>
-                    <a class="btn btn-info" onclick="modal_view('sksekolah')">Lihat</a>
-                    <a class="btn btn-danger" onclick="modal_delete('sksekolah')">Hapus</a>
+                    <?php if (!$registrant->getFinalized()) :?>
+                        <a class="btn btn-primary" onclick="modal_upload('sksekolah')">Upload</a>
+                    <?php endif;
+                    if($status_upload['sksekolah']) :?>
+                        <a class="btn btn-info" onclick="modal_view('sksekolah')">Lihat</a>
+                        <?php if (!$registrant->getFinalized()) :?>
+                            <a class="btn btn-danger" onclick="modal_delete('sksekolah')">Hapus</a>
+                        <?php endif;
+                    endif;?>
                 </td>
             </tr>
             <tr>
@@ -105,9 +123,15 @@
                 <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> </button>';?></td>
                 <td>Wajib</td>
                 <td>
-                    <a class="btn btn-primary" onclick="modal_upload('sksehat')">Upload</a>
-                    <a class="btn btn-info" onclick="modal_view('sksehat')">Lihat</a>
-                    <a class="btn btn-danger" onclick="modal_delete('sksehat')">Hapus</a>
+                    <?php if (!$registrant->getFinalized()) :?>
+                        <a class="btn btn-primary" onclick="modal_upload('sksehat')">Upload</a>
+                    <?php endif;
+                    if($status_upload['sksehat']) :?>
+                        <a class="btn btn-info" onclick="modal_view('sksehat')">Lihat</a>
+                        <?php if (!$registrant->getFinalized()) :?>
+                            <a class="btn btn-danger" onclick="modal_delete('sksehat')">Hapus</a>
+                        <?php endif;
+                    endif;?>
                 </td>
             </tr>
             <tr>
@@ -119,9 +143,15 @@
                 <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> </button>';?></td>
                 <td>Wajib</td>
                 <td>
-                    <a class="btn btn-primary" onclick="modal_upload('skbn')">Upload</a>
-                    <a class="btn btn-info" onclick="modal_view('skbn')">Lihat</a>
-                    <a class="btn btn-danger" onclick="modal_delete('skbn')">Hapus</a>
+                    <?php if (!$registrant->getFinalized()) :?>
+                        <a class="btn btn-primary" onclick="modal_upload('skbn')">Upload</a>
+                    <?php endif;
+                    if($status_upload['skbn']) :?>
+                        <a class="btn btn-info" onclick="modal_view('skbn')">Lihat</a>
+                        <?php if (!$registrant->getFinalized()) :?>
+                            <a class="btn btn-danger" onclick="modal_delete('skbn')">Hapus</a>
+                        <?php endif;
+                    endif;?>
                 </td>
             </tr>
             <tr>
@@ -133,9 +163,15 @@
                 <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> </button>';?></td>
                 <td>Tidak Wajib</td>
                 <td>
-                    <a class="btn btn-primary" onclick="modal_upload('ijazah')">Upload</a>
-                    <a class="btn btn-info" onclick="modal_view('ijazah')">Lihat</a>
-                    <a class="btn btn-danger" onclick="modal_delete('ijazah')">Hapus</a>
+                    <?php if (!$registrant->getFinalized()) :?>
+                        <a class="btn btn-primary" onclick="modal_upload('ijazah')">Upload</a>
+                    <?php endif;
+                    if($status_upload['ijazah']) :?>
+                        <a class="btn btn-info" onclick="modal_view('ijazah')">Lihat</a>
+                        <?php if (!$registrant->getFinalized()) :?>
+                            <a class="btn btn-danger" onclick="modal_delete('ijazah')">Hapus</a>
+                        <?php endif;
+                    endif;?>
                 </td>
             </tr>
             <tr>
@@ -147,9 +183,15 @@
                 <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> </button>';?></td>
                 <td>Tidak Wajib</td>
                 <td>
-                    <a class="btn btn-primary" onclick="modal_upload('skhun')">Upload</a>
-                    <a class="btn btn-info" onclick="modal_view('skhun')">Lihat</a>
-                    <a class="btn btn-danger" onclick="modal_delete('skhun')">Hapus</a>
+                    <?php if (!$registrant->getFinalized()) :?>
+                        <a class="btn btn-primary" onclick="modal_upload('skhun')">Upload</a>
+                    <?php endif;
+                    if($status_upload['skhun']) :?>
+                        <a class="btn btn-info" onclick="modal_view('skhun')">Lihat</a>
+                        <?php if (!$registrant->getFinalized()) :?>
+                            <a class="btn btn-danger" onclick="modal_delete('skhun')">Hapus</a>
+                        <?php endif;
+                    endif;?>
                 </td>
             </tr>
             <tr>
@@ -161,9 +203,15 @@
                 <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> </button>';?></td>
                 <td>Tidak Wajib</td>
                 <td>
-                    <a class="btn btn-primary" onclick="modal_upload('jamkes')">Upload</a>
-                    <a class="btn btn-info" onclick="modal_view('jamkes')">Lihat</a>
-                    <a class="btn btn-danger" onclick="modal_delete('jamkes')">Hapus</a>
+                    <?php if (!$registrant->getFinalized()) :?>
+                        <a class="btn btn-primary" onclick="modal_upload('jamkes')">Upload</a>
+                    <?php endif;
+                    if($status_upload['jamkes']) :?>
+                        <a class="btn btn-info" onclick="modal_view('jamkes')">Lihat</a>
+                        <?php if (!$registrant->getFinalized()) :?>
+                            <a class="btn btn-danger" onclick="modal_delete('jamkes')">Hapus</a>
+                        <?php endif;
+                    endif;?>
                 </td>
             </tr>
             <tr>
@@ -175,9 +223,15 @@
                 <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> </button>';?></td>
                 <td>Tidak Wajib</td>
                 <td>
-                    <a class="btn btn-primary" onclick="modal_upload('sktm')">Upload</a>
-                    <a class="btn btn-info" onclick="modal_view('sktm')">Lihat</a>
-                    <a class="btn btn-danger" onclick="modal_delete('sktm')">Hapus</a>
+                    <?php if (!$registrant->getFinalized()) :?>
+                        <a class="btn btn-primary" onclick="modal_upload('sktm')">Upload</a>
+                    <?php endif;
+                    if($status_upload['sktm']) :?>
+                        <a class="btn btn-info" onclick="modal_view('sktm')">Lihat</a>
+                        <?php if (!$registrant->getFinalized()) :?>
+                            <a class="btn btn-danger" onclick="modal_delete('sktm')">Hapus</a>
+                        <?php endif;
+                    endif;?>
                 </td>
             </tr>
         </table>
@@ -211,14 +265,14 @@ Cekingnya pakai readfile?
     </div>
 </div>
 <div class="modal fade" id="modal_view" tabindex="-1" role="dialog" aria-labelledby="modal_view" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <h4 class="modal-title" id="view_title"></h4>
             </div>
             <div class="modal-body">
-                
+                <div id="view_content"></div>
             </div>
         </div>
     </div>
@@ -280,5 +334,16 @@ function modal_upload(tipe) {
             break;
     }    
     $('#modal_upload').modal('show');
+}
+function modal_view(tipe) {
+    title = $('#judul_'+tipe).text();
+    $('#view_title').text(title);
+    //if (!(tipe == 'ijazah' && tipe == 'skhun')) {
+        $('#view_content').empty();
+        img_link = "<?=base_url()."pendaftar/getDocument/".$registrant->getId()."/"?>"+tipe+"/"+Math.random().toString(36).substring(7);
+        str_child = "<img src='"+img_link+"' alt='image' class='img-responsive img-thumbnail' >"
+        $('#view_content').append(str_child);
+    //}
+    $('#modal_view').modal('show');
 }
 </script>
