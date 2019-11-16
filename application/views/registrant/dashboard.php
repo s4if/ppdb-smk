@@ -51,16 +51,11 @@
     <h1>Selamat, anda telah menyelesaikan pendaftaran!</h1>
     <p>
         Terimakasih telah mendaftar di SMKIT Ihsanul Fikri.<br/>
-        Tes akan dilaksanakan tanggal [belum]<br/>
-        Hasil tes akan diumumkan tanggal [belum]<br/>
+        Tes akan dilaksanakan tanggal 23 Februari 2020<br/>
         Silahkan Unduh dan cetak form pendaftaran dan kartu pendaftaran.
     </p>        
     <a class="btn btn-primary" href="<?=  base_url().'pendaftar/print_data_pendaftaran/'.$id;?>">
         Unduh Kartu Dan Formulir Pendaftaran</a>
-    <a class="btn btn-warning" href="<?= base_url().$id.'/sertifikat'?>">
-        <span class="glyphicon glyphicon-upload"></span>
-        Upload Persyaratan Jalur Prestasi/Beasiswa Unggulan
-    </a>
     <?php elseif(is_null($registrant->getPaymentData())) :?>
     <h1>Selamat Datang di Sistem PPDB SMKIT Ihsanul Fikri Mungkid</h1>
     <p>

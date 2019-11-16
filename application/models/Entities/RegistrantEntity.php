@@ -145,6 +145,13 @@ class RegistrantEntity
      * @var string
      */
     protected $landDonation; // Wakaf Tanah
+
+    /**
+     * @Column(type="boolean", nullable=TRUE)
+     *
+     * @var boolean
+     */
+    protected $BuyingLaptop; // Wakaf Tanah
     
     /**
      * @Column(type="bigint", nullable=TRUE)
@@ -614,6 +621,28 @@ class RegistrantEntity
     public function setCertificates($certificates)
     {
         $this->certificates = $certificates;
+
+        return $this;
+    }
+
+
+
+    /**
+     * @return boolean
+     */
+    public function isBuyingLaptop()
+    {
+        return $this->BuyingLaptop;
+    }
+
+    /**
+     * @param boolean $BuyingLaptop
+     *
+     * @return self
+     */
+    public function setBuyingLaptop($BuyingLaptop)
+    {
+        $this->BuyingLaptop = $BuyingLaptop;
 
         return $this;
     }

@@ -28,7 +28,7 @@ cd application/tests/
 rm _ci_phpunit_test/tmp/cache/autoload.php
 
 # Call PHPUNIT
-../../vendor/bin/phpunit --verbose --process-isolation
+../../vendor/bin/phpunit --verbose --process-isolation --stop-on-error
 
 # Back to ppdb
 cd ../..

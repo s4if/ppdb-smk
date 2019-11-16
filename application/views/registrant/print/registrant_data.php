@@ -137,7 +137,7 @@
     <h1 class="header-print">Data Pendaftar</h1>
     <div class="page-content">
         <h2 class="header-section">Foto Pendaftar</h2>
-        <img class="foto-profil" src="<?=FCPATH.'data/foto/'.$id.'.png';?>" alt="Foto 3x4">
+        <img class="foto-profil" src="<?=FCPATH.'data/'.$registrant->getUploadDir().'/foto.png';?>" alt="Foto 3x4">
         <hr />
     </div>
     <div class="page-content">

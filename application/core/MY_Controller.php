@@ -124,4 +124,33 @@ class MY_Controller extends CI_Controller
 
         return $options;
     }
+
+    protected function getImgLink($id, $type = 'foto'){
+        $this->load->helper('file');
+        $registrant = $this->reg->getRegistrant($id);
+        $img_link = "";
+        $file = read_file(FCPATH.'data/'.$registrant->getUploadDir().'/'.$type.'.png');
+        $datetime = new DateTime('now');
+        if($file == false){
+            $img_link = base_url().'assets/images/default.png';
+        }  else {
+            $img_link = base_url().'pendaftar/get_image/'.$type.'/'.$id.'/'.hash('md2', $datetime->format('Y-m-d H:i:s'));
+        }
+        return $img_link;
+    }
+
+    public function get_image($type, $id, $hash){
+        $this->blockUnloggedOne($id, true);
+        $registrant = $this->reg->getRegistrant($id);
+        $imagine = new Imagine\Gd\Imagine();
+        try {
+            $image = $imagine->open(FCPATH.'data/'.$registrant->getUploadDir().'/'.$type.'.png');
+            $this->session->set_userdata('random_hash', $hash);
+            $image->show('png');
+        } catch (Imagine\Exception\InvalidArgumentException $e) {
+            $image = $imagine->open(FCPATH.'assets/images/default.png');
+            $this->session->set_userdata('random_hash', $hash);
+            $image->show('png');
+        }   
+    }
 }
