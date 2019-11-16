@@ -401,6 +401,21 @@ class Model_registrant extends CI_Model {
         }
     }
 
+    public function deleteDocument($fileUrl)
+    {
+        error_reporting(0); 
+        $res = false;
+        if (file_exists($fileUrl)) {
+            try {
+                unlink($fileUrl);
+                $res = true;
+            } catch (Exception $e) {
+                $res = false;
+            }
+        }
+        return $res;
+    }
+
     public function scanRegDir($upload_dir)
     {
         $status = [
@@ -430,6 +445,7 @@ class Model_registrant extends CI_Model {
         } catch (Exception $e) {
             $status['scandir_error'] =  true;
         } finally {
+            $status['dokumen_lengkap'] = $status['foto'] && $status['akte'] && $status['sksekolah'] && $status['sksehat'] && $status['skbn'];
             return $status;
         }
     }

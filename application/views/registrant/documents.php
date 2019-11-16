@@ -40,8 +40,7 @@
 </ol>
 <div class="container-fluid">
     <div class="row">
-        Silahkan upload semua dokumen yang dibutuhkan:
-
+        <h2 class="text-center">Silahkan upload semua dokumen yang dibutuhkan:</h2>
     </div>
     <div class="row">
         <table class="table table-bordered">
@@ -252,13 +251,13 @@ Cekingnya pakai readfile?
                 <h4 class="modal-title" id="upload_title">Pilih File</h4>
             </div>
             <div class="modal-body">
-                <form role="form" method="post" action="" enctype="multipart/form-data" id="upload_form">
+                <form role="form" method="post" enctype="multipart/form-data" id="upload_form">
                     <div class="form-group">
-                        <label>Silahkan upload file bertipe <u id="upload_type"></u> disini</label>
+                        <label>Silahkan upload file bertipe <u id="upload_type"></u> disini.</label>
                         <input type="file" id="upload_file" name="file" required>
                     </div>
                     <button type="submit" class="btn btn-primary">Upload</button>
-                    <button type="button" class="btn btn-warning" data-dismiss="modal">Nanti</button>
+                    <button type="button" class="btn btn-warning" data-dismiss="modal">kembali</button>
                 </form>
             </div>
         </div>
@@ -273,6 +272,56 @@ Cekingnya pakai readfile?
             </div>
             <div class="modal-body">
                 <div id="view_content"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning" data-dismiss="modal">Kembali</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="modal_delete" tabindex="-1" role="dialog" aria-labelledby="modal_delete" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="delete_title"></h4>
+            </div>
+            <div class="modal-body">
+                <h2 class="text-danger text-center">Apakah anda yakin untuk menghapus dokumen <u id="delete_type"></u>?</h2>
+            </div>
+            <div class="modal-footer">
+                <a class="btn btn-danger" id="delete_button">HAPUS</a>
+                <button type="button" class="btn btn-warning" data-dismiss="modal">Kembali</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="modal_lengkap" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Notifikasi</h4>
+            </div>
+            <div class="modal-body">
+                <h4 class="text-center">
+                    <span class="glyphicon glyphicon-ok-sign"></span>
+                    Data dokumen wajib telah terupload semua. <br/>
+                    Silahkan melanjutkan menuju halaman Rekap dengan menekan tombol <b>Lanjut</b>.<br />
+                    Atau melengkapi lagi dokumen yang dibutuhkan dengan menekan tombol <b>Tutup</b>.
+                </h4>
+            </div>
+            <div class="modal-footer" >
+                <div class="center-block">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="btn-group" role="group">
+                            <a class="btn btn-success" href="<?=base_url() . $id . '/rekap'?>">
+                                Lanjut
+                            </a>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -338,12 +387,29 @@ function modal_upload(tipe) {
 function modal_view(tipe) {
     title = $('#judul_'+tipe).text();
     $('#view_title').text(title);
-    //if (!(tipe == 'ijazah' && tipe == 'skhun')) {
-        $('#view_content').empty();
-        img_link = "<?=base_url()."pendaftar/getDocument/".$registrant->getId()."/"?>"+tipe+"/"+Math.random().toString(36).substring(7);
+    $('#view_content').empty();
+    img_link = "<?=base_url()."pendaftar/getDocument/".$registrant->getId()."/"?>"+tipe+"/"+Math.random().toString(36).substring(7);
+    str_child = "";
+    if (!(tipe == 'ijazah' || tipe == 'skhun')) {
         str_child = "<img src='"+img_link+"' alt='image' class='img-responsive img-thumbnail' >"
-        $('#view_content').append(str_child);
-    //}
+    } else {
+        str_child = "<embed src='"+img_link+"' type='application/pdf' width='100%' height='600px' />"
+    }
+    $('#view_content').append(str_child);
     $('#modal_view').modal('show');
 }
+function modal_delete(tipe) {
+    title = $('#judul_'+tipe).text();
+    $('#delete_title').text(title);
+    $('#delete_type').text(title);
+    delete_url = "<?=base_url()."pendaftar/removeDocument/".$registrant->getId()."/"?>"+tipe+"/";
+    $('#delete_button').attr('href', delete_url);
+    $('#modal_delete').modal('show');
+}
+$(document).ready(function () {
+<?php
+if ($status_upload['dokumen_lengkap']) :?>
+    $('#modal_lengkap').modal('show');
+<?php endif;?>
+});
 </script>

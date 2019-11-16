@@ -344,10 +344,10 @@ class Pendaftar extends MY_Controller {
             $res = $this->reg->uploadDocumentImage($fileUrl, $upload_dir, $type);
         }
         if ($res) {
-            $this->session->set_flashdata("notices", [0 => "Upload Foto Berhasil!"]);
+            $this->session->set_flashdata("notices", [0 => "Upload Dokumen Berhasil!"]);
             redirect($id.'/dokumen');
         } else {
-            $this->session->set_flashdata("errors", [0 => "Upload Foto Gagal!"]);
+            $this->session->set_flashdata("errors", [0 => "Upload Dokumen Gagal!"]);
             redirect($id.'/dokumen');
         }
     }
@@ -423,6 +423,24 @@ class Pendaftar extends MY_Controller {
                 header("Status: 404 Not Found");
                 echo "<h1>404 File not found</h1>";
             }
+        }
+    }
+
+    public function removeDocument($id, $type){
+        $this->blockUnloggedOne($id, true);
+        $registrant = $this->reg->getRegistrant($id);
+        $ext = 'png';
+        if(($type == 'ijazah') || ($type == 'skhun')){
+            $ext = 'pdf';
+        }
+        $fileUrl = FCPATH.'data/'.$registrant->getUploadDir().'/'.$type.'.'.$ext;
+        $res = $this->reg->deleteDocument($fileUrl);
+        if ($res) {
+            $this->session->set_flashdata("notices", [0 => "Hapus Dokumen Berhasil!"]);
+            redirect($id.'/dokumen');
+        } else {
+            $this->session->set_flashdata("errors", [0 => "Hapus Dokumen Gagal!"]);
+            redirect($id.'/dokumen');
         }
     }
     
@@ -517,7 +535,7 @@ class Pendaftar extends MY_Controller {
         if($res){
             $this->session->set_userdata('registrant', $this->reg->getRegistrant());
             $this->session->set_flashdata("notices", [0 => "Data Sudah berhasil disimpan"]);
-            redirect($id.'/rekap');
+            redirect($id.'/dokumen');
         } else {
             $this->session->set_flashdata("errors", [0 => "Maaf, Terjadi Kesalahan"]);
             redirect($id.'/surat');
