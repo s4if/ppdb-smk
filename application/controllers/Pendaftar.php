@@ -393,6 +393,38 @@ class Pendaftar extends MY_Controller {
         $this->session->set_userdata('random_hash_2', $hash);
         $image->show('png');
     }
+
+    public function getDocument($id, $type, $hash = '000'){
+        $this->blockUnloggedOne($id, true);
+        $registrant = $this->reg->getRegistrant($id);
+        if(($type == 'ijazah') || ($type == 'skhun')){
+            $file = FCPATH.'data/'.$registrant->getUploadDir().'/'.$type.'.pdf';
+            if (file_exists($file)) {
+                $filename = $registrant->getUploadDir().'-'.$type.'pdf';
+                header('Content-type: application/pdf');
+                header('Content-Disposition: inline; filename="' . $filename . '"');
+                header('Content-Transfer-Encoding: binary');
+                header('Content-Length: ' . filesize($file));
+                header('Accept-Ranges: bytes');
+                @readfile($file);
+            } else {
+                header("HTTP/1.0 404 Not Found");
+                header("Status: 404 Not Found");
+                echo "<h1>404 File not found</h1>";
+            }
+        } else {
+            try {
+                $imagine = new Imagine\Gd\Imagine();
+                $image = $imagine->open(FCPATH.'data/'.$registrant->getUploadDir().'/'.$type.'.png');
+                $this->session->set_userdata('random_hash_2', $hash);
+                $image->show('png');
+            } catch (Imagine\Exception\InvalidArgumentException $e) {
+                header("HTTP/1.0 404 Not Found");
+                header("Status: 404 Not Found");
+                echo "<h1>404 File not found</h1>";
+            }
+        }
+    }
     
     public function rekap($id){
         $this->blockUnloggedOne($id);
