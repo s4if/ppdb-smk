@@ -88,8 +88,21 @@
     <ul>
         <li>Data Diri</li>
         <li>Data Orang Tua</li>
-        <li>Data Rapor (mapel Matematika, IPA, IPS, dan Bahasa Indonesia dan Bahasa Inggris Semester 1 - 4)</li>
         <li>Data Surat Pernyataan</li>
+        <li>Upload Dokumen yang dibutuhkan</li>
+        <li>
+            <ol>
+                <li>Foto 3x4 portrait (Ukuran Max 4MB)</li>
+                <li>Scan Akte Kelahiran (dalam bentuk jpg/png)</li>
+                <li>Scan Surat Keterangan Siswa dari sekolah (dalam bentuk jpg/png)</li>
+                <li>Scan Surat Keterangan sehat (dalam bentuk jpg/png)</li>
+                <li>Scan Surat Keterangan Bebas Narkoba (dalam bentuk jpg/png)</li>
+                <li>Ijazah (tidak wajib, dalam bentuk PDF</li>
+                <li>SKHUN (tidak wajib, dalam bentuk PDF)</li>
+                <li>Scan KPS/KKS/KIP/KIS/SKTM (tidak wajib, dalam bentuk jpg/png)</li>
+                <li>Scan Jaminan Kesehatan (tidak wajib, dalam bentuk jpg/png)</li>
+            </ol>
+        </li>
     </ul>
     </p>
     <?php endif;?>

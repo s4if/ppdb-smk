@@ -71,11 +71,11 @@
             <tr>
                 <td> Nomor Pendaftaran </td>
                 <td> &nbsp;:&nbsp; </td>
-                <td> <?php
-                $prefix1 = ($registrant->getGender()=='L')?'I':'A';
-                $prefix2 = ($registrant->getProgram()=='tahfidz')?'T':'R';
-                echo $prefix1.$prefix2.$registrant->getKode();
-                ?> </td>
+                <td> <?php 
+                $prefix = ($registrant->getProgram() == 'Kelas Industri') ? 'I' : 'R';
+                echo $prefix.$registrant->getKode();
+                ?> 
+                </td>
             </tr>
             <tr>
                 <td> Nama </td>
@@ -306,38 +306,27 @@
             <tr>
                 <td> Seragam </td>
                 <td> &nbsp;:&nbsp; </td>
-                <td> Rp. 1.900.000,00 </td>
+                <td> Rp. 1.800.000,00 </td>
             </tr>
             <tr>
                 <td> Dana Kesiswaan </td>
                 <td> &nbsp;:&nbsp; </td>
-                <?php $program = $registrant->getProgram();?>
-                <td> <?php echo ($program == 'IPA Tahfidz' || $program == 'IPS Tahfidz')?'Rp. 1.200.000,-':'Rp.1.000.000,-';?> </td>
+                <td> Rp. 1.650.000,00 </td>
             </tr>
             <tr>
                 <td> Dana Kesehatan </td>
                 <td> &nbsp;:&nbsp; </td>
-                <td> Rp. 250.000,00 </td>
+                <td> Rp. 150.000,00 </td>
             </tr>
             <tr>
                 <td> Dana Buku </td>
                 <td> &nbsp;:&nbsp; </td>
-                <td> Rp. 1.500.000,00 </td>
+                <td> Rp. 750.000,00 </td>
             </tr>
             <tr>
-                <td> Perlengkapan Asrama </td>
+                <td> Biaya Praktik </td>
                 <td> &nbsp;:&nbsp; </td>
-                <td> Rp. 1.100.000,00</td>
-            </tr>
-            <tr>
-                <td> Dana Majalah dan kalender </td>
-                <td> &nbsp;:&nbsp; </td>
-                <td> Rp. 120.000,00</td>
-            </tr>
-            <tr>
-                <td> Biaya pembukaan rekening BMT dan tabungan uang saku </td>
-                <td> &nbsp;:&nbsp; </td>
-                <td> Rp. 300.000,00</td>
+                <td> Rp. 500.000,00</td>
             </tr>
             <tr>
                 <td> Kesanggupan Berqurban Tahun </td>
@@ -348,10 +337,9 @@
                 <td> <strong class="red">Total</strong> </td>
                 <td> &nbsp;:&nbsp; </td>
                 <?php 
-                $default = 5170000;
+                $default = 4850000;
                 $tot = $registrant->getSubscriptionCost()+$registrant->getInitialCost()+$registrant->getLandDonation();
-                $addons =  ($program == 'IPA Tahfidz' || $program == 'IPS Tahfidz')?1200000:1000000;
-                $total = $tot+$addons+$default;
+                $total = $tot+$default;
                 ?>
                 <td> <strong class="red">Rp. <?php echo number_format($total,2,',','.');?></strong> </td>
             </tr>

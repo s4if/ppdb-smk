@@ -185,65 +185,45 @@
                 <tr>
                     <th>Jenis Pembiayaan</th>
                     <th>Nominal Pembiayaan</th>
-                    <th>Frekuensi Pembiayaan</th>
                 </tr>
                 <tr>
                     <td>a. Infaq Pendidikan</td>
                     <td>Rp. <?= number_format($registrant->getInitialCost(), 0, ',', '.');?>,-</td>
-                    <td>Sekali</td>
                 </tr>
                 <tr>
                     <td>b. Iuran Dana Pendidikan (IDP) bulanan</td>
                     <td>Rp. <?= number_format($registrant->getSubscriptionCost(), 0, ',', '.');?>,-</td>
-                    <td>Per Bulan</td>
                 </tr>
                 <tr>
                     <td>c. Wakaf Tanah</td>
                     <td>Rp. <?= number_format($registrant->getLandDonation(), 0, ',', '.');?>,-</td>
-                    <td>Sekali</td>
                 </tr>
                 <tr>
                     <td>d. Seragam</td>
-                    <td>Rp. 1.900.000,-</td>
-                    <td>Sekali</td>
+                    <td>Rp. 1.800.000,-</td>
                 </tr>
                 <tr>
-                    <td>e. Uang Kesiswaan</td>
-                    <td><?php echo ($registrant->getProgram() == 'IPA Tahfidz' || $registrant->getProgram() == 'IPS Tahfidz')?'Rp. 1.200.000,-':'Rp. 1.000.000,-';?></td>
-                    <td>Per Tahun</td>
+                    <td>e. Dana Kesiswaan</td>
+                    <td>Rp. 1.650.000,-</td>
                 </tr>
                 <tr>
-                    <td>f. Biaya Kesehatan</td>
+                    <td>f. Dana Kesehatan</td>
                     <td>Rp. 250.000,-</td>
-                    <td>Per Tahun</td>
                 </tr>
                 <tr>
-                    <td>g. Biaya Buku</td>
+                    <td>g. Dana Buku</td>
                     <td>Rp. 1.500.000,-</td>
-                    <td>Sekali</td>
                 </tr>
                 <tr>
-                    <td>h. Perlengkapan Asrama</td>
-                    <td>Rp. 1.100.000,-</td>
-                    <td>Sekali</td>
-                </tr>
-                <tr>
-                    <td>i. Majalah dan Kalender</td>
-                    <td>Rp. 120.000,-</td>
-                    <td>Per Tahun</td>
-                </tr>
-                <tr>
-                    <td>j. Biaya pembukaan rekening BMT dan tabungan uang saku </td>
-                    <td> Rp. 300.000,00</td>
-                    <td>Sekali</td>
+                    <td>h. Biaya Praktik</td>
+                    <td>Rp. 500.000,-</td>
                 </tr>
                 <tr>
                     <td><strong>Total</strong></td>
                     <?php 
-                    $default = 5170000;
-                    $kegiatan = ($registrant->getProgram() == 'IPA Tahfidz' || $registrant->getProgram() == 'IPS Tahfidz')?1200000:1000000;
+                    $default = 4850000;
                     $total = $registrant->getInitialCost()+$registrant->getSubscriptionCost()
-                            +$registrant->getLandDonation()+$kegiatan+$default;
+                            +$registrant->getLandDonation()+$default;
                     ?>
                     <td><strong>Rp. <?= number_format($total, 0, ',', '.');?>,-</strong></td>
                 </tr>
