@@ -84,8 +84,14 @@ class Model_registrant extends CI_Model {
         return $this->doctrine->em->getRepository('RegistrantEntity')->getDataByUsername($username);
     }
     
-    public function getArrayData($gender = NULL, $vars = [], $completed = false){
-        $data = $this->getData($gender, null, $completed);
+    public function getArrayData($gender = NULL, $vars = [], $completed = false, $program = null){ // ditambah wae rek...
+        $data = [];
+        if (is_null($program)) {
+            $data = $this->getData($gender, null, $completed);
+        } else {
+            $regRepo = $this->doctrine->em->getRepository('RegistrantEntity');
+            $data = $regRepo->getDataByJurusan($program, null, $completed, false);
+        }
         if (empty($vars)){
             $vars = ['id','regId', 'username', 'name','gender','previousSchool','nisn', 'cp', 'program', 'finalized'];
         }
@@ -496,14 +502,13 @@ class Model_registrant extends CI_Model {
         } else {
             $arr_result ['guardian'] = 1;
         }
-        //$this->load->helper('file');
-//        $file = read_file('./data/foto/'.$id.'.png');
-//        if(!$file){
-//            $arr_result ['foto'] = 0;
-//        } else {
-//            $arr_result ['foto'] = 1;
-//            $all_stats++;
-//        }
+        $url = FCPATH.'data/'.$registrant->getUploadDir();
+        if($this->scanRegDir($url)){
+            $arr_result ['document'] = 0;
+        } else {
+            $arr_result ['document'] = 1;
+            $all_stats++;
+        }
         if(!$registrant->getFinalized()){
             $arr_result ['finalized'] = 0;
         } else {
@@ -533,7 +538,7 @@ class Model_registrant extends CI_Model {
                 $str = 'Data telah lengkap, kurang finalisasi';
             }elseif (is_null($registrant->getVerified())) {
                 $str = 'Pendaftaran selesai, menunggu verifikasi pembayaran';
-            }elseif($registrant->getVerified()=='tidak valid'){
+            }elseif($registrant->getVerified() == 'tidak valid'){
                 $str = 'Bukti Pendaftaran Tidak Valid';
             }elseif($registrant->getFinalized() && ($registrant->getVerified()=='valid')){
                 $str = 'Pendaftaran telah selesai';
@@ -547,9 +552,9 @@ class Model_registrant extends CI_Model {
             if($status['data'] < 1): $str = $str.'data diri, '; endif;
             if($status['father'] < 1): $str = $str.'data ayah, '; endif;
             if($status['mother'] < 1): $str = $str.'data ibu, '; endif;
+            if($status['document'] < 1): $str = $str.'upload dokumen, '; endif;
             if($status['letter'] < 1): $str = $str.'surat pernyataan, '; endif;
             if($status['finalized'] < 1): $str = $str.'Finalisasi, '; endif;
-//            if($status['foto'] < 1): $str = $str.'Foto, '; endif;
             return ['status' => $str, 'completed' => $status['completed']];
         }
     }
@@ -589,7 +594,7 @@ class Model_registrant extends CI_Model {
         }
     }
     
-    private function getDataByJurusan($program, $gender){
+    private function getDataByJurusan($program, $gender = null){
         $regRepo = $this->doctrine->em->getRepository('RegistrantEntity');
         return $regRepo->getDataByJurusan($program, $gender);
     }
