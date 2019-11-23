@@ -218,7 +218,7 @@ class Model_1_registrant_test extends TestCase {
     public function test_upload()
     {
         $arr_reg =  $this->obj->getData('L');
-        $registrant = end($arr_reg);
+        $registrant = $arr_reg[0];
         $id = $registrant->getId();
         $uploadDir = $registrant->getKode().'-'. strtolower(str_replace(' ', '_', str_replace("'", "", $registrant->getName())));
         $registrant->setUploadDir($uploadDir);

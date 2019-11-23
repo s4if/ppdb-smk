@@ -49,37 +49,21 @@
                 <a id="btn_semua" onclick="semua()" class="btn btn-default active" href="#">
                     Semua
                 </a>
-                <a id="btn_ikhwan" onclick="ikhwan()" class="btn btn-default" href="#">
-                    Ikhwan
+                <a id="btn_ikhwan" onclick="industri()" class="btn btn-default" href="#">
+                    Kelas Industri
                 </a>
-                <a id="btn_akhwat" onclick="akhwat()" class="btn btn-default" href="#">
-                    Akhwat
+                <a id="btn_akhwat" onclick="reguler()" class="btn btn-default" href="#">
+                    Kelas Reguler
                 </a>
-            </div>
-            <!-- Single button -->
-            <div class="btn-group">
-                <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Download Data Ikhwan <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu">
-                  <li><a href="<?=base_url()?>admin/export_data/L/Reguler/ipa">Ikhwan IPA Reguler</a></li>
-                  <li><a href="<?=base_url()?>admin/export_data/L/Tahfidz/ipa">Ikhwan IPA Tahfidz</a></li>
-                  <li role="separator" class="divider"></li>
-                  <li><a href="<?=base_url()?>admin/export_data/L/Reguler/ips">Ikhwan IPS Reguler</a></li>
-                  <li><a href="<?=base_url()?>admin/export_data/L/Tahfidz/ips">Ikhwan IPS Tahfidz</a></li>
-                </ul>
             </div>
             <!-- Single button -->
             <div class="btn-group">
                 <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Download Data Akhwat <span class="caret"></span>
+                    Download Data <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu">
-                  <li><a href="<?=base_url()?>admin/export_data/P/Reguler/ipa">Akhwat IPA Reguler</a></li>
-                  <li><a href="<?=base_url()?>admin/export_data/P/Tahfidz/ipa">Akhwat IPA Tahfidz</a></li>
-                  <li role="separator" class="divider"></li>
-                  <li><a href="<?=base_url()?>admin/export_data/P/Reguler/ips">Akhwat Reguler</a></li>
-                  <li><a href="<?=base_url()?>admin/export_data/P/Tahfidz/ips">Akhwat Tahfidz</a></li>
+                  <li><a href="<?=base_url()?>admin/export_data/L/industri">Kelas Industri</a></li>
+                  <li><a href="<?=base_url()?>admin/export_data/L/reguler">Kelas Reguler</a></li>
                 </ul>
             </div>
         </div>
@@ -151,18 +135,18 @@ $(document).ready(function() {
 
 });
 
-function ikhwan(){
+function industri(){
     $('#btn_semua').removeClass('active');
     $('#btn_akhwat').removeClass('active');
     $('#btn_ikhwan').addClass('active');
-    tabel_refresh('L');
+    tabel_refresh('industri');
 }
 
-function akhwat(){
+function reguler(){
     $('#btn_semua').removeClass('active');
     $('#btn_ikhwan').removeClass('active');
     $('#btn_akhwat').addClass('active');
-    tabel_refresh('P');
+    tabel_refresh('reguler');
 }
 
 function semua(){
@@ -173,8 +157,8 @@ function semua(){
     table.ajax.url(url).load();
 }
 
-function tabel_refresh (gender){
-    url = "<?php echo site_url('admin/lihat_ajax/')?>/" + gender;
+function tabel_refresh (jurusan){
+    url = "<?php echo site_url('admin/lihat_per_jurusan_ajax/')?>" + jurusan;
     table.ajax.url(url).load();
 }
 

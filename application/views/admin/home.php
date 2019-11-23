@@ -45,7 +45,7 @@
             <div class="panel-body">
                 <div id="chart-jml-pendaftar"></div>
                 <div class="text-left">
-                    <strong>Total Pendaftar : <?=($male_count+$female_count)?></strong>
+                    <strong>Total Pendaftar : <?=($industri_count+$reguler_count)?></strong>
                 </div>
                 <div class="text-right">
                     <a href="<?=  base_url().'admin/lihat/'?>">Lihat Detail <i class="fa fa-arrow-circle-right"></i></a>
@@ -172,8 +172,8 @@ $(document).ready(function() {
     Morris.Donut({
         element: 'chart-jml-pendaftar',
         data: [
-            {label: "Ikhwan", value: <?php echo $male_count;?>},
-            {label: "Akhwat", value: <?php echo $female_count;?>}
+            {label: "Kelas Industri", value: <?php echo $industri_count;?>},
+            {label: "Kelas Reguler", value: <?php echo $reguler_count;?>}
         ]
     });
     

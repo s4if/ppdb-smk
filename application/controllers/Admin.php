@@ -52,8 +52,8 @@ class Admin extends MY_Controller {
             'admin' => $this->session->admin,
             'nav_pos' => 'homeAdmin',
             'data_registrant' => $registrant_data,
-            'female_count' => $this->reg->getCount(['gender' => 'P']),
-            'male_count' => $this->reg->getCount(['gender' => 'L'])
+            'industri_count' => $this->reg->getCount(['program' => 'Kelas Industri']),
+            'reguler_count' => $this->reg->getCount(['program' => 'Kelas Reguler'])
         ];
         $this->CustomView('admin/home', $data);
     }
@@ -144,6 +144,41 @@ class Admin extends MY_Controller {
         $this->blockNonAdmin();
         error_reporting(0);
         $registrant_data = (is_null($gender))?$this->reg->getArrayData():$this->reg->getArrayData($gender);
+        $data = [];
+        foreach ($registrant_data as $registrant){
+            $row = [];
+            $row[] = $registrant['id'];
+            $row[] = $registrant['username'];
+            $row[] = $registrant['kode'];
+            $row[] = $registrant['name'];
+            $row[] = ($registrant['gender'] == 'L') ? 'Ikhwan' : 'Akhwat';
+            $row[] = $registrant['previousSchool'];
+            $row[] = ucfirst($registrant['program']);
+            $father = $registrant['object']->getFather();
+            if(is_null($father)){$father =  new ParentEntity();}
+            $mother = $registrant['object']->getMother();
+            if(is_null($mother)){$mother =  new ParentEntity();}
+            $row[] = 'Rp.'.number_format($father->getIncome(), 0, ',', '.').',-';
+            $row[] = 'Rp.'.number_format($mother->getIncome(), 0, ',', '.').',-';
+            $row[] = $registrant['cp'];
+            $row[] = $registrant['status'];
+            $row[] = $this->load->view('admin/fragment/data_registrant', ['registrant' => $registrant], true);
+            $data [] = $row;
+        }
+        echo json_encode(['data' => $data]);
+    }
+
+    public function lihat_per_jurusan_ajax($program){
+        $this->blockNonAdmin();
+        error_reporting(0);
+        $str_program = "";
+        if ($program == 'industri') {
+            $str_program = 'Kelas Industri';
+        }
+        if ($program == 'reguler') {
+            $str_program = 'Kelas Reguler';
+        }
+        $registrant_data = $this->reg->getArrayData(null, [], false, $str_program );
         $data = [];
         foreach ($registrant_data as $registrant){
             $row = [];
@@ -486,14 +521,20 @@ class Admin extends MY_Controller {
         }
     }
     
-    public function export_data($gender = 'L', $programme = 'tahfidz', $study= 'IPA')
+    public function export_data($gender = 'L', $program = 'reguler')
     {
         $this->blockNonAdmin();
         $strGender = ('L' == strtoupper($gender))?'Ikhwan':'Akhwat';
         $date = new DateTime('now');
-        $strProgramme = strtoupper($study) . ' ' .  ucfirst($programme);
-        $this->reg->export('Backup Data PPDB '.  ucfirst(strtolower($strGender)).' '. ucwords(strtolower($programme)).' '.$date->format('d-m-Y'),
-            $gender, $strProgramme);
+        $str_program = "";
+        if ($program == 'industri') {
+            $str_program = 'Kelas Industri';
+        }
+        if ($program == 'reguler') {
+            $str_program = 'Kelas Reguler';
+        }
+        $this->reg->export('Backup Data PPDB '.  ucfirst(strtolower($strGender)).' '. ucwords(strtolower($program)).' '.$date->format('d-m-Y'),
+            $gender, $str_program);
     }
     
     public function export_rapor($gender = 'L', $programme = 'tahfidz', $study= 'IPA')
