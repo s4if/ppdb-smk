@@ -62,8 +62,8 @@
                     Download Data <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu">
-                  <li><a href="<?=base_url()?>admin/export_data/industri">Kelas Industri</a></li>
-                  <li><a href="<?=base_url()?>admin/export_data/reguler">Kelas Reguler</a></li>
+                  <li><a href="<?=base_url()?>admin/export_data/L/industri">Kelas Industri</a></li>
+                  <li><a href="<?=base_url()?>admin/export_data/L/reguler">Kelas Reguler</a></li>
                 </ul>
             </div>
         </div>

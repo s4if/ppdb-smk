@@ -758,16 +758,74 @@ class Model_registrant extends CI_Model {
         $worksheet->SetCellValue('BM4', 'Keikutsertaan Qurban');
         // End Pembayaran
 
-        // Start Data Tambahan
-        $worksheet->mergeCells('BN3:BP3');
-        $worksheet->setCellValue('BN3', 'Data Tambahan');
+        // Start Data Kependudukan
+        $worksheet->mergeCells('BN3:BS3');
+        $worksheet->setCellValue('BN3', 'Data Nomor Kependudukan');
         $worksheet->getColumnDimension('BN')->setAutoSize(true);
         $worksheet->SetCellValue('BN4', 'Nomor Induk Kependudukan');
         $worksheet->getColumnDimension('BO')->setAutoSize(true);
         $worksheet->SetCellValue('BO4', 'Nomor Kartu Keluarga');
         $worksheet->getColumnDimension('BP')->setAutoSize(true);
         $worksheet->SetCellValue('BP4', 'Nomor Akte Kelahiran');
-        // End Data Tambahan
+        $worksheet->getColumnDimension('BQ')->setAutoSize(true);
+        $worksheet->SetCellValue('BQ4', 'Nomor Induk Kependudukan Ayah');
+        $worksheet->getColumnDimension('BR')->setAutoSize(true);
+        $worksheet->SetCellValue('BR4', 'Nomor Induk Kependudukan Ibu');
+        $worksheet->getColumnDimension('BS')->setAutoSize(true);
+        $worksheet->SetCellValue('BS4', 'Nomor Induk Kependudukan Wali');
+        // End Data Kependudukan
+
+
+        // Start Pemetaan data wilayah Anak
+        $worksheet->mergeCells('BT3:BY3');
+        $worksheet->setCellValue('BT3', 'Pemetaan Wilayah Asal Siswa');
+        $worksheet->getColumnDimension('BT')->setAutoSize(true);
+        $worksheet->SetCellValue('BT4', 'Dusun/Jalan');
+        $worksheet->getColumnDimension('BU')->setAutoSize(true);
+        $worksheet->SetCellValue('BU4', 'Desa/Kelurahan');
+        $worksheet->getColumnDimension('BV')->setAutoSize(true);
+        $worksheet->SetCellValue('BV4', 'Kecamatan');
+        $worksheet->getColumnDimension('BW')->setAutoSize(true);
+        $worksheet->SetCellValue('BW4', 'Kota/Kabupaten');
+        $worksheet->getColumnDimension('BX')->setAutoSize(true);
+        $worksheet->SetCellValue('BX4', 'Propinsi');
+        $worksheet->getColumnDimension('BY')->setAutoSize(true);
+        $worksheet->SetCellValue('BY4', 'Negara');
+        // End Pemetaan data wilayah Anak
+
+        // Start Pemetaan data wilayah Ayah
+        $worksheet->mergeCells('BZ3:CE3');
+        $worksheet->setCellValue('BZ3', 'Pemetaan Wilayah Asal Ayah');
+        $worksheet->getColumnDimension('BZ')->setAutoSize(true);
+        $worksheet->SetCellValue('BZ4', 'Dusun/Jalan');
+        $worksheet->getColumnDimension('CA')->setAutoSize(true);
+        $worksheet->SetCellValue('CA4', 'Desa/Kelurahan');
+        $worksheet->getColumnDimension('CB')->setAutoSize(true);
+        $worksheet->SetCellValue('CB4', 'Kecamatan');
+        $worksheet->getColumnDimension('CC')->setAutoSize(true);
+        $worksheet->SetCellValue('CC4', 'Kota/Kabupaten');
+        $worksheet->getColumnDimension('CD')->setAutoSize(true);
+        $worksheet->SetCellValue('CD4', 'Propinsi');
+        $worksheet->getColumnDimension('CE')->setAutoSize(true);
+        $worksheet->SetCellValue('CE4', 'Negara');
+        // End Pemetaan data wilayah Ayah
+
+        // Start Pemetaan data wilayah Ibu
+        $worksheet->mergeCells('CF3:CK3');
+        $worksheet->setCellValue('CF3', 'Pemetaan Wilayah Asal Ibu');
+        $worksheet->getColumnDimension('CF')->setAutoSize(true);
+        $worksheet->SetCellValue('CF4', 'Dusun/Jalan');
+        $worksheet->getColumnDimension('CG')->setAutoSize(true);
+        $worksheet->SetCellValue('CG4', 'Desa/Kelurahan');
+        $worksheet->getColumnDimension('CH')->setAutoSize(true);
+        $worksheet->SetCellValue('CH4', 'Kecamatan');
+        $worksheet->getColumnDimension('CI')->setAutoSize(true);
+        $worksheet->SetCellValue('CI4', 'Kota/Kabupaten');
+        $worksheet->getColumnDimension('CJ')->setAutoSize(true);
+        $worksheet->SetCellValue('CJ4', 'Propinsi');
+        $worksheet->getColumnDimension('CK')->setAutoSize(true);
+        $worksheet->SetCellValue('CK4', 'Negara');
+        // End Pemetaan data wilayah Ibu
         
         // Start Mbatik Isi
         $row = 5;
@@ -800,6 +858,13 @@ class Model_registrant extends CI_Model {
                 $worksheet->SetCellValue('Q'.$row, ucwords($str_sibling));//edit
                 $worksheet->SetCellValue('R'.$row, $rData->getHobbies(false));
                 $worksheet->SetCellValue('S'.$row, $rData->getAchievements(false));
+                // Pemetaan Alamat
+                $worksheet->SetCellValue('BT'.$row, $rData->getStreet());
+                $worksheet->SetCellValue('BU'.$row, $rData->getVillage());
+                $worksheet->SetCellValue('BV'.$row, $rData->getDistrict());
+                $worksheet->SetCellValue('BW'.$row, $rData->getCity());
+                $worksheet->SetCellValue('BX'.$row, $rData->getProvince());
+                $worksheet->SetCellValue('BY'.$row, $rData->getCountry());
             }
             
             // Registrant Payment
@@ -823,8 +888,17 @@ class Model_registrant extends CI_Model {
                 $worksheet->SetCellValue('AC'.$row, $fData->getJob());
                 $worksheet->SetCellValue('AD'.$row, $fData->getPosition());
                 $worksheet->SetCellValue('AE'.$row, $fData->getCompany());
-                $worksheet->SetCellValue('AF'.$row, $fData->getIncome());//number_format($fData->getIncome(), 0, ',', '.'));
+                $worksheet->SetCellValue('AF'.$row, $fData->getIncome());
                 $worksheet->SetCellValue('AG'.$row, $fData->getBurdenCount());
+                // Data NIK
+                $worksheet->SetCellValue('BQ'.$row, $fData->getNik());
+                // Pemetaan Alamat
+                $worksheet->SetCellValue('BZ'.$row, $fData->getStreet());
+                $worksheet->SetCellValue('CA'.$row, $fData->getVillage());
+                $worksheet->SetCellValue('CB'.$row, $fData->getDistrict());
+                $worksheet->SetCellValue('CC'.$row, $fData->getCity());
+                $worksheet->SetCellValue('CD'.$row, $fData->getProvince());
+                $worksheet->SetCellValue('CE'.$row, $fData->getCountry());
             }
             
             // Registrant Mother
@@ -842,11 +916,20 @@ class Model_registrant extends CI_Model {
                 $worksheet->SetCellValue('AQ'.$row, $mData->getJob());
                 $worksheet->SetCellValue('AR'.$row, $mData->getPosition());
                 $worksheet->SetCellValue('AS'.$row, $mData->getCompany());
-                $worksheet->SetCellValue('AT'.$row, $mData->getIncome());//number_format($mData->getIncome(), 0, ',', '.'));
+                $worksheet->SetCellValue('AT'.$row, $mData->getIncome());
                 $worksheet->SetCellValue('AU'.$row, $mData->getBurdenCount());
+                // Data NIK
+                $worksheet->SetCellValue('BR'.$row, $mData->getNik());
+                // Pemetaan Alamat
+                $worksheet->SetCellValue('CF'.$row, $mData->getStreet());
+                $worksheet->SetCellValue('CG'.$row, $mData->getVillage());
+                $worksheet->SetCellValue('CH'.$row, $mData->getDistrict());
+                $worksheet->SetCellValue('CI'.$row, $mData->getCity());
+                $worksheet->SetCellValue('CJ'.$row, $mData->getProvince());
+                $worksheet->SetCellValue('CK'.$row, $mData->getCountry());
             }
             
-            // Registrant Mother
+            // Registrant W
             $gData = $registrant->getGuardian();
             if(!empty($gData)){
                 $worksheet->SetCellValue('AV'.$row, $gData->getName());
@@ -861,8 +944,10 @@ class Model_registrant extends CI_Model {
                 $worksheet->SetCellValue('BE'.$row, $gData->getJob());
                 $worksheet->SetCellValue('BF'.$row, $gData->getPosition());
                 $worksheet->SetCellValue('BG'.$row, $gData->getCompany());
-                $worksheet->SetCellValue('BH'.$row, $gData->getIncome());//number_format($gData->getIncome(), 0, ',', '.'));
+                $worksheet->SetCellValue('BH'.$row, $gData->getIncome());
                 $worksheet->SetCellValue('BI'.$row, $gData->getBurdenCount());
+                // Data NIK
+                $worksheet->SetCellValue('BS'.$row, $gData->getNik());
             }
 
             if(!empty($rData)){

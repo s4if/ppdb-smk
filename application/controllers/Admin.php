@@ -168,17 +168,17 @@ class Admin extends MY_Controller {
         echo json_encode(['data' => $data]);
     }
 
-    public function lihat_per_jurusan_ajax($jurusan){
+    public function lihat_per_jurusan_ajax($program){
         $this->blockNonAdmin();
         error_reporting(0);
-        $str_jurusan = "";
-        if ($jurusan == 'industri') {
-            $str_jurusan = 'Kelas Industri';
+        $str_program = "";
+        if ($program == 'industri') {
+            $str_program = 'Kelas Industri';
         }
-        if ($jurusan == 'reguler') {
-            $str_jurusan = 'Kelas Reguler';
+        if ($program == 'reguler') {
+            $str_program = 'Kelas Reguler';
         }
-        $registrant_data = $this->reg->getArrayData(null, [], false, $str_jurusan );
+        $registrant_data = $this->reg->getArrayData(null, [], false, $str_program );
         $data = [];
         foreach ($registrant_data as $registrant){
             $row = [];
@@ -521,14 +521,20 @@ class Admin extends MY_Controller {
         }
     }
     
-    public function export_data($gender = 'L', $programme = 'tahfidz', $study= 'IPA')
+    public function export_data($gender = 'L', $program = 'reguler')
     {
         $this->blockNonAdmin();
         $strGender = ('L' == strtoupper($gender))?'Ikhwan':'Akhwat';
         $date = new DateTime('now');
-        $strProgramme = strtoupper($study) . ' ' .  ucfirst($programme);
-        $this->reg->export('Backup Data PPDB '.  ucfirst(strtolower($strGender)).' '. ucwords(strtolower($programme)).' '.$date->format('d-m-Y'),
-            $gender, $strProgramme);
+        $str_program = "";
+        if ($program == 'industri') {
+            $str_program = 'Kelas Industri';
+        }
+        if ($program == 'reguler') {
+            $str_program = 'Kelas Reguler';
+        }
+        $this->reg->export('Backup Data PPDB '.  ucfirst(strtolower($strGender)).' '. ucwords(strtolower($program)).' '.$date->format('d-m-Y'),
+            $gender, $str_program);
     }
     
     public function export_rapor($gender = 'L', $programme = 'tahfidz', $study= 'IPA')
