@@ -1,11 +1,11 @@
 TODO:
 ---- 1st Step ----
-- Ubah Data
-- Ubah Model
-- Ubah Controller
+- Ubah Data - Sudah
+- Ubah Model - Sudah
+- Ubah Controller - Sudah
 ---- 2nd Step ----
-- Ubah View
-- Rebranding
+- Ubah View - Sudah
+- Rebranding - Sudah
 
 
 ------------------
@@ -13,3 +13,36 @@ TODO:
 Minta scan2an surat yang ada kop-nya
 ---
 ------------------
+
+------------------
+Permintaan dari pak affan:
+1. Export Data, Alamat dibuat terpisah
+2. Harus ada Lingkar Kepala #1 -> OK 
+	- hapus rel to ips? -> OK
+3. Harus ada NIK Orang Tua  #2 -> OK
+4. Upload dibuat per folder Anak #4
+?? Karena ortu ada, apakah form ortu dipisah? #3 -> sepertinya ga usah
+	- NIK Ortu kemungkinan jadi deal breaker! -> KISS Keep It Simple Stupid
+?? Excel dibuat ulang? #4
+---
+Yang kurang: upload!
+NEXT: Doing Upload
+Strategi: pake scandir?
+
+List yang harus diupload:
+- Foto
+- Akte kelahuran
+- Surat keterangan siswa dr seolah
+- Surat keterangan sehat
+- Surat keterangan bebas narkoba
+- Ijazah (tw - pdf)
+- SKHUN (tw - pdf)
+- KPS/KKS/KIP/KIS/SKTM (tw)
+- Jaminan kesehatan (tw)
+- Bukti transfer biaya pendaftaran
+------- rework upload selesai!!! -----
+Next: 
+- Rework Surat pernyataan
+	- Tambah beli laptop atau tidak # tidak jadi!
+- Rework Export
+- Rework Admin!
