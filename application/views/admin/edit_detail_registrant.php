@@ -202,6 +202,12 @@
             </div>
         </div>
         <div class="form-group">
+            <label class="col-sm-4 control-label">Lingkar Kepala (dalam cm)<strong class="red">*</strong> :</label>
+            <div class="col-sm-6">
+                <input type="number" required name="head_size" id="head_size" tabindex="1" class="form-control" placeholder="Lingkar Kepala" value="<?=$registrant_detail->getHeadSize();?>">
+            </div>
+        </div>
+        <div class="form-group">
             <label class="col-sm-4 control-label">Tinggal Bersama :</label>
             <div class="col-sm-7">
                 <div class="radio">
@@ -478,6 +484,12 @@
                         <label class="col-sm-4 control-label">Tempat Lahir :</label>
                         <div class="col-sm-7">
                             <input type="text" required name="birth_place" class="form-control" placeholder="Tempat Lahir" value="<?=$parent_data->getBirthPlace();?>">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">NIK<strong class="red">*</strong> :</label>
+                        <div class="col-sm-6">
+                            <input type="number" required="true" name="nik" class="form-control" placeholder="Masukkan NIK" value="<?=$parent_data->getNik();?>">
                         </div>
                     </div>
                     <div class="form-group">

@@ -379,7 +379,12 @@ class Admin extends MY_Controller {
     public function upload_foto($id) {
         $this->blockNonAdmin();
         $fileUrl = $_FILES['file']["tmp_name"];
-        $res = $this->reg->uploadFoto($fileUrl, $id);
+        $registrant = $this->reg->getRegistrant($id);
+        $res = false;
+        if (!is_null($registrant->getUploadDir())) {
+            $upload_dir = FCPATH.'data/'.$registrant->getUploadDir();
+            $res = $this->reg->uploadFoto($fileUrl, $upload_dir);
+        }
         if ($res) {
             $this->session->set_flashdata("notices", [0 => "Upload Foto Berhasil!"]);
             redirect('admin/registrant/'.$id);

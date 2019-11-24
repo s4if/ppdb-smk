@@ -105,7 +105,7 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-lg-8">
+    <div class="col-md-12">
         <div class="panel panel-warning">
             <div class="panel-heading">
                 <h3 class="panel-title"><i class="fa fa-user"></i> Pendaftar Yang belum melengkapi</h3>

@@ -92,9 +92,6 @@
             <li id="navPaymentAdmin">
                 <a href="<?=  base_url().'admin/pembayaran/'?>">Lihat Pembayaran</a>
             </li>
-            <li id="navAchievementAdmin">
-                <a href="<?=  base_url().'admin/prestasi/'?>">Lihat Prestasi</a>
-            </li>
             <?php endif;?>
         </ul>
     </div>
