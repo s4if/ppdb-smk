@@ -29,6 +29,11 @@ body {
     color:white;
     font-weight:bolder;
     text-align:center;
+    text-shadow:
+   -2px -2px 0 #000,  
+    2px -2px 0 #000,
+    -2px 2px 0 #000,
+     2px 2px 0 #000;
 }
 img.foto-profil {
     resize: both;
