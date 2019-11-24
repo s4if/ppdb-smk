@@ -42,7 +42,12 @@ List yang harus diupload:
 - Bukti transfer biaya pendaftaran
 ------- rework upload selesai!!! -----
 Next: 
-- Rework Surat pernyataan
+- Rework Surat pernyataan -> Sudah
 	- Tambah beli laptop atau tidak # tidak jadi!
-- Rework Export
-- Rework Admin!
+- Rework Export -> sudah
+- Rework Admin! -> sudah
+
+----- Pengecekan pendaftar
+- Upload kwitansi masih 300k -> sudah
+- masih ada halaman upload prestasi -> sudah
+- huruf di kartu ujian masih belum kelihatan -> sudah
