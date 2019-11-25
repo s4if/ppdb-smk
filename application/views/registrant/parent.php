@@ -138,7 +138,7 @@
         <div class="form-group">
             <label class="col-sm-4 control-label">Agama<strong class="red">*</strong> :</label>
             <div class="col-sm-6">
-                <input type="text" required="true" name="<?= $type.'_';?>religion" id="religion" tabindex="1" class="form-control" placeholder="Agama" value="<?=$parent_data->getReligion();?>">
+                <input type="text" required="true" name="<?= $type.'_';?>religion" id="religion" tabindex="1" class="form-control" placeholder="Agama" value="<?=empty($parent_data->getReligion())?'Islam':$parent_data->getReligion();?>">
             </div>
         </div>
         <div class="form-group">
@@ -207,9 +207,12 @@
             </div>
         </div>
         <div class="form-group">
+            <hr/>
+        </div>
+        <div class="form-group">
             <label class="col-sm-4 control-label">No. Telp<strong class="red">*</strong> :</label>
             <div class="col-sm-6">
-                <input type="text" required="true" name="<?= $type.'_';?>contact" class="form-control" placeholder="Masukkan Nomor Telepon" value="<?=$parent_data->getContact();?>">
+                <input type="text" required="true" name="<?= $type.'_';?>contact" class="form-control" placeholder="Masukkan Nomor Telepon" pattern="([0-9+])\w+" title="Harus nomor telepon!!" value="<?=$parent_data->getContact();?>"> <!-- semoga bisa lancar --> 
             </div>
         </div>
         <div class="form-group">

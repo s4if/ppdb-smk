@@ -139,7 +139,7 @@
                 <form role="form" method="post" class="form-horizontal" action="<?=base_url();?>pendaftar/upload_receipt/<?=$registrant->getId()?>" enctype="multipart/form-data">
                     <div class="form-group">
                         <div class="col-sm-8 col-sm-offset-2">
-                            <label>File berupa Hasil Scan atau Foto dari Kwitansi Pembayaran</label>
+                            <label>File berupa <b>Gambar</b> Hasil Scan atau Foto dari Kwitansi Pembayaran</label>
                         </div>
                     </div>
                     <div class="form-group">
@@ -201,8 +201,10 @@ function kodeUnik()
                 );
                 $('#kode-unik').text(data.kode);
                 $('#btn-gen').text('Berhasil');
-                var placeh = "Contoh : '300"+data.kode+"' tanpa titik!";
+                var placeh = "Contoh : '200"+data.kode+"' tanpa titik!";
                 $('#jml-uang').attr('placeholder', placeh);
+                var isi = 200+data.kode;
+                $('#jml-uang').attr('value', isi);
                 $('#btn-kwitansi').attr('disabled', false);
             }
             else

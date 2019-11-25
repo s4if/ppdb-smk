@@ -308,53 +308,53 @@ body {
                                            required id="cp_suffix" tabindex="1" placeholder="Telp tanpa awalan cth: 85727411xxx">
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label">Jenis Kelamin :</label>
+                                    <label class=" control-label">Jenis Kelamin :</label>
                                     <div class="">
-                                        <div class="radio">
-                                            <label>
-                                                <input type="radio" name="gender" value="L"
-                                                       <?php if(array_key_exists('gender', $registrant)):?>
-                                                            <?php if($registrant['gender'] ==='L'):?>
-                                                            checked
-                                                            <?php endif;?>
-                                                        <?php endif;?>>
+                                        <select class="form-control" name="gender">
+                                            <option value="Kelas Reguler"
+                                                    <?php if(array_key_exists('gender', $registrant)):?>
+                                                        <?php if($registrant['gender']=='L'): ?>
+                                                                selected
+                                                        <?php endif;?>
+                                                    <?php endif;?>>
                                                 Laki - Laki
-                                            </label>
-                                        </div>
-                                        <div class="radio">
-                                            <label>
-                                                <input type="radio" name="gender" value="P"
-                                                       <?php if(array_key_exists('gender', $registrant)):?>
-                                                            <?php if($registrant['gender'] ==='P'):?>
-                                                            checked
-                                                            <?php endif;?>
-                                                        <?php endif;?>>
+                                            </option>
+                                            <option value="Kelas Industri"
+                                                    <?php if(array_key_exists('gender', $registrant)):?>
+                                                        <?php if($registrant['gender']=='P'): ?>
+                                                                selected
+                                                        <?php endif;?>
+                                                    <?php endif;?>>
                                                 Perempuan
-                                            </label>
-                                        </div>
+                                            </option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class=" control-label">Program :</label>
+                                    <label class="control-label">Program :</label>
                                     <div class="">
-                                        <select class="form-control" name="program">
-                                            <option value="Kelas Reguler"
-                                                    <?php if(array_key_exists('program', $registrant)):?>
-                                                        <?php if($registrant['program']=='Kelas Reguler'): ?>
-                                                                selected
-                                                        <?php endif;?>
-                                                    <?php endif;?>>
-                                                Kelas Reguler
-                                            </option>
-                                            <option value="Kelas Industri"
-                                                    <?php if(array_key_exists('program', $registrant)):?>
-                                                        <?php if($registrant['program']=='Kelas Industri'): ?>
-                                                                selected
-                                                        <?php endif;?>
-                                                    <?php endif;?>>
+                                        <div class="radio">
+                                            <label>
+                                                <input type="radio" name="program" value="Kelas Industri"
+                                                       <?php if(array_key_exists('program', $registrant)):?>
+                                                            <?php if($registrant['program'] ==='Kelas Industri'):?>
+                                                            checked
+                                                            <?php endif;?>
+                                                        <?php endif;?>>
                                                 Kelas Industri
-                                            </option>
-                                        </select>
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label>
+                                                <input type="radio" name="program" value="Kelas Reguler"
+                                                       <?php if(array_key_exists('program', $registrant)):?>
+                                                            <?php if($registrant['program'] ==='Kelas Reguler'):?>
+                                                            checked
+                                                            <?php endif;?>
+                                                        <?php endif;?>>
+                                                Kelas Reguler
+                                            </label>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="form-group">

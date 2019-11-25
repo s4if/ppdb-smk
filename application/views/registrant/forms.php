@@ -343,7 +343,7 @@
         <div class="form-group">
             <label class="col-sm-4 control-label">Agama<strong class="red">*</strong> :</label>
             <div class="col-sm-6">
-                <input type="text" required name="religion" id="religion" tabindex="1" class="form-control" placeholder="Agama" value="<?=$reg_data->getReligion();?>">
+                <input type="text" required name="religion" id="religion" tabindex="1" class="form-control" placeholder="Agama" value="<?=(empty($reg_data->getReligion()))?'Islam':$reg_data->getReligion(); ?>">
             </div>
         </div>
         <div class="form-group">
