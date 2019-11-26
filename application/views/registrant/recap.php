@@ -349,7 +349,7 @@
     <?php endif;?>
     <?php if((!$registrant->getFinalized())&&(!is_null($registrant->getPaymentData()))) :?>
     <a class="btn btn-success <?php echo ($registrant->getCompleted())?'':'disabled';?>" data-toggle="modal" data-target="#ModalFinalized">
-        <span class="glyphicon glyphicon-registration-mark"></span>
+        <span class="glyphicon glyphicon glyphicon-floppy-saved"></span>
         Finalisasi
     </a>
     <a class="btn btn-warning" href="<?=  base_url().$id.'/formulir'?>">Edit Data</a>

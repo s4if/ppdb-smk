@@ -343,7 +343,7 @@
         </div>
         <div class="form-group">
             <label class="col-sm-4 control-label" id="<?= $type.'_';?>job_mark">
-                Pekerjaan<?php echo ($key == 'ayah' && (($parent_data->getStatus() ==='masih hidup') || empty($parent_data->getStatus())))?'<strong class="red">*</strong>':'';?> :</label>
+                Pekerjaan<?php echo ((($parent_data->getStatus() ==='masih hidup') || empty($parent_data->getStatus())))?'<strong class="red">*</strong>':'';?> :</label>
             <div class="col-sm-6">
                 <input type="text" required="true" id="<?= $type.'_';?>job" name="<?= $type.'_';?>job" 
                 <?php echo ($key == 'ayah' && (($parent_data->getStatus() ==='masih hidup') || empty($parent_data->getStatus())))?'required="true"':'';?> 

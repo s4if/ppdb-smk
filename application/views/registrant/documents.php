@@ -39,6 +39,26 @@
     </li>
 </ol>
 <div class="container-fluid">
+    <?php if ($status_upload['dokumen_lengkap']) :?>
+    <div class="row">
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h3 class="panel-title">Pemberitahuan</h3>
+            </div>
+            <div class="panel-body">
+                <h3 class="text-center">
+                    <span class="glyphicon glyphicon-ok-sign"></span>
+                    Data dokumen wajib telah terupload semua. <br/>
+                    Silahkan melanjutkan menuju halaman Rekap dengan menekan tombol <b>Lanjut</b>.<br />
+                    Atau anda bisa melengkapi dokumen lain dengan tombol langkah yang sama dibawah.
+                </h3>
+            </div>
+            <div class="panel-footer">
+                <a class="btn btn-success btn-lg" href="<?=base_url() . $id . '/rekap'?>">Lanjut</a>
+            </div>
+        </div>
+    </div>
+    <?php endif;?>
     <div class="row">
         <h2 class="text-center">Silahkan upload semua dokumen yang dibutuhkan:</h2>
     </div>
@@ -406,10 +426,4 @@ function modal_delete(tipe) {
     $('#delete_button').attr('href', delete_url);
     $('#modal_delete').modal('show');
 }
-$(document).ready(function () {
-<?php
-if ($status_upload['dokumen_lengkap']) :?>
-    $('#modal_lengkap').modal('show');
-<?php endif;?>
-});
 </script>

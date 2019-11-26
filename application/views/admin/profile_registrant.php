@@ -34,6 +34,9 @@
     <li>
         <a href="<?=base_url();?>admin/beranda/">Beranda</a>
     </li>
+    <li>
+        <a href="<?=base_url().'admin/lihat/';?>">Data Peserta</a>
+    </li>
     <li class="active">
         Profil
     </li>
@@ -91,7 +94,7 @@
         </tr>
         <tr>
             <td colspan="3">
-                <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editProfil" >
+                <a class="btn btn-warning btn-sm" data-toggle="modal" data-target="#editProfil" >
                     <span class="glyphicon glyphicon-edit"></span>
                     Edit Profil
                 </a>
@@ -99,9 +102,13 @@
                     <span class="glyphicon glyphicon-upload"></span>
                     Upload Foto
                 </a>
-                <a class="btn btn-sm btn-warning" data-toggle="modal" data-target="#editPassword">
+                <a class="btn btn-sm btn-danger" data-toggle="modal" data-target="#editPassword">
                     <span class="glyphicon glyphicon-briefcase"></span>
                     Ganti Password
+                </a>
+                <a class="btn btn-sm btn-primary" data-toggle="modal" href="<?=base_url();?>admin/dokumen_peserta/<?=$registrant_data->getId();?>">
+                    <span class="glyphicon glyphicon-file"></span>
+                    Dokumen Peserta
                 </a>
             </td>
         </tr>
@@ -143,7 +150,7 @@
                             :'Belum Dilengkapi <span class="glyphicon glyphicon-remove-sign"></span>';?>
                         </td>
                         <td>
-                            <a class="btn btn-xs btn-primary"  data-toggle="modal" data-target="#editDetail"><span class="glyphicon glyphicon-edit">Edit</a>
+                            <a class="btn btn-sm btn-info"  data-toggle="modal" data-target="#editDetail"><span class="glyphicon glyphicon-edit">Edit</a>
                         </td>
                     </tr>
                     <tr>
@@ -159,7 +166,7 @@
                             :'Belum Dilengkapi <span class="glyphicon glyphicon-remove-sign"></span>';?>
                         </td>
                         <td>
-                            <a class="btn btn-xs btn-primary" data-toggle="modal" data-target="#editFather"><span class="glyphicon glyphicon-edit">Edit</a>
+                            <a class="btn btn-sm btn-info" data-toggle="modal" data-target="#editFather"><span class="glyphicon glyphicon-edit">Edit</a>
                         </td>
                     </tr>
                     <tr>
@@ -175,7 +182,7 @@
                             :'Belum Dilengkapi <span class="glyphicon glyphicon-remove-sign"></span>';?>
                         </td>
                         <td>
-                           <a class="btn btn-xs btn-primary" data-toggle="modal" data-target="#editMother"><span class="glyphicon glyphicon-edit">Edit</a>
+                           <a class="btn btn-sm btn-info" data-toggle="modal" data-target="#editMother"><span class="glyphicon glyphicon-edit">Edit</a>
                         </td>
                     </tr>
                     <tr>
@@ -191,7 +198,7 @@
                             :'Belum Dilengkapi <span class="glyphicon glyphicon-remove-sign"></span>';?>
                         </td>
                         <td>
-                          <a class="btn btn-xs btn-primary"  data-toggle="modal" data-target="#editGuardian"><span class="glyphicon glyphicon-edit">Edit</a>
+                          <a class="btn btn-sm btn-info"  data-toggle="modal" data-target="#editGuardian"><span class="glyphicon glyphicon-edit">Edit</a>
                         </td>
                     </tr>
                 </tbody>
