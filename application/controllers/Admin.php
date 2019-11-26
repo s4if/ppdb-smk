@@ -500,6 +500,22 @@ class Admin extends MY_Controller {
             redirect('admin/prestasi/'.$reg_id);
         }
     }
+
+    public function dokumen_peserta($id)
+    {
+        $this->blockNonAdmin();
+        $registrant = $this->reg->getRegistrant($id);
+        $upload_dir = FCPATH.'data/'.$registrant->getUploadDir();
+        $data = [
+            'id' => $registrant->getId(),
+            'title' => 'Upload Sertifikat',
+            'username' => $this->session->admin->getUsername(),
+            'admin' => $this->session->admin,
+            'status_upload' => $this->reg->scanRegDir($upload_dir),
+            'upload_dir' => $upload_dir
+        ];
+        $this->CustomView('admin/dokumen_peserta', $data);
+    }
     
     public function print_sertifikat($id){
         $this->blockNonAdmin();
