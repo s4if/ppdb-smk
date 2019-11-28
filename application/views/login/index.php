@@ -311,7 +311,7 @@ body {
                                     <label class=" control-label">Jenis Kelamin :</label>
                                     <div class="">
                                         <select class="form-control" name="gender">
-                                            <option value="Kelas Reguler"
+                                            <option value="L"
                                                     <?php if(array_key_exists('gender', $registrant)):?>
                                                         <?php if($registrant['gender']=='L'): ?>
                                                                 selected
@@ -319,7 +319,7 @@ body {
                                                     <?php endif;?>>
                                                 Laki - Laki
                                             </option>
-                                            <option value="Kelas Industri"
+                                            <option value="P"
                                                     <?php if(array_key_exists('gender', $registrant)):?>
                                                         <?php if($registrant['gender']=='P'): ?>
                                                                 selected

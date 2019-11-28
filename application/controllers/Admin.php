@@ -552,6 +552,21 @@ class Admin extends MY_Controller {
             redirect('admin/pembayaran/'.$id);
         }
     }
+
+    public function set_finalisasi($id, $finalized){
+        $this->blockNonAdmin();
+        $data['id'] = $id;
+        $data['finalized'] = ($finalized === 'true');
+        $res = $this->reg->updateData($data);
+        if($res){
+            $this->session->set_userdata('registrant', $this->reg->getRegistrant());
+            $this->session->set_flashdata("notices", [0 => "Status finalisasi peserta berhasil diubah."]);
+            redirect('/admin/registrant/'.$id);
+        } else {
+            $this->session->set_flashdata("errors", [0 => "Maaf, Terjadi Kesalahan"]);
+            redirect('/admin/registrant/'.$id);
+        }
+    }
     
     public function export_data($gender = 'L', $program = 'reguler')
     {

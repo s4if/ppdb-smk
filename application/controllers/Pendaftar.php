@@ -456,6 +456,7 @@ class Pendaftar extends MY_Controller {
             'nav_pos' => 'recap',
             'img_link' => $this->getImgLink($id),
             'registrant' => $this->session->registrant,
+            'status_upload' => $this->reg->scanRegDir(FCPATH.'data/'.$registrant->getUploadDir())
         ];
         $this->CustomView('registrant/recap', $data);
     }

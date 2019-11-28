@@ -50,7 +50,7 @@
                     <span class="glyphicon glyphicon-ok-sign"></span>
                     Data dokumen wajib telah terupload semua. <br/>
                     Silahkan melanjutkan menuju halaman Rekap dengan menekan tombol <b>Lanjut</b>.<br />
-                    Atau anda bisa melengkapi dokumen lain dengan tombol langkah yang sama dibawah.
+                    Atau anda bisa melengkapi dokumen lain dengan langkah yang sama dibawah.
                 </h3>
             </div>
             <div class="panel-footer">
@@ -182,10 +182,8 @@
                 <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> </button>';?></td>
                 <td>Tidak Wajib</td>
                 <td>
-                    <?php if (!$registrant->getFinalized()) :?>
-                        <a class="btn btn-primary" onclick="modal_upload('ijazah')">Upload</a>
-                    <?php endif;
-                    if($status_upload['ijazah']) :?>
+                    <a class="btn btn-primary" onclick="modal_upload('ijazah')">Upload</a>
+                    <?php if($status_upload['ijazah']) :?>
                         <a class="btn btn-info" onclick="modal_view('ijazah')">Lihat</a>
                         <?php if (!$registrant->getFinalized()) :?>
                             <a class="btn btn-danger" onclick="modal_delete('ijazah')">Hapus</a>
@@ -202,10 +200,8 @@
                 <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> </button>';?></td>
                 <td>Tidak Wajib</td>
                 <td>
-                    <?php if (!$registrant->getFinalized()) :?>
-                        <a class="btn btn-primary" onclick="modal_upload('skhun')">Upload</a>
-                    <?php endif;
-                    if($status_upload['skhun']) :?>
+                    <a class="btn btn-primary" onclick="modal_upload('skhun')">Upload</a>
+                    <?php if($status_upload['skhun']) :?>
                         <a class="btn btn-info" onclick="modal_view('skhun')">Lihat</a>
                         <?php if (!$registrant->getFinalized()) :?>
                             <a class="btn btn-danger" onclick="modal_delete('skhun')">Hapus</a>
@@ -222,10 +218,8 @@
                 <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> </button>';?></td>
                 <td>Tidak Wajib</td>
                 <td>
-                    <?php if (!$registrant->getFinalized()) :?>
-                        <a class="btn btn-primary" onclick="modal_upload('jamkes')">Upload</a>
-                    <?php endif;
-                    if($status_upload['jamkes']) :?>
+                    <a class="btn btn-primary" onclick="modal_upload('jamkes')">Upload</a>
+                    <?php if($status_upload['jamkes']) :?>
                         <a class="btn btn-info" onclick="modal_view('jamkes')">Lihat</a>
                         <?php if (!$registrant->getFinalized()) :?>
                             <a class="btn btn-danger" onclick="modal_delete('jamkes')">Hapus</a>
@@ -242,10 +236,8 @@
                 <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> </button>';?></td>
                 <td>Tidak Wajib</td>
                 <td>
-                    <?php if (!$registrant->getFinalized()) :?>
-                        <a class="btn btn-primary" onclick="modal_upload('sktm')">Upload</a>
-                    <?php endif;
-                    if($status_upload['sktm']) :?>
+                    <a class="btn btn-primary" onclick="modal_upload('sktm')">Upload</a>
+                    <?php if($status_upload['sktm']) :?>
                         <a class="btn btn-info" onclick="modal_view('sktm')">Lihat</a>
                         <?php if (!$registrant->getFinalized()) :?>
                             <a class="btn btn-danger" onclick="modal_delete('sktm')">Hapus</a>

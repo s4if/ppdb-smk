@@ -83,7 +83,7 @@
             <td> <?=$registrant_data->getNisn()?> </td>
         </tr>
         <tr>
-            <td> Email </td>
+            <td> No. Telp Utama </td>
             <td> &nbsp;:&nbsp; </td>
             <td> <?=$registrant_data->getCp()?> </td>
         </tr>
@@ -91,6 +91,20 @@
             <td> Program </td>
             <td> &nbsp;:&nbsp; </td>
             <td> <?=$registrant_data->getProgram()?> </td>
+        </tr>
+        <tr>
+            <td> Status Finalisasi </td>
+            <td> &nbsp;:&nbsp; </td>
+            <td>
+                <?=($registrant_data->getFinalized())?'Telah Melakukan Finalisasi':'Belum Finalisasi';?>
+                <a class="btn btn-xs btn-danger" onclick="finalisasi(<?=($registrant_data->getFinalized())?"'false'":"'true'";?>)">
+                    <span class="glyphicon glyphicon glyphicon-exclamation-sign"></span>
+                    <?=($registrant_data->getFinalized())?'Batalkan Finalisasi':'Set Finalisasi';?>
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">&nbsp;</td>
         </tr>
         <tr>
             <td colspan="3">
@@ -337,6 +351,26 @@
     </div>
 </div>
 
+<div class="modal fade" id="ModalFinalisasi" tabindex="-1" role="dialog" aria-labelledby="ModalFinalisasi" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="ModalFinalisasi>">Set Finalisasi</h4>
+            </div>
+            <div class="modal-body">
+                <p>Dikarenakan status finalisasi menentukan bisa atau tidaknya pendaftar melakukan pengisian data, 
+                pastikan perubahan status finalisasi hanya dilakukan atas permintaan peserta!</p>
+                <p id="finalisasi_txt"></p>
+            </div>
+            <div class="modal-footer">
+                <a href="" id="finalisasi_url" class="btn btn-primary"></a>
+                <button class="btn btn-default" data-dismiss="modal">Batal</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script type="text/javascript">
     $(function() {
         var max_fields      = 10; //maximum input boxes allowed
@@ -453,4 +487,16 @@
         });
         
     });
+function finalisasi(str_tipe) { //true: melakukan finalisasi, false membatalkan finalisasi
+    tipe = (str_tipe == 'true');
+    if (tipe) {
+        $("#finalisasi_txt").text("Apakah anda yakin melakukan finalisasi untuk peserta ini?");
+        $('#finalisasi_url').text("Set Finalisasi");
+    } else {
+        $("#finalisasi_txt").text("Apakah anda yakin membatalkan finalisasi untuk peserta ini?");
+        $('#finalisasi_url').text("Batalkan Finaliasi")
+    }
+    $('#finalisasi_url').attr('href', '<?=base_url().'admin/set_finalisasi/'.$registrant_data->getId().'/';?>'+str_tipe);
+    $('#ModalFinalisasi').modal('show');
+}
 </script>
