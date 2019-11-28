@@ -474,6 +474,17 @@ class Admin extends MY_Controller {
         ];
         $this->CustomView('admin/dokumen_prestasi', $data);
     }
+
+    public function download_dokumen($id)
+    {
+        $this->blockNonAdmin();
+        $registrant = $this->reg->getData(null, $id);
+        $upload_dir = FCPATH.'data/'.$registrant->getUploadDir();
+        $reg_files = scandir($upload_dir);
+        $this->load->library('zip');
+        $this->zip->read_dir($upload_dir, FALSE);
+        $this->zip->download($registrant->getUploadDir().'.zip');
+    }
     
     public function upload_cert($id){
         $this->blockNonAdmin();

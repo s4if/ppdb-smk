@@ -393,7 +393,7 @@ function modal_upload(tipe) {
         case "sktm":
             $("#upload_type").text('Gambar');
             $("#upload_form").attr('action', "<?=base_url();?>pendaftar/upload_dokumen_gambar/<?=$registrant->getId()?>/"+tipe);
-            $("#upload_title").text('Upload Surat Keteranga Tidak Mampu dsb...');
+            $("#upload_title").text('Upload Surat Keterangan Tidak Mampu dsb...');
             break;
         
         default:
