@@ -347,7 +347,7 @@
         <hr />
     </div>
     <?php endif;?>
-    <?php if((!$registrant->getFinalized())&&(!is_null($registrant->getPaymentData()))) :?>
+    <?php if((!$registrant->getFinalized())&&(!is_null($registrant->getPaymentData()))&&($status_upload['dokumen_lengkap'])) :?>
     <a class="btn btn-success <?php echo ($registrant->getCompleted())?'':'disabled';?>" data-toggle="modal" data-target="#ModalFinalized">
         <span class="glyphicon glyphicon glyphicon-floppy-saved"></span>
         Finalisasi

@@ -148,6 +148,9 @@
                         </div>
                     </div>
                 </div>
+                <div class="panel-footer">
+                    <a href="<?=base_url().'admin/download_dokumen/'.$id?>" class="btn btn-lg btn-success">Download Semua File &nbsp;<span class="glyphicon glyphicon glyphicon-floppy-save" aria-hidden="true"></span> </a>
+                </div>
             </div>
         </div>
     </div>

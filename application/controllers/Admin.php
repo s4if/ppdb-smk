@@ -474,6 +474,17 @@ class Admin extends MY_Controller {
         ];
         $this->CustomView('admin/dokumen_prestasi', $data);
     }
+
+    public function download_dokumen($id)
+    {
+        $this->blockNonAdmin();
+        $registrant = $this->reg->getData(null, $id);
+        $upload_dir = FCPATH.'data/'.$registrant->getUploadDir();
+        $reg_files = scandir($upload_dir);
+        $this->load->library('zip');
+        $this->zip->read_dir($upload_dir, FALSE);
+        $this->zip->download($registrant->getUploadDir().'.zip');
+    }
     
     public function upload_cert($id){
         $this->blockNonAdmin();
@@ -539,6 +550,21 @@ class Admin extends MY_Controller {
         } else {
             $this->session->set_flashdata("errors", [0 => "Maaf, Terjadi Kesalahan"]);
             redirect('admin/pembayaran/'.$id);
+        }
+    }
+
+    public function set_finalisasi($id, $finalized){
+        $this->blockNonAdmin();
+        $data['id'] = $id;
+        $data['finalized'] = ($finalized === 'true');
+        $res = $this->reg->updateData($data);
+        if($res){
+            $this->session->set_userdata('registrant', $this->reg->getRegistrant());
+            $this->session->set_flashdata("notices", [0 => "Status finalisasi peserta berhasil diubah."]);
+            redirect('/admin/registrant/'.$id);
+        } else {
+            $this->session->set_flashdata("errors", [0 => "Maaf, Terjadi Kesalahan"]);
+            redirect('/admin/registrant/'.$id);
         }
     }
     

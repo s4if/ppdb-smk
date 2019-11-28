@@ -138,6 +138,10 @@ class Login extends MY_Controller {
             $this->session->set_flashdata("errors", [0 => "Maaf, Captcha dari gambar yang anda masukkan salah<br />"
                 . "Silahkan anda cek kembali"]);
             redirect('login/index');
+        } elseif($res['status'] == -3) {
+            $this->session->set_flashdata('data', $data);
+            $this->session->set_flashdata("errors", [0 => "Mohon maaf, untuk saat ini SMKIT Ihsanul Fikri hanya menerima peserta Putra."]);
+            redirect('login/index');
         } else {
             $this->session->set_flashdata('data', $data);
             $this->session->set_flashdata("errors", [0 => "Maaf, terjadi Error yang tidak diketahui"]);
@@ -148,7 +152,9 @@ class Login extends MY_Controller {
     private function real_do_register($data){
         $registrant = '';
         $res = 0;
-        if($data['password'] == $data['confirm-password']){
+        if ($data['gender'] != 'L') {
+            $res = -3;
+        } elseif($data['password'] == $data['confirm-password']){
             if($this->session->captcha == $data['captcha'] || PHP_SAPI == 'cli' || !isset($_SERVER['HTTP_USER_AGENT'])){
                 $res = ($this->reg->insertData($data))?1:0;
                 $registrant = $this->reg->getRegistrant();
