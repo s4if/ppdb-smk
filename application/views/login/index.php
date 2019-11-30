@@ -244,7 +244,7 @@ body {
                         Gunakan <b>username</b> dan <b>password</b> tersebut pada saat <b>Masuk</b> ke akun Anda untuk proses pendaftaran Online selanjutnya (Mengisi & Mengedit data pada formulir online)
                     </li>
                     <li>
-                        Jika lupa <b>username</b> atau <b>password</b> silahkan menghubungi nomor <u>+62 857-2962-9508</u> (ust Mahfud)
+                        Jika lupa <b>username</b> atau <b>password</b> silahkan menghubungi nomor <u>+62 858-6891-0988</u> (ust Affan)
                     </li>
                 </ol>
             </div>
