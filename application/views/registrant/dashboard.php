@@ -89,8 +89,7 @@
         <li>Data Diri</li>
         <li>Data Orang Tua</li>
         <li>Data Surat Pernyataan</li>
-        <li>Upload Dokumen yang dibutuhkan</li>
-        <li>
+        <li>Upload Dokumen yang dibutuhkan
             <ol>
                 <li>Foto 3x4 portrait (Ukuran Max 4MB)</li>
                 <li>Scan Akte Kelahiran (dalam bentuk jpg/png)</li>
