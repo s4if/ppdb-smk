@@ -19,7 +19,7 @@
 <!-- Custom CSS -->
 <style>
 body {
-    padding-top: 90px;
+    padding-top: 10px;
 }
 .p-header {
     background-image: url("<?php echo FCPATH.'assets/images/headerkartu.jpg';?>");
@@ -94,8 +94,70 @@ img.foto-profil {
                                     </tr>
                                 </table>
                                 <p style="text-align: center;">
-                                    Silahkan dibawa saat tes tertulis sebagai kartu peserta tes dan bukti pendaftaran.
+                                    Silahkan dibawa saat tes tertulis sebagai kartu peserta tes dan bukti pendaftaran. <br>
+                                    Ujian di laksanakan pada tanggal 23 Februari 2020 Jam 08.00<br >
+                                    Di SMK IT Ihsanul Fikri. Jl blabak - mendut km 3 tirto paremono mungkid
                                 </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-footer">
+                        &nbsp;
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="panel panel-success">
+                    <div class="panel-heading p-header">
+                        <h1 class="txt-header">Cek Poin Seleksi</h1>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <p style="text-align: center;">
+                                    Silahkan kartu ini dimintakan tanda tangan kepada petugas 
+                                    setelah melaksanakan tiap sesi!
+                                </p>
+                                <table class="table table-responsive table-bordered">
+                                <tr>
+                                    <th class="text-center">Sesi</th>
+                                    <th class="text-center">Tanda Tangan</th>
+                                </tr>
+                                <tr>
+                                    <td>Tes tulis</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>Tes Tahsin Tahfidz</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>Tes Wawancara</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>Ukur Baju</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12" style="font-size: 0.75em;">
+                                Materi Ujian:
+                                <ol type="a">
+                                    <li>
+                                       Tes potensi akademik 
+                                    </li>
+                                    <li>
+                                        Tahsin & tahfidz (bacaan & hafalan Al Qur'an)
+                                    </li>
+                                    <li>
+                                        Wawancara
+                                    </li>
+                                </ol>
                             </div>
                         </div>
                     </div>
