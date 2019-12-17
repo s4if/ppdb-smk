@@ -65,17 +65,24 @@
         <strong>Bank BRI Syariah Kanca Magelang</strong> dengan <strong>No. 10 33 88 13 43</strong> atas nama 
         <strong>BMT Makmur Gemilang</strong>. <br /> Kode unik bisa diminta dengan mengeklik tombol :
     </p>
+    <?php if (is_null($registrant->getUploadDir())):?>
     <p><a class="btn btn-primary" id="btn-gen" role="button" onclick="kodeUnik()">Minta kode unik</a></p>
     <h1 id="kode-unik"></h1>
+    <p>
+        Silahkan logout, lalu login lagi untuk mengupload kwitansi pembayaran.
+    </p>
+    <?php else : ?>
+    <h1>Kode Unik: <?= $registrant->getkode();?></h1>
     <hr />
     <p>
         Setelah transfer selesai, upload hasil scan / foto kuitansi pembayaran untuk diverifikasi
         oleh panitia pada tombol dibawah ini.
     </p>
-    <a class="btn btn-warning" data-toggle="modal" data-target="#uploadKwitansi" id="btn-kwitansi" disabled="true">
+    <a class="btn btn-warning" data-toggle="modal" data-target="#uploadKwitansi" id="btn-kwitansi">
         <span class="glyphicon glyphicon-upload"></span>
         Upload Kwitansi
     </a>
+    <?php endif; ?>
     <?php else :?>
     <h1>Selamat, Anda telah menyelesaikan tahap pertama!</h1>
     <p>
@@ -151,7 +158,7 @@
                         <div class="col-sm-6">
                             <input type="text" required="true" name="amount" class="form-control" 
                                    id="jml-uang"pattern="^[1-9]([0-9]{1,20}$)" title="Hanya angka!"
-                                   value="">
+                                   value="200<?=$registrant->getKode();?>">
                         </div>
                     </div>
                     <div class="form-group">
