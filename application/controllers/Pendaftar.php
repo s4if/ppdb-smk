@@ -597,6 +597,7 @@ class Pendaftar extends MY_Controller {
     {
         // tambahi scan dir!!
         $this->blockUnloggedOne($id);
+        $this->blockNonPayers($this->session->registrant);
         $registrant = $this->reg->getRegistrant($id);
         $upload_dir = FCPATH.'data/'.$registrant->getUploadDir();
         $data = [
