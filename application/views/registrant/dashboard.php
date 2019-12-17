@@ -63,9 +63,10 @@
         Sebelum anda mengisi data pribadi, silahkan mentransfer telebih dahulu biaya pendaftaran peserta 
         sebesar <strong>Rp. 200.000,-</strong> ditambah <strong>nomor unik (Contoh = 200.123)</strong> di rekening 
         <strong>Bank BRI Syariah Kanca Magelang</strong> dengan <strong>No. 10 33 88 13 43</strong> atas nama 
-        <strong>BMT Makmur Gemilang</strong>. <br /> Kode unik bisa diminta dengan mengeklik tombol :
+        <strong>BMT Makmur Gemilang</strong>.
     </p>
     <?php if (is_null($registrant->getUploadDir())):?>
+    <p>Kode unik bisa diminta dengan mengeklik tombol :</p>
     <p><a class="btn btn-primary" id="btn-gen" role="button" onclick="kodeUnik()">Minta kode unik</a></p>
     <h1 id="kode-unik"></h1>
     <p>
