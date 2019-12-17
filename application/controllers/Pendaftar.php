@@ -462,7 +462,7 @@ class Pendaftar extends MY_Controller {
     }
     
     public function print_data_pendaftaran($id, $action = 'download'){
-        $this->blockUnloggedOne($id);
+        $this->blockUnloggedOne($id, true);
         $registrant = $this->reg->getRegistrant($id);
         $this->session->set_userdata('registrant', $registrant);
         $pdf = new mikehaertl\wkhtmlto\Pdf();
@@ -597,6 +597,7 @@ class Pendaftar extends MY_Controller {
     {
         // tambahi scan dir!!
         $this->blockUnloggedOne($id);
+        $this->blockNonPayers($this->session->registrant);
         $registrant = $this->reg->getRegistrant($id);
         $upload_dir = FCPATH.'data/'.$registrant->getUploadDir();
         $data = [

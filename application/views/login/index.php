@@ -174,12 +174,9 @@ body {
             <!-- Navbar collapse -->
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right shifted">
-                    <li class=""><a href="http://smkit.ihsanulfikri.sch.id/info-ppdb-2020-2021/">
+                    <li class=""><a href="https://www.youtube.com/watch?v=G2L3V5VtqQo">
                         Petunjuk Pendaftaran
                     </a></li>
-                    <!--<li class=""><a href="http://smkit.ihsanulfikri.sch.id/ppdb-smkit-ihsanul-fikri-mungkid-jalur-beasiswa-unggulan-dan-prestasi/">
-                        Petunjuk Jalur Beasiswa dan Prestasi
-                    </a></li>-->
                     <li class=""><a href="<?=  base_url().'login/admin'?>">Admin</a></li>
                     <li class=""><a href="<?=  base_url().'lihat'?>">Lihat</a></li>
                     <li class=" active"><a href="<?=  base_url().'login'?>">Daftar</a></li>
