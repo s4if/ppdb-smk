@@ -532,7 +532,10 @@ class Pendaftar extends MY_Controller {
             }
         }
         $data['qurban'] = $qurban;
-        $res = $this->reg->updateData($data);
+        $res = false;
+        if (($data['initial_cost'] != 0 && $data['subscription_cost'] != 0) && $data['land_donation'] != 0) {
+            $res = $this->reg->updateData($data);
+        }
         if($res){
             $this->session->set_userdata('registrant', $this->reg->getRegistrant());
             $this->session->set_flashdata("notices", [0 => "Data Sudah berhasil disimpan"]);
