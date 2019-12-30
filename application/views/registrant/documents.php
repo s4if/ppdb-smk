@@ -82,7 +82,7 @@
                 <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> </button>';?></td>
                 <td>Wajib</td>
                 <td>
-                    <?php if (!$registrant->getFinalized()) :?>
+                    <?php if (!$registrant->getFinalized() || !$status_upload['foto']) :?>
                         <a class="btn btn-primary" onclick="modal_upload('foto')">Upload</a>
                     <?php endif;
                     if($status_upload['foto']) :?>
@@ -102,7 +102,7 @@
                 <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> </button>';?></td>
                 <td>Wajib</td>
                 <td>
-                    <?php if (!$registrant->getFinalized()) :?>
+                    <?php if (!$registrant->getFinalized() || !$status_upload['akte']) :?>
                         <a class="btn btn-primary" onclick="modal_upload('akte')">Upload</a>
                     <?php endif;
                     if($status_upload['akte']) :?>
@@ -122,7 +122,7 @@
                 <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> </button>';?></td>
                 <td>Wajib</td>
                 <td>
-                    <?php if (!$registrant->getFinalized()) :?>
+                    <?php if (!$registrant->getFinalized() || !$status_upload['kk']) :?>
                         <a class="btn btn-primary" onclick="modal_upload('kk')">Upload</a>
                     <?php endif;
                     if($status_upload['kk']) :?>
@@ -142,7 +142,7 @@
                 <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> </button>';?></td>
                 <td>Wajib</td>
                 <td>
-                    <?php if (!$registrant->getFinalized()) :?>
+                    <?php if (!$registrant->getFinalized() || !$status_upload['sksekolah']) :?>
                         <a class="btn btn-primary" onclick="modal_upload('sksekolah')">Upload</a>
                     <?php endif;
                     if($status_upload['sksekolah']) :?>
@@ -162,7 +162,7 @@
                 <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> </button>';?></td>
                 <td>Wajib</td>
                 <td>
-                    <?php if (!$registrant->getFinalized()) :?>
+                    <?php if (!$registrant->getFinalized() || !$status_upload['sksehat']) :?>
                         <a class="btn btn-primary" onclick="modal_upload('sksehat')">Upload</a>
                     <?php endif;
                     if($status_upload['sksehat']) :?>
@@ -182,7 +182,7 @@
                 <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> </button>';?></td>
                 <td>Wajib</td>
                 <td>
-                    <?php if (!$registrant->getFinalized()) :?>
+                    <?php if (!$registrant->getFinalized() || !$status_upload['skbn']) :?>
                         <a class="btn btn-primary" onclick="modal_upload('skbn')">Upload</a>
                     <?php endif;
                     if($status_upload['skbn']) :?>
