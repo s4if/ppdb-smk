@@ -114,6 +114,26 @@
                 </td>
             </tr>
             <tr>
+                <td id="judul_kk">Kartu Keluarga</td>  
+                <td>Gambar</td>
+                <td><?=($status_upload['kk'])?'<button class="btn btn-success">Sudah Diupload &nbsp;
+                <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> </button>'
+                :'<button class="btn btn-warning">Belum Diupload &nbsp;
+                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> </button>';?></td>
+                <td>Wajib</td>
+                <td>
+                    <?php if (!$registrant->getFinalized()) :?>
+                        <a class="btn btn-primary" onclick="modal_upload('kk')">Upload</a>
+                    <?php endif;
+                    if($status_upload['kk']) :?>
+                        <a class="btn btn-info" onclick="modal_view('kk')">Lihat</a>
+                        <?php if (!$registrant->getFinalized()) :?>
+                            <a class="btn btn-danger" onclick="modal_delete('kk')">Hapus</a>
+                        <?php endif;
+                    endif;?>
+                </td>
+            </tr>
+            <tr>
                 <td id="judul_sksekolah">Surat Keterangan dari Sekolah</td>  
                 <td>Gambar</td>
                 <td><?=($status_upload['sksekolah'])?'<button class="btn btn-success">Sudah Diupload &nbsp;
@@ -351,6 +371,11 @@ function modal_upload(tipe) {
             $("#upload_type").text('Gambar');
             $("#upload_form").attr('action', "<?=base_url();?>pendaftar/upload_dokumen_gambar/<?=$registrant->getId()?>/"+tipe);
             $("#upload_title").text('Upload Akte Kelahiran');
+            break;
+        case "kk":
+            $("#upload_type").text('Gambar');
+            $("#upload_form").attr('action', "<?=base_url();?>pendaftar/upload_dokumen_gambar/<?=$registrant->getId()?>/"+tipe);
+            $("#upload_title").text('Upload Kartu Keluarga');
             break;
         case "sksekolah":
             $("#upload_type").text('Gambar');
