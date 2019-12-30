@@ -427,6 +427,7 @@ class Model_registrant extends CI_Model {
         $status = [
             'foto' => false,
             'akte' => false,
+            'kk' => false, // kartu keluarga
             'sksekolah' => false,
             'sksehat' => false,
             'skbn' => false,
@@ -451,7 +452,7 @@ class Model_registrant extends CI_Model {
         } catch (Exception $e) {
             $status['scandir_error'] =  true;
         } finally {
-            $status['dokumen_lengkap'] = $status['foto'] && $status['akte'] && $status['sksekolah'] && $status['sksehat'] && $status['skbn'];
+            $status['dokumen_lengkap'] = $status['foto'] && $status['akte'] && $status['sksekolah'] && $status['sksehat'] && $status['skbn'] && $status['kk'];
             return $status;
         }
     }
