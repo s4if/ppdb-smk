@@ -82,6 +82,15 @@
                                     <td>Wajib</td>
                                 </tr>
                                 <tr>
+                                    <td id="judul_kk">Kartu Keluarga</td>  
+                                    <td>Gambar</td>
+                                    <td><?=($status_upload['kk'])?'<button class="btn btn-success">Sudah Diupload &nbsp;
+                                    <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> </button>'
+                                    :'<button class="btn btn-warning">Belum Diupload &nbsp;
+                                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> </button>';?></td>
+                                    <td>Wajib</td>
+                                </tr>
+                                <tr>
                                     <td id="judul_sksekolah">Surat Keterangan dari Sekolah</td>  
                                     <td>Gambar</td>
                                     <td><?=($status_upload['sksekolah'])?'<button class="btn btn-success">Sudah Diupload &nbsp;
@@ -158,6 +167,7 @@
     $lst_dokumen = [
             'foto' => 'Foto',
             'akte' => 'Akte Kelahiran',
+            'kk' => 'Kartu Keluarga',
             'sksekolah' => 'Surat Keterangan Sekolah',
             'sksehat' => 'Surat Keterangan Sehat',
             'skbn' => 'Surat Keterangan Bebas Narkoba',
