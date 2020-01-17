@@ -180,12 +180,10 @@
                 <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> </button>'
                 :'<button class="btn btn-warning">Belum Diupload &nbsp;
                 <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> </button>';?></td>
-                <td>Wajib</td>
+                <td>Tidak wajib diupload tetapi <strong>WAJIB <br />DIBAWA</strong> saat penyerahan berkas.</td>
                 <td>
-                    <?php if (!$registrant->getFinalized() || !$status_upload['skbn']) :?>
-                        <a class="btn btn-primary" onclick="modal_upload('skbn')">Upload</a>
-                    <?php endif;
-                    if($status_upload['skbn']) :?>
+                    <a class="btn btn-primary" onclick="modal_upload('skbn')">Upload</a>
+                    <?php if($status_upload['skbn']) :?>
                         <a class="btn btn-info" onclick="modal_view('skbn')">Lihat</a>
                         <?php if (!$registrant->getFinalized()) :?>
                             <a class="btn btn-danger" onclick="modal_delete('skbn')">Hapus</a>
