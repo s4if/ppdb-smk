@@ -115,7 +115,7 @@
                                     <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> </button>'
                                     :'<button class="btn btn-warning">Belum Diupload &nbsp;
                                     <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> </button>';?></td>
-                                    <td>Wajib</td>
+                                    <td>Tidak wajib diupload, tetapi <strong>Wajib</strong> dibawa saat pendaftaran</td>
                                 </tr>
                                 <tr>
                                     <td id="judul_ijazah">Ijazah</td>  
