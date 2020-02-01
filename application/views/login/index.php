@@ -244,13 +244,13 @@ body {
                         Jika lupa <b>username</b> atau <b>password</b> silahkan menghubungi nomor <u>+62 858-6891-0988</u> (ust Affan)
                     </li>
                 </ol>
-                <h4><b>Dokumen persyaratan yang harus disiapkan</b></h4>
+                <h4><b>Dokumen persyaratan yang disiapkan</b></h4>
                 <ol>
                     <li>Foto Resmi (jpg/png)(wajib upload)</li>
-                    <li>Akte Kelahiran (jpg/png)(wajib upload)</li>
-                    <li>Kartu Keluarga (jpg/png)(wajib upload)</li>
-                    <li>Surat Keteragan Sekolah (jpg/png)(wajib upload)</li>
-                    <li>Surat Keterangan Sehat (jpg/png)(wajib upload)</li>
+                    <li>Akte Kelahiran (jpg/png)(wajib dipersiapkan)</li>
+                    <li>Kartu Keluarga (jpg/png)(wajib dipersiapkan)</li>
+                    <li>Surat Keteragan Sekolah (jpg/png)(wajib dipersiapkan)</li>
+                    <li>Surat Keterangan Sehat (jpg/png)(wajib dipersiapkan)</li>
                     <li>Surat Keterangan Bebas Narkoba (jpg/png)(Wajib dipersiapkan)</li>
                     <li>Ijazah (jika ada)(pdf)</li>
                     <li>SKHUN (jika ada)(pdf)</li>
