@@ -288,7 +288,7 @@ class Model_registrant extends CI_Model {
         if (!empty($data['religion'])) : $this->registrantData->setReligion($data['religion']); endif;
         if (!empty($data['height'])) : $this->registrantData->setHeight($data['height']); endif;
         if (!empty($data['weight'])) : $this->registrantData->setWeight($data['weight']); endif;
-        if (!empty($data['head_size'])) : $this->registrantData->setHeadSize($data['head_size']); endif;
+        if (!is_null($data['head_size'])) : $this->registrantData->setHeadSize($data['head_size']); endif;
         if (!empty($data['stay_with'])) : $this->registrantData->setStayWith($data['stay_with']); endif;
         // ---------------- SMK --------------------------//
         if (!empty($data['un_number'])) : $this->registrantData->setUNNumber($data['un_number']); endif;

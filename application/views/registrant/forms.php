@@ -359,10 +359,15 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-4 control-label">Lingkar Kepala (dalam cm)<strong class="red">*</strong> :</label>
+            <label class="col-sm-4 control-label">Lingkar Kepala (dalam cm) :</label>
             <div class="col-sm-6">
                 <input type="number" required name="head_size" id="head_size" tabindex="1" class="form-control" placeholder="Lingkar Kepala" value="<?=$reg_data->getHeadSize();?>">
             </div>
+        </div>
+        <div class="form-group">
+            <p class="help-block col-sm-offset-4 col-sm-6">
+                * Tinggi dan Berat BOLEH dikira-kira, Lingkar kepala TIDAK WAJIB.
+            </p>
         </div>
         <!-- TODO: Riwayat Penyakit -->
         <?php if ($reg_data->getHospitalSheetsCount() == 0): ?>
