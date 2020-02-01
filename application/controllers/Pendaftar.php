@@ -168,6 +168,10 @@ class Pendaftar extends MY_Controller {
         $this->blockUnloggedOne($id);
         $data = $this->input->post(null, true);
         $res = $this->do_edit_all($id, $data);
+        // Workaround lingkar kepala tidak wajib
+        if (is_null($data["head_size"])) {
+            $data["head_size"] = 0;
+        }
         if($res['success'] ==  1){
             $this->session->set_userdata('registrant', $this->reg->getRegistrant());
             echo json_encode([
