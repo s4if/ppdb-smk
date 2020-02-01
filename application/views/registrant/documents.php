@@ -39,7 +39,7 @@
     </li>
 </ol>
 <div class="container-fluid">
-    <?php if ($status_upload['dokumen_lengkap']) :?>
+    <?php /* if ($status_upload['dokumen_lengkap']) : ? >
     <div class="row">
         <div class="panel panel-success">
             <div class="panel-heading">
@@ -58,9 +58,24 @@
             </div>
         </div>
     </div>
-    <?php endif;?>
+    <?php endif; */?>
     <div class="row">
-        <h2 class="text-center">Silahkan upload semua dokumen yang dibutuhkan:</h2>
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h3 class="panel-title">Keterangan</h3>
+            </div>
+            <div class="panel-body">
+                <h3 class="text-center">
+                    Silahkan upload dokummen yang dibutuhkan, atau jika dokumen belum siap, silahkan klik tombol "Lanjut"
+                </h3>
+            </div>
+            <div class="panel-footer">
+                <a class="btn btn-success btn-lg" href="<?=base_url() . $id . '/rekap'?>">Lanjut</a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <h2 class="text-center">Upload Dokumen:</h2>
     </div>
     <div class="row">
         <table class="table table-bordered">
@@ -82,10 +97,8 @@
                 <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> </button>';?></td>
                 <td>Wajib</td>
                 <td>
-                    <?php if (!$registrant->getFinalized() || !$status_upload['foto']) :?>
-                        <a class="btn btn-primary" onclick="modal_upload('foto')">Upload</a>
-                    <?php endif;
-                    if($status_upload['foto']) :?>
+                    <a class="btn btn-primary" onclick="modal_upload('foto')">Upload</a>
+                    <?php if($status_upload['foto']) :?>
                         <a class="btn btn-info" onclick="modal_view('foto')">Lihat</a>
                         <?php if (!$registrant->getFinalized()) :?>
                             <a class="btn btn-danger" onclick="modal_delete('foto')">Hapus</a>
@@ -102,10 +115,8 @@
                 <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> </button>';?></td>
                 <td>Wajib</td>
                 <td>
-                    <?php if (!$registrant->getFinalized() || !$status_upload['akte']) :?>
-                        <a class="btn btn-primary" onclick="modal_upload('akte')">Upload</a>
-                    <?php endif;
-                    if($status_upload['akte']) :?>
+                    <a class="btn btn-primary" onclick="modal_upload('akte')">Upload</a>
+                    <?php if($status_upload['akte']) :?>
                         <a class="btn btn-info" onclick="modal_view('akte')">Lihat</a>
                         <?php if (!$registrant->getFinalized()) :?>
                             <a class="btn btn-danger" onclick="modal_delete('akte')">Hapus</a>
@@ -122,10 +133,8 @@
                 <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> </button>';?></td>
                 <td>Wajib</td>
                 <td>
-                    <?php if (!$registrant->getFinalized() || !$status_upload['kk']) :?>
-                        <a class="btn btn-primary" onclick="modal_upload('kk')">Upload</a>
-                    <?php endif;
-                    if($status_upload['kk']) :?>
+                    <a class="btn btn-primary" onclick="modal_upload('kk')">Upload</a>
+                    <?php if($status_upload['kk']) :?>
                         <a class="btn btn-info" onclick="modal_view('kk')">Lihat</a>
                         <?php if (!$registrant->getFinalized()) :?>
                             <a class="btn btn-danger" onclick="modal_delete('kk')">Hapus</a>
@@ -142,10 +151,8 @@
                 <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> </button>';?></td>
                 <td>Wajib</td>
                 <td>
-                    <?php if (!$registrant->getFinalized() || !$status_upload['sksekolah']) :?>
-                        <a class="btn btn-primary" onclick="modal_upload('sksekolah')">Upload</a>
-                    <?php endif;
-                    if($status_upload['sksekolah']) :?>
+                    <a class="btn btn-primary" onclick="modal_upload('sksekolah')">Upload</a>
+                    <?php if($status_upload['sksekolah']) :?>
                         <a class="btn btn-info" onclick="modal_view('sksekolah')">Lihat</a>
                         <?php if (!$registrant->getFinalized()) :?>
                             <a class="btn btn-danger" onclick="modal_delete('sksekolah')">Hapus</a>
@@ -162,10 +169,8 @@
                 <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> </button>';?></td>
                 <td>Wajib</td>
                 <td>
-                    <?php if (!$registrant->getFinalized() || !$status_upload['sksehat']) :?>
-                        <a class="btn btn-primary" onclick="modal_upload('sksehat')">Upload</a>
-                    <?php endif;
-                    if($status_upload['sksehat']) :?>
+                    <a class="btn btn-primary" onclick="modal_upload('sksehat')">Upload</a>
+                    <?php if($status_upload['sksehat']) :?>
                         <a class="btn btn-info" onclick="modal_view('sksehat')">Lihat</a>
                         <?php if (!$registrant->getFinalized()) :?>
                             <a class="btn btn-danger" onclick="modal_delete('sksehat')">Hapus</a>
@@ -180,7 +185,8 @@
                 <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> </button>'
                 :'<button class="btn btn-warning">Belum Diupload &nbsp;
                 <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> </button>';?></td>
-                <td>Tidak wajib diupload tetapi <strong>WAJIB <br />DIBAWA</strong> saat penyerahan berkas.</td>
+                <!-- <td>Tidak wajib diupload tetapi <strong>WAJIB <br />DIBAWA</strong> saat penyerahan berkas.</td> -->
+                <td>Wajib</td>
                 <td>
                     <a class="btn btn-primary" onclick="modal_upload('skbn')">Upload</a>
                     <?php if($status_upload['skbn']) :?>
