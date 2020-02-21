@@ -444,7 +444,7 @@ class RegistrantEntity
         return $this;
     }
 
-    private function setRegId()
+    public function setRegId()
     {
         $prefix = ($this->program == 'Kelas Industri') ? 'I' : 'R';
         $this->regId = $prefix.$this->getKode();

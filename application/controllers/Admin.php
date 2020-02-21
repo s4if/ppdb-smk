@@ -618,7 +618,9 @@ class Admin extends MY_Controller {
         $pdf = new mikehaertl\wkhtmlto\Pdf();
         $pdf->setOptions($this->pdfOption());
         foreach ($registrant_data as $registrant){
-            $reg_data = $this->load->view('registrant/print', ['registrant' => $registrant['object']], true);
+            $reg_obj = $registrant['object'];
+            $reg_obj->setRegId();
+            $reg_data = $this->load->view('registrant/print', ['registrant' => $reg_obj], true);
             $pdf->addPage($reg_data);
         }
         $suffix = ($unpaid == "true")?"belum membayar":"belum lengkap";
