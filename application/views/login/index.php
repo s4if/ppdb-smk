@@ -226,7 +226,9 @@ body {
 
             <div class="alert alert-info alert-dismissible">
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4><b>Langkah Mendaftar PPDB SMKIT Ihsanul Fikri</b></h4>
+                <h4>Mohon maaf, pendaftaran telah ditutup. Jika masih ingin mendaftar, silahkan mendaftar 
+                langsung di SMKIT Ihsanul Fikri Mungkid pada hari Minggu, 23 Februari 2020.</h4>
+                <!--<h4><b>Langkah Mendaftar PPDB SMKIT Ihsanul Fikri</b></h4>
                 <ol>
                     <li>
                         Buat Akun PPDB SMKIT IF dengan pilih <b>Daftar</b>
@@ -256,7 +258,7 @@ body {
                     <li>SKHUN (jika ada)(pdf)</li>
                     <li>Jaminan Kesehatan (jika ada)(jpg/png)</li>
                     <li>KPS/KKS/KIP/KIS/SKTM (jika ada)(jpg/png)</li>
-                </ol>
+                </ol> -->
             </div>
 </div>
         </div>
@@ -268,9 +270,9 @@ body {
                             <div class="col-xs-6">
                                 <a href="#" class="active" id="login-form-link">Masuk</a>
                             </div>
-                            <div class="col-xs-6">
+                            <!-- <div class="col-xs-6">
                                 <a href="#" id="register-form-link">Daftar</a>
-                            </div>
+                            </div> -->
                         </div>
                         <hr>
                     </div>
