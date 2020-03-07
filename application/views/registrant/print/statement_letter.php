@@ -212,7 +212,7 @@
                 </tr>
                 <tr>
                     <td>g. Dana Buku</td>
-                    <td>Rp. 1.500.000,-</td>
+                    <td>Rp. 750.000,-</td>
                 </tr>
                 <tr>
                     <td>h. Biaya Praktik</td>
