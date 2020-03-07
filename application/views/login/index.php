@@ -169,7 +169,7 @@ body {
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand brand-shifted" href="http://smkit.ihsanulfikri.sch.id/">PPDB SMKIT Ihsanul Fikri</a>
+                <a class="navbar-brand brand-shifted" href="http://smkit.ihsanulfikri.sch.id/">PPDB SMKIT Ihsanul Fikri Gelombang 2</a>
             </div>
             <!-- Navbar collapse -->
             <div class="navbar-collapse collapse">
@@ -217,18 +217,10 @@ body {
     ?>
 </div>
 <?php endif; ?>
-<!--            <div class="alert alert-warning alert-dismissible">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <p class=" text-center"><strong>Pengumuman:</strong><br/>
-                Mohon maaf, pendaftaran telah ditutup pada tanggal 10 Februari 2017 Pukul 23:59 WIB <br/>
-                <i>Hormat kami, Tim PPDB SMKIT Ihsanul Fikri Mungkid.</i></p>
-            </div>-->
 
             <div class="alert alert-info alert-dismissible">
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4>Mohon maaf, pendaftaran telah ditutup. Jika masih ingin mendaftar, silahkan mendaftar 
-                langsung di SMKIT Ihsanul Fikri Mungkid pada hari Minggu, 23 Februari 2020.</h4>
-                <!--<h4><b>Langkah Mendaftar PPDB SMKIT Ihsanul Fikri</b></h4>
+                <h4><b>Langkah Mendaftar PPDB SMKIT Ihsanul Fikri</b></h4>
                 <ol>
                     <li>
                         Buat Akun PPDB SMKIT IF dengan pilih <b>Daftar</b>
@@ -258,7 +250,7 @@ body {
                     <li>SKHUN (jika ada)(pdf)</li>
                     <li>Jaminan Kesehatan (jika ada)(jpg/png)</li>
                     <li>KPS/KKS/KIP/KIS/SKTM (jika ada)(jpg/png)</li>
-                </ol> -->
+                </ol>
             </div>
 </div>
         </div>
@@ -270,9 +262,9 @@ body {
                             <div class="col-xs-6">
                                 <a href="#" class="active" id="login-form-link">Masuk</a>
                             </div>
-                            <!-- <div class="col-xs-6">
+                            <div class="col-xs-6">
                                 <a href="#" id="register-form-link">Daftar</a>
-                            </div> -->
+                            </div>
                         </div>
                         <hr>
                     </div>
@@ -399,28 +391,6 @@ body {
         </div>
     </div>
 </div>
-<div class="modal fade" id="pengumumanModal" tabindex="-1" role="dialog" aria-labelledby="pengumumanModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
-                </button>
-                 <h4 class="modal-title" id="pengumumanModalLabel">PENGUMUMAN</h4>
-
-            </div>
-            <div class="modal-body">
-                <p style="text-align: left;"><em>Assalaamu&#8217;alaykum.wr.wb. </em></p>
-                <p>Panitia PPDB SMKITIF 2017/2018</p>
-            </div>
-            <div class="modal-footer">
-                <a href="http://smkit.ihsanulfikri.sch.id/program-tahfidz-tes-tambahan-untuk-program-tahfidz/" class="btn btn-info">Info Lebih Lanjut</a>
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-<script>
-</script>
 <!-- Bootstrap Core JS -->
 <script src="<?=  base_url() ?>assets/js/bootstrap.min.js"></script>
 <script src="<?=  base_url() ?>assets/js/bootstrap3-typeahead.min.js"></script>
