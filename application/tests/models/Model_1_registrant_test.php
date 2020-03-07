@@ -40,7 +40,7 @@ class Model_1_registrant_test extends TestCase {
     public function test_crud_data_registrant(){
         $this->setUp();
         $data = [
-            'password' => 'qwerty',
+            'hashed_password' => password_hash('qwerty', PASSWORD_BCRYPT),///disini disesuaikan
             'name' => 'Zaid Zulkarnaen',
             'username' => 'zaidd',
             'nisn' => '0943292385234',

@@ -46,7 +46,7 @@ class Pendaftar extends MY_Controller {
         $data = $this->input->post(null, true);
         if($data['new_password'] == $data['confirm_password']){
             if(password_verify($data['stored_password'], $registrant->getPassword())){
-                $this->do_change_password(['password' => $data['new_password'], 'id' => $id]);
+                $this->do_change_password(['hashed_password' => password_hash($data['new_password'], PASSWORD_BCRYPT), 'id' => $id]);
             } else {
                 $this->session->set_flashdata("errors", [0 => "Maaf, Password lama anda salah <br />"
                     . "Silahkan di periksa kembali."]);

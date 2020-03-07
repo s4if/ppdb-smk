@@ -156,6 +156,7 @@ class Login extends MY_Controller {
             $res = -3;
         } elseif($data['password'] == $data['confirm-password']){
             if($this->session->captcha == $data['captcha'] || PHP_SAPI == 'cli' || !isset($_SERVER['HTTP_USER_AGENT'])){
+                $data['hashed_password'] = password_hash($data['password'], PASSWORD_BCRYPT); // data di hash disini
                 $res = ($this->reg->insertData($data))?1:0;
                 $registrant = $this->reg->getRegistrant();
             }  else {
