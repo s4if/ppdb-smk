@@ -45,8 +45,10 @@ class Pendaftar extends MY_Controller {
         $registrant = $this->reg->getData(null, $id);
         $data = $this->input->post(null, true);
         if($data['new_password'] == $data['confirm_password']){
-            if(password_verify($data['stored_password'], $registrant->getPassword())){
-                $this->do_change_password(['password' => $data['new_password'], 'id' => $id]);
+            if($this->pass_verify($data['stored_password'], $registrant->getPassword())){
+                //$this->do_change_password(['hashed_password' => password_hash($data['new_password'], PASSWORD_BCRYPT), 'id' => $id]);
+                $enc_password = $this->encrypt($data['new_password']);
+                $this->do_change_password(['hashed_password' => $enc_password, 'id' => $id]);
             } else {
                 $this->session->set_flashdata("errors", [0 => "Maaf, Password lama anda salah <br />"
                     . "Silahkan di periksa kembali."]);
@@ -56,7 +58,7 @@ class Pendaftar extends MY_Controller {
             $this->session->set_flashdata("errors", [0 => "Maaf, Password baru dan konfirmasi password tidak sama, <br />"
                 . "Silahkan di periksa kembali."]);
             redirect($id.'/password');
-        }        
+        }
     }
     
     private function do_change_password($data){
@@ -64,7 +66,7 @@ class Pendaftar extends MY_Controller {
         if($res){
             $this->session->set_userdata('registrant', $this->reg->getRegistrant());
             $this->session->set_flashdata("notices", [0 => "Passsword sudah berhasil diubah."]);
-            redirect($data['id'].'/password');
+            redirect($data['id'].'/beranda');
         } else {
             $this->session->set_flashdata("errors", [0 => "Maaf, Terjadi Kesalahan"]);
             redirect($data['id'].'/password');

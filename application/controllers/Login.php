@@ -42,7 +42,8 @@ class Login extends MY_Controller {
     // ================= LOGIN & REGISTER ===========================
     public function index(){
         $reg_obj = $this->reg->getData();
-        $builder = new Gregwar\Captcha\CaptchaBuilder();
+        $phraseBuilder = new Gregwar\Captcha\PhraseBuilder(5, "abcdefghijklmnopqrstuvwxyz1234567890");
+        $builder = new Gregwar\Captcha\CaptchaBuilder(null, $phraseBuilder);
         $builder->setDistortion(false);
         $builder->build();
         $this->session->set_userdata('captcha', $builder->getPhrase());
@@ -92,7 +93,7 @@ class Login extends MY_Controller {
         $registrant = $this->reg->getDataByUsername($data['username']);
         $res = 0;
         if(!is_null($registrant)){
-            if(password_verify($data['password'], $registrant->getPassword())){
+            if($this->pass_verify($data['password'], $registrant->getPassword())){
                 $this->session->set_userdata('registrant', $registrant);
                 $res = 1;
                 redirect($registrant->getId().'/beranda');
@@ -156,6 +157,8 @@ class Login extends MY_Controller {
             $res = -3;
         } elseif($data['password'] == $data['confirm-password']){
             if($this->session->captcha == $data['captcha'] || PHP_SAPI == 'cli' || !isset($_SERVER['HTTP_USER_AGENT'])){
+                //$data['hashed_password'] = password_hash($data['password'], PASSWORD_BCRYPT); // data di hash disini
+                $data['hashed_password'] = $this->encrypt($data['password']);
                 $res = ($this->reg->insertData($data))?1:0;
                 $registrant = $this->reg->getRegistrant();
             }  else {
