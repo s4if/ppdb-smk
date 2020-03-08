@@ -64,7 +64,7 @@ img.foto-profil {
                                 </p>
                                 <table class="table table-responsive table-condensed table-borderless">
                                     <tr>
-                                        <td rowspan="5">
+                                        <td rowspan="6">
                                             <img class="foto-profil" src="<?=FCPATH.'data/'.$registrant->getUploadDir().'/foto.png';?>" alt="Tempelkan Fto 3x4CM">
                                         </td>
                                         <td>Nama </td>
@@ -72,9 +72,9 @@ img.foto-profil {
                                         <td><?php echo ucwords($registrant->getName());?></td>
                                     </tr>
                                     <tr>
-                                        <td>I/A </td>
+                                        <td>Gender </td>
                                         <td>&nbsp;:&nbsp;</td>
-                                        <td><?php echo ($registrant->getGender()=='L')?'Ikhwan':'Akhwat';?></td>
+                                        <td><?php echo ($registrant->getGender()=='L')?'Laki-laki':'Perempuan';?></td>
                                     </tr>
                                     <tr>
                                         <td>No. Pendaftaran </td>
@@ -92,11 +92,16 @@ img.foto-profil {
                                         <td>&nbsp;:&nbsp;</td>
                                         <td><?php echo $registrant->getProgram();?></td>
                                     </tr>
+                                    <tr>
+                                        <td>Gelombang </td>
+                                        <td>&nbsp;:&nbsp;</td>
+                                        <td>2</td>
+                                    </tr>
                                 </table>
-                                <p style="text-align: center;">
-                                    Silahkan dibawa saat tes tertulis sebagai kartu peserta tes dan bukti pendaftaran. <br>
-                                    Ujian di laksanakan pada tanggal 23 Februari 2020 Jam 08.00<br >
-                                    Di SMK IT Ihsanul Fikri. Jl blabak - mendut km 3 tirto paremono mungkid
+                                <p style="text-align: center; font-size: 0.85em;">
+                                    Silahkan kartu ini dibawa saat tes seleksi sebagai kartu peserta dan bukti pendaftaran. <br>
+                                    Ujian di laksanakan pada tanggal 3 Mei 2020 Jam 08.00<br >
+                                    Di SMK IT Ihsanul Fikri. Jl Blabak - Mendut km 3 Tirto Paremono kec. Mungkid
                                 </p>
                             </div>
                         </div>
@@ -126,7 +131,7 @@ img.foto-profil {
                                     <th class="text-center">Tanda Tangan</th>
                                 </tr>
                                 <tr>
-                                    <td>Tes tulis</td>
+                                    <td>Tes Potensi Akademik</td>
                                     <td>&nbsp;</td>
                                 </tr>
                                 <tr>

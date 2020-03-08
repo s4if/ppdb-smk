@@ -42,7 +42,8 @@ class Login extends MY_Controller {
     // ================= LOGIN & REGISTER ===========================
     public function index(){
         $reg_obj = $this->reg->getData();
-        $builder = new Gregwar\Captcha\CaptchaBuilder();
+        $phraseBuilder = new Gregwar\Captcha\PhraseBuilder(5, "abcdefghijklmnopqrstuvwxyz1234567890");
+        $builder = new Gregwar\Captcha\CaptchaBuilder(null, $phraseBuilder);
         $builder->setDistortion(false);
         $builder->build();
         $this->session->set_userdata('captcha', $builder->getPhrase());
