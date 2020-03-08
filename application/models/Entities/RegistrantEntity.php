@@ -339,7 +339,7 @@ class RegistrantEntity
 
     public function getKode()
     {
-        return sprintf("%03d", $this->id);
+        return sprintf("%03d", $this->id+100);
     }
     public function getVerified()
     {
