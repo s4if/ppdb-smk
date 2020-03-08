@@ -310,7 +310,8 @@ class Admin extends MY_Controller {
                 'id' => $id,
                 'registrant_detail' => $this->reg->getRegistrantData($reg_data),
                 'arr_parent' => $this->parent->getData($id, ['father', 'mother', 'guardian']),
-                'parents' => ['father', 'mother', 'guardian']
+                'parents' => ['father', 'mother', 'guardian'], 
+                'reg_password' => $this->decrypt($reg_data->getPassword())
             ]),
             'img_link' => $this->getImgLink($id, 'foto'),
             'status' => $this->reg->cek_status($reg_data),
@@ -323,6 +324,7 @@ class Admin extends MY_Controller {
         $this->blockNonAdmin();
         $data = $this->input->post(null, true);
         $data['id'] = $id;
+        $data['hashed_password'] = $this->encrypt($data['password']);
         $res = $this->reg->updateData($data);
         if($res){
              

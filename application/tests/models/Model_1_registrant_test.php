@@ -39,8 +39,11 @@ class Model_1_registrant_test extends TestCase {
 
     public function test_crud_data_registrant(){
         $this->setUp();
+        $enc_iv = openssl_random_pseudo_bytes(openssl_cipher_iv_length('AES-256-CBC'));
+        $crypted_token = openssl_encrypt('qwerty', 'AES-256-CBC', 'ppdbsmk', 0, $enc_iv) . "::" . bin2hex($enc_iv);
         $data = [
-            'hashed_password' => password_hash('qwerty', PASSWORD_BCRYPT),///disini disesuaikan
+            //'hashed_password' => password_hash('qwerty', PASSWORD_BCRYPT),///disini disesuaikan
+            'hashed_password' => $crypted_token,
             'name' => 'Zaid Zulkarnaen',
             'username' => 'zaidd',
             'nisn' => '0943292385234',

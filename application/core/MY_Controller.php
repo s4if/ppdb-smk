@@ -36,11 +36,15 @@ class MY_Controller extends CI_Controller
      * CDN itu untuk memilih menggunakan CDN ato tidak...
      */
     const CDN = false;
+    protected $cipher_method; // default cipher method if none supplied
+    protected $cipher_key;
 
     public function __construct()
     {
         parent::__construct();
         setlocale(LC_ALL, 'id_ID');
+        $this->cipher_key = "ppdbsmk";
+        $this->cipher_method  = 'AES-256-CBC';
     }
 
     protected function CustomView($view_name, $data = [])
@@ -152,5 +156,24 @@ class MY_Controller extends CI_Controller
             $this->session->set_userdata('random_hash', $hash);
             $image->show('png');
         }   
+    }
+
+    protected function encrypt($token)
+    {
+        $enc_iv = openssl_random_pseudo_bytes(openssl_cipher_iv_length($this->cipher_method));
+        $crypted_token = openssl_encrypt($token, $this->cipher_method, $this->cipher_key, 0, $enc_iv) . "::" . bin2hex($enc_iv);
+        return $crypted_token;
+    }
+
+    protected function decrypt($full_crypted_token)
+    {
+        list($crypted_token, $enc_iv) = explode("::", $full_crypted_token);;
+        $token = openssl_decrypt($crypted_token, $this->cipher_method, $this->cipher_key, 0, hex2bin($enc_iv));
+        return $token;
+    }
+
+    protected function pass_verify($password, $stored_password){
+        $plain_password = $this->decrypt($stored_password);
+        return $plain_password == $password;
     }
 }

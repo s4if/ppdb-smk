@@ -799,10 +799,14 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title text-center" id="tambahModal">Ganti Password Pendaftart</h4>
+                <h4 class="modal-title text-center" id="tambahModal">Ganti Password Pendaftar</h4>
             </div>
             <div class="modal-body">
                 <form class="form-horizontal" role="form" method="post" action="<?=base_url().'admin/do_password_registrant/'.$id;?>">
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">Password Lama:</label>
+                        <label class="col-sm-7"><b style="color: red; font-size: 2.2em;"><?=$reg_password;?></b></label>
+                    </div>
                     <div class="form-group">
                         <label class="col-sm-4 control-label">Password Baru :</label>
                         <div class="col-sm-7">
