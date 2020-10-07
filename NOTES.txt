@@ -51,3 +51,9 @@ Next:
 - Upload kwitansi masih 300k -> sudah
 - masih ada halaman upload prestasi -> sudah
 - huruf di kartu ujian masih belum kelihatan -> sudah
+
+-------- 2021 ------------
+TODO:
+- Setting jumlah uang
+- Sesuaikan tanggal
+- Sesuaikan tahun Qurban

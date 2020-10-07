@@ -75,9 +75,6 @@
                 <a href="<?=  base_url().$id.'/surat'?>">Surat Pernyataan</a>
             </li>
             <?php endif;?>
-            <li id="navDocuments">
-                <a href="<?=  base_url().$id.'/dokumen'?>">Upload Dokumen </a>
-            </li>
             <li id="navRecap">
                 <a href="<?=  base_url().$id.'/rekap'?>">Rekap</a>
             </li>

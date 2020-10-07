@@ -392,70 +392,6 @@ class Model_registrant extends CI_Model {
             return false;
         }
     }
-
-    public function uploadDocumentImage($file_url, $upload_dir, $type){
-        try {
-            $imagine = new Imagine\Gd\Imagine();
-            $image = $imagine->open($file_url);
-            if(!is_dir($upload_dir)){
-                mkdir($upload_dir, 0777);
-            }
-            $image->save($upload_dir.'/'.$type.'.png');
-            return true;
-        } catch (Imagine\Exception\RuntimeException $e){
-            return false;
-        }
-    }
-
-    public function deleteDocument($fileUrl)
-    {
-        error_reporting(0); 
-        $res = false;
-        if (file_exists($fileUrl)) {
-            try {
-                unlink($fileUrl);
-                $res = true;
-            } catch (Exception $e) {
-                $res = false;
-            }
-        }
-        return $res;
-    }
-
-    public function scanRegDir($upload_dir)
-    {
-        $status = [
-            'foto' => false,
-            'akte' => false,
-            'kk' => false, // kartu keluarga
-            'sksekolah' => false,
-            'sksehat' => false,
-            'skbn' => false,
-            'ijazah' => false,
-            'skhun' => false,
-            'jamkes' => false,
-            'sktm' => false,
-            'scandir_error' => false
-        ];
-        try {
-            if(!is_dir($upload_dir)){
-                mkdir($upload_dir, 0777);
-            }
-            $reg_files = scandir($upload_dir);
-            foreach ($status as $key => $value) {
-                foreach ($reg_files as $file) {
-                    if(preg_match("/{$key}/i", $file)) {
-                        $status[$key] = true;
-                    }
-                }
-            }
-        } catch (Exception $e) {
-            $status['scandir_error'] =  true;
-        } finally {
-            $status['dokumen_lengkap'] = $status['foto'] && $status['akte'] && $status['sksekolah'] && $status['sksehat'] && $status['kk']; // sk bebas narkoba tidak jadi wajib
-            return $status;
-        }
-    }
     
     public function receipt_data($id, $data){
         $this->registrant = $this->doctrine->em->find('RegistrantEntity', $id);
@@ -504,12 +440,12 @@ class Model_registrant extends CI_Model {
             $arr_result ['guardian'] = 1;
         }
         $url = FCPATH.'data/'.$registrant->getUploadDir();
-        if($this->scanRegDir($url)){
+        /*if($this->scanRegDir($url)){
             $arr_result ['document'] = 0;
         } else {
             $arr_result ['document'] = 1;
             $all_stats++;
-        }
+        }*/
         if(!$registrant->getFinalized()){
             $arr_result ['finalized'] = 0;
         } else {
@@ -553,7 +489,7 @@ class Model_registrant extends CI_Model {
             if($status['data'] < 1): $str = $str.'data diri, '; endif;
             if($status['father'] < 1): $str = $str.'data ayah, '; endif;
             if($status['mother'] < 1): $str = $str.'data ibu, '; endif;
-            if($status['document'] < 1): $str = $str.'upload dokumen, '; endif;
+            //if($status['document'] < 1): $str = $str.'upload dokumen, '; endif;
             if($status['letter'] < 1): $str = $str.'surat pernyataan, '; endif;
             if($status['finalized'] < 1): $str = $str.'Finalisasi, '; endif;
             return ['status' => $str, 'completed' => $status['completed']];
@@ -835,7 +771,7 @@ class Model_registrant extends CI_Model {
             $rData = $registrant->getRegistrantData();
             // Registrant Data
             $worksheet->SetCellValue('A'.$row, $registrant->getRegId());
-            $worksheet->SetCellValue('B'.$row, $registrant->getNisn());
+            $worksheet->SetCellValue('B'.$row, "'".$registrant->getNisn());
             $worksheet->SetCellValue('C'.$row, $registrant->getName());
             $worksheet->SetCellValue('D'.$row, ($registrant->getGender() == 'L') ? 'Ikhwan' : 'Akhwat');
             $worksheet->SetCellValue('E'.$row, $registrant->getPreviousSchool());
@@ -892,7 +828,7 @@ class Model_registrant extends CI_Model {
                 $worksheet->SetCellValue('AF'.$row, $fData->getIncome());
                 $worksheet->SetCellValue('AG'.$row, $fData->getBurdenCount());
                 // Data NIK
-                $worksheet->SetCellValue('BQ'.$row, $fData->getNik());
+                $worksheet->SetCellValue('BQ'.$row, "'".$fData->getNik());
                 // Pemetaan Alamat
                 $worksheet->SetCellValue('BZ'.$row, $fData->getStreet());
                 $worksheet->SetCellValue('CA'.$row, $fData->getVillage());
@@ -920,7 +856,7 @@ class Model_registrant extends CI_Model {
                 $worksheet->SetCellValue('AT'.$row, $mData->getIncome());
                 $worksheet->SetCellValue('AU'.$row, $mData->getBurdenCount());
                 // Data NIK
-                $worksheet->SetCellValue('BR'.$row, $mData->getNik());
+                $worksheet->SetCellValue('BR'.$row, "'".$mData->getNik());
                 // Pemetaan Alamat
                 $worksheet->SetCellValue('CF'.$row, $mData->getStreet());
                 $worksheet->SetCellValue('CG'.$row, $mData->getVillage());
@@ -948,13 +884,13 @@ class Model_registrant extends CI_Model {
                 $worksheet->SetCellValue('BH'.$row, $gData->getIncome());
                 $worksheet->SetCellValue('BI'.$row, $gData->getBurdenCount());
                 // Data NIK
-                $worksheet->SetCellValue('BS'.$row, $gData->getNik());
+                $worksheet->SetCellValue('BS'.$row, "'".$gData->getNik());
             }
 
             if(!empty($rData)){
-                $worksheet->SetCellValue('BN'.$row, $rData->getNik());
-                $worksheet->SetCellValue('BO'.$row, $rData->getNkk());
-                $worksheet->SetCellValue('BP'.$row, $rData->getNak());
+                $worksheet->SetCellValue('BN'.$row, "'".$rData->getNik());
+                $worksheet->SetCellValue('BO'.$row, "'".$rData->getNkk());
+                $worksheet->SetCellValue('BP'.$row, "'".$rData->getNak());
             }
             //Mohon mbatik dikoreksi lagi kalau udah ga ngantuk... hehe
             // Iteration of Rows

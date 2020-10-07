@@ -121,6 +121,7 @@ class MY_Controller extends CI_Controller
             'footer-spacing' => 5,
             'disable-smart-shrinking',
             'no-outline',
+            'enable-local-file-access',
             'commandOptions' => [
                 'enableXvfb' => true,//ini hanya kalau perlu
             ],
