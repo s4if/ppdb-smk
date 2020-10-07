@@ -169,7 +169,7 @@ body {
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand brand-shifted" href="http://smkit.ihsanulfikri.sch.id/">PPDB SMKIT Ihsanul Fikri Gelombang 2</a>
+                <a class="navbar-brand brand-shifted" href="http://smkit.ihsanulfikri.sch.id/">PPDB SMKIT Ihsanul Fikri</a>
             </div>
             <!-- Navbar collapse -->
             <div class="navbar-collapse collapse">

@@ -771,7 +771,7 @@ class Model_registrant extends CI_Model {
             $rData = $registrant->getRegistrantData();
             // Registrant Data
             $worksheet->SetCellValue('A'.$row, $registrant->getRegId());
-            $worksheet->SetCellValue('B'.$row, $registrant->getNisn());
+            $worksheet->SetCellValue('B'.$row, "'".$registrant->getNisn());
             $worksheet->SetCellValue('C'.$row, $registrant->getName());
             $worksheet->SetCellValue('D'.$row, ($registrant->getGender() == 'L') ? 'Ikhwan' : 'Akhwat');
             $worksheet->SetCellValue('E'.$row, $registrant->getPreviousSchool());
@@ -828,7 +828,7 @@ class Model_registrant extends CI_Model {
                 $worksheet->SetCellValue('AF'.$row, $fData->getIncome());
                 $worksheet->SetCellValue('AG'.$row, $fData->getBurdenCount());
                 // Data NIK
-                $worksheet->SetCellValue('BQ'.$row, $fData->getNik());
+                $worksheet->SetCellValue('BQ'.$row, "'".$fData->getNik());
                 // Pemetaan Alamat
                 $worksheet->SetCellValue('BZ'.$row, $fData->getStreet());
                 $worksheet->SetCellValue('CA'.$row, $fData->getVillage());
@@ -856,7 +856,7 @@ class Model_registrant extends CI_Model {
                 $worksheet->SetCellValue('AT'.$row, $mData->getIncome());
                 $worksheet->SetCellValue('AU'.$row, $mData->getBurdenCount());
                 // Data NIK
-                $worksheet->SetCellValue('BR'.$row, $mData->getNik());
+                $worksheet->SetCellValue('BR'.$row, "'".$mData->getNik());
                 // Pemetaan Alamat
                 $worksheet->SetCellValue('CF'.$row, $mData->getStreet());
                 $worksheet->SetCellValue('CG'.$row, $mData->getVillage());
@@ -884,13 +884,13 @@ class Model_registrant extends CI_Model {
                 $worksheet->SetCellValue('BH'.$row, $gData->getIncome());
                 $worksheet->SetCellValue('BI'.$row, $gData->getBurdenCount());
                 // Data NIK
-                $worksheet->SetCellValue('BS'.$row, $gData->getNik());
+                $worksheet->SetCellValue('BS'.$row, "'".$gData->getNik());
             }
 
             if(!empty($rData)){
-                $worksheet->SetCellValue('BN'.$row, $rData->getNik());
-                $worksheet->SetCellValue('BO'.$row, $rData->getNkk());
-                $worksheet->SetCellValue('BP'.$row, $rData->getNak());
+                $worksheet->SetCellValue('BN'.$row, "'".$rData->getNik());
+                $worksheet->SetCellValue('BO'.$row, "'".$rData->getNkk());
+                $worksheet->SetCellValue('BP'.$row, "'".$rData->getNak());
             }
             //Mohon mbatik dikoreksi lagi kalau udah ga ngantuk... hehe
             // Iteration of Rows
