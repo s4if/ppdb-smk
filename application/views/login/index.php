@@ -218,40 +218,10 @@ body {
 </div>
 <?php endif; ?>
 
-            <div class="alert alert-info alert-dismissible">
+            <!-- <div class="alert alert-info alert-dismissible">
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4><b>Langkah Mendaftar PPDB SMKIT Ihsanul Fikri</b></h4>
-                <ol>
-                    <li>
-                        Buat Akun PPDB SMKIT IF dengan pilih <b>Daftar</b>
-                    </li>
-                    <li>
-                        Isikan data yang diminta
-                    </li>
-                    <li>
-                        Buat <b>username</b> dan <b>password</b> yang mudah Anda ingat
-                    </li>
-                    <li>
-                        Gunakan <b>username</b> dan <b>password</b> tersebut pada saat <b>Masuk</b> ke akun Anda untuk proses pendaftaran Online selanjutnya (Mengisi & Mengedit data pada formulir online)
-                    </li>
-                    <li>
-                        Jika lupa <b>username</b> atau <b>password</b> silahkan menghubungi nomor <u>+62 858-6891-0988</u> (ust Affan)
-                    </li>
-                </ol>
-                <h4><b>Dokumen persyaratan yang disiapkan</b></h4>
-                <ol>
-                    <li>Foto Resmi (jpg/png)(wajib upload)</li>
-                    <li>Akte Kelahiran (jpg/png)(wajib dipersiapkan)</li>
-                    <li>Kartu Keluarga (jpg/png)(wajib dipersiapkan)</li>
-                    <li>Surat Keteragan Sekolah (jpg/png)(wajib dipersiapkan)</li>
-                    <li>Surat Keterangan Sehat (jpg/png)(wajib dipersiapkan)</li>
-                    <li>Surat Keterangan Bebas Narkoba (jpg/png)(Wajib dipersiapkan)</li>
-                    <li>Ijazah (jika ada)(pdf)</li>
-                    <li>SKHUN (jika ada)(pdf)</li>
-                    <li>Jaminan Kesehatan (jika ada)(jpg/png)</li>
-                    <li>KPS/KKS/KIP/KIS/SKTM (jika ada)(jpg/png)</li>
-                </ol>
-            </div>
+                
+            </div> -->
 </div>
         </div>
     	<div class="row">
