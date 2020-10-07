@@ -232,7 +232,7 @@ switch (ENVIRONMENT)
 	define('SELF', pathinfo(__FILE__, PATHINFO_BASENAME));
 
 	// Path to the test directory containing all the test files.
-	define('TESTPATH', __dir__.DIRECTORY_SEPARATOR);  // Should be the folder this `Bootstrap.php` file is in.
+	define('TESTPATH', __DIR__.DIRECTORY_SEPARATOR);  // Should be the folder this `Bootstrap.php` file is in.
 
 	// Path to the system directory
 	define('BASEPATH', $system_path);
@@ -331,7 +331,7 @@ switch (ENVIRONMENT)
  * -------------------------------------------------------------------
  *  Enabling Monkey Patching
  * -------------------------------------------------------------------
- * 
+ *
  * If you want to use monkey patching, uncomment below code and configure
  * for your application.
  */
@@ -376,11 +376,6 @@ MonkeyPatchManager::init([
  *  Added for ci-phpunit-test
  * -------------------------------------------------------------------
  */
-
-// If you want to change the path of tests directory, set TESTPATH
-/*
-define('TESTPATH', APPPATH.'tests'.DIRECTORY_SEPARATOR);
-*/
 
 require CI_PHPUNIT_TESTPATH . '/CIPHPUnitTest.php';
 
