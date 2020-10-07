@@ -120,10 +120,6 @@
                     <span class="glyphicon glyphicon-briefcase"></span>
                     Ganti Password
                 </a>
-                <a class="btn btn-sm btn-primary" data-toggle="modal" href="<?=base_url();?>admin/dokumen_peserta/<?=$registrant_data->getId();?>">
-                    <span class="glyphicon glyphicon-file"></span>
-                    Dokumen Peserta
-                </a>
             </td>
         </tr>
     </table>

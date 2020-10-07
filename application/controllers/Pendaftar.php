@@ -339,44 +339,6 @@ class Pendaftar extends MY_Controller {
         }
     }
 
-    public function upload_dokumen_gambar($id, $type = 'akte')
-    {
-        $this->blockUnloggedOne($id);
-        $fileUrl = $_FILES['file']["tmp_name"];
-        $registrant = $this->reg->getRegistrant($id);
-        $res = false;
-        if (!is_null($registrant->getUploadDir())) {
-            $upload_dir = FCPATH.'data/'.$registrant->getUploadDir();
-            $res = $this->reg->uploadDocumentImage($fileUrl, $upload_dir, $type);
-        }
-        if ($res) {
-            $this->session->set_flashdata("notices", [0 => "Upload Dokumen Berhasil!"]);
-            redirect($id.'/dokumen');
-        } else {
-            $this->session->set_flashdata("errors", [0 => "Upload Dokumen Gagal!"]);
-            redirect($id.'/dokumen');
-        }
-    }
-
-    public function upload_dokumen_pdf($id, $type)
-    {
-        $registrant = $this->reg->getRegistrant($id);
-        $config['upload_path'] = $upload_dir = FCPATH.'data/'.$registrant->getUploadDir();
-        $config['allowed_types'] = 'pdf';
-        $config['file_name'] = $type.'.pdf';
-        $this->load->library('upload', $config);
-        if (!$this->upload->do_upload('file'))
-        {
-            $this->session->set_flashdata("errors", [0 => "Upload PDF Gagal!"]);
-            redirect($id.'/dokumen');
-        }
-        else
-        {
-            $this->session->set_flashdata("notices", [0 => "Upload PDF Berhasil!"]);
-            redirect($id.'/dokumen');
-        }
-    }
-    
     private function getImgReceipt($id){
         $this->load->helper('file');
         $registrant = $this->reg->getRegistrant($id);
@@ -399,56 +361,6 @@ class Pendaftar extends MY_Controller {
         $this->session->set_userdata('random_hash_2', $hash);
         $image->show('png');
     }
-
-    public function getDocument($id, $type, $hash = '000'){
-        $this->blockUnloggedOne($id, true);
-        $registrant = $this->reg->getRegistrant($id);
-        if(($type == 'ijazah') || ($type == 'skhun')){
-            $file = FCPATH.'data/'.$registrant->getUploadDir().'/'.$type.'.pdf';
-            if (file_exists($file)) {
-                $filename = $registrant->getUploadDir().'-'.$type.'pdf';
-                header('Content-type: application/pdf');
-                header('Content-Disposition: inline; filename="' . $filename . '"');
-                header('Content-Transfer-Encoding: binary');
-                header('Content-Length: ' . filesize($file));
-                header('Accept-Ranges: bytes');
-                @readfile($file);
-            } else {
-                header("HTTP/1.0 404 Not Found");
-                header("Status: 404 Not Found");
-                echo "<h1>404 File not found</h1>";
-            }
-        } else {
-            try {
-                $imagine = new Imagine\Gd\Imagine();
-                $image = $imagine->open(FCPATH.'data/'.$registrant->getUploadDir().'/'.$type.'.png');
-                $this->session->set_userdata('random_hash_2', $hash);
-                $image->show('png');
-            } catch (Imagine\Exception\InvalidArgumentException $e) {
-                header("HTTP/1.0 404 Not Found");
-                header("Status: 404 Not Found");
-                echo "<h1>404 File not found</h1>";
-            }
-        }
-    }
-
-    public function removeDocument($id, $type){
-        $this->blockUnloggedOne($id, true);
-        $registrant = $this->reg->getRegistrant($id);
-        $ext = 'png';
-        if(($type == 'ijazah') || ($type == 'skhun')){
-            $ext = 'pdf';
-        }
-        $fileUrl = FCPATH.'data/'.$registrant->getUploadDir().'/'.$type.'.'.$ext;
-        $res = $this->reg->deleteDocument($fileUrl);
-        if ($res) {
-            $this->session->set_flashdata("notices", [0 => "Hapus Dokumen Berhasil!"]);
-            redirect($id.'/dokumen');
-        } else {
-            $this->session->set_flashdata("errors", [0 => "Hapus Dokumen Gagal!"]);
-            redirect($id.'/dokumen');
-        }
-    }
     
     public function rekap($id){
         $this->blockUnloggedOne($id);
@@ -462,7 +374,6 @@ class Pendaftar extends MY_Controller {
             'nav_pos' => 'recap',
             'img_link' => $this->getImgLink($id),
             'registrant' => $this->session->registrant,
-            'status_upload' => $this->reg->scanRegDir(FCPATH.'data/'.$registrant->getUploadDir())
         ];
         $this->CustomView('registrant/recap', $data);
     }
@@ -545,7 +456,7 @@ class Pendaftar extends MY_Controller {
         if($res){
             $this->session->set_userdata('registrant', $this->reg->getRegistrant());
             $this->session->set_flashdata("notices", [0 => "Data Sudah berhasil disimpan"]);
-            redirect($id.'/dokumen');
+            redirect($id.'/rekap');
         } else {
             $this->session->set_flashdata("errors", [0 => "Maaf, Terjadi Kesalahan"]);
             redirect($id.'/surat');
@@ -600,24 +511,6 @@ class Pendaftar extends MY_Controller {
             $this->session->set_flashdata("errors", [0 => "Maaf, Anda tidak boleh melihat halaman ini lagi!"]);
             redirect('login/index');
         }
-    }
-
-    public function halaman_dokumen($id)
-    {
-        // tambahi scan dir!!
-        $this->blockUnloggedOne($id);
-        $this->blockNonPayers($this->session->registrant);
-        $registrant = $this->reg->getRegistrant($id);
-        $upload_dir = FCPATH.'data/'.$registrant->getUploadDir();
-        $data = [
-            'title' => 'Upload Sertifikat',
-            'username' => $this->session->registrant->getName(),
-            'id' => $this->session->registrant->getId(),
-            'registrant' => $this->reg->getRegistrant($this->session->registrant),
-            'nav_pos' => 'documents',
-            'status_upload' => $this->reg->scanRegDir($upload_dir)
-        ];
-        $this->CustomView('registrant/documents', $data);
     }
     
     // =========================================================
