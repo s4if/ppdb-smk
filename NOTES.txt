@@ -56,4 +56,6 @@ Next:
 TODO:
 - Setting jumlah uang
 - Sesuaikan tanggal
-- Sesuaikan tahun Qurban
+- Sesuaikan tahun Qurban (OK)
+- kembalikan ID awal jadi 0 (OK)
+- edit background? (Ga Usah)
