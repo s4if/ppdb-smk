@@ -51,7 +51,7 @@
     <h1>Selamat, anda telah menyelesaikan pendaftaran!</h1>
     <p>
         Terimakasih telah mendaftar di SMKIT Ihsanul Fikri.<br/>
-        Tes gelombang 2 akan dilaksanakan tanggal 3 Mei 2020<br/>
+        Tes gelombang 1 akan dilaksanakan tanggal 24 Januari 2021<br/>
         Silahkan Unduh dan cetak form pendaftaran dan kartu pendaftaran.
     </p>        
     <a class="btn btn-primary" href="<?=  base_url().'pendaftar/print_data_pendaftaran/'.$id;?>">
@@ -62,7 +62,7 @@
         Ini adalah sistem pendaftaran peserta didik baru (PPDB) SMKIT Ihsanul Fikri Mungkid.
         Sebelum anda mengisi data pribadi, silahkan mentransfer telebih dahulu biaya pendaftaran peserta 
         sebesar <strong>Rp. 200.000,-</strong> ditambah <strong>nomor unik (Contoh = 200.123)</strong> di rekening 
-        <strong>Bank BRI Syariah Kanca Magelang</strong> dengan <strong>No. 10 33 88 13 43</strong> atas nama 
+        <strong>Bank BRI Syariah Kanca Magelang</strong> dengan <strong>No. [MENYUSUL]</strong> atas nama 
         <strong>BMT Makmur Gemilang</strong>.
     </p>
     <?php if (is_null($registrant->getUploadDir())):?>
@@ -96,20 +96,8 @@
     <ul>
         <li>Data Diri</li>
         <li>Data Orang Tua</li>
+        <li>Data Kartu Keluarga & Akte Kelahiran</li>
         <li>Data Surat Pernyataan</li>
-        <li>Upload Dokumen yang dibutuhkan
-            <ol>
-                <li>Foto 3x4 portrait (Ukuran Max 4MB)</li>
-                <li>Scan Akte Kelahiran (dalam bentuk jpg/png)</li>
-                <li>Scan Surat Keterangan Siswa dari sekolah (dalam bentuk jpg/png)</li>
-                <li>Scan Surat Keterangan sehat (dalam bentuk jpg/png)</li>
-                <li>Scan Surat Keterangan Bebas Narkoba (dalam bentuk jpg/png)</li>
-                <li>Ijazah (tidak wajib, dalam bentuk PDF</li>
-                <li>SKHUN (tidak wajib, dalam bentuk PDF)</li>
-                <li>Scan KPS/KKS/KIP/KIS/SKTM (tidak wajib, dalam bentuk jpg/png)</li>
-                <li>Scan Jaminan Kesehatan (tidak wajib, dalam bentuk jpg/png)</li>
-            </ol>
-        </li>
     </ul>
     </p>
     <?php endif;?>

@@ -100,7 +100,7 @@ img.foto-profil {
                                 </table>
                                 <p style="text-align: center; font-size: 0.85em;">
                                     Silahkan kartu ini dibawa saat tes seleksi sebagai kartu peserta dan bukti pendaftaran. <br>
-                                    Ujian di laksanakan pada tanggal 3 Mei 2020 Jam 08.00<br >
+                                    Ujian di laksanakan pada tanggal 24 Januari 2021 Jam 08.00<br >
                                     Di SMK IT Ihsanul Fikri. Jl Blabak - Mendut km 3 Tirto Paremono kec. Mungkid
                                 </p>
                             </div>
