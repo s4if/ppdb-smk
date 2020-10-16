@@ -309,7 +309,7 @@
                 <td> Rp. 1.800.000,00 </td>
             </tr>
             <tr>
-                <td> Dana Kesiswaan </td>
+                <td> Dana Kegiatan Kesiswaan </td>
                 <td> &nbsp;:&nbsp; </td>
                 <td> Rp. 1.650.000,00 </td>
             </tr>
@@ -329,6 +329,16 @@
                 <td> Rp. 500.000,00</td>
             </tr>
             <tr>
+                <td> Pembukaan Rekening BMT </td>
+                <td> &nbsp;:&nbsp; </td>
+                <td> Rp. 300.000,00</td>
+            </tr>
+            <tr>
+                <td> Majalah & Kalender </td>
+                <td> &nbsp;:&nbsp; </td>
+                <td> Rp. 120.000,00</td>
+            </tr>
+            <tr>
                 <td> Kesanggupan Berqurban Tahun </td>
                 <td> &nbsp;:&nbsp; </td>
                 <td> <?php echo str_replace('-', ' ', $registrant->getQurban()); ?></td>
@@ -337,7 +347,7 @@
                 <td> <strong class="red">Total</strong> </td>
                 <td> &nbsp;:&nbsp; </td>
                 <?php 
-                $default = 4850000;
+                $default = 5270000;
                 $tot = $registrant->getSubscriptionCost()+$registrant->getInitialCost()+$registrant->getLandDonation();
                 $total = $tot+$default;
                 ?>

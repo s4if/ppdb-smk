@@ -61,7 +61,7 @@
     <p>
         Ini adalah sistem pendaftaran peserta didik baru (PPDB) SMKIT Ihsanul Fikri Mungkid.
         Sebelum anda mengisi data pribadi, silahkan mentransfer telebih dahulu biaya pendaftaran peserta 
-        sebesar <strong>Rp. 200.000,-</strong> ditambah <strong>nomor unik (Contoh = 200.123)</strong> di rekening 
+        sebesar <strong>Rp. 200.000,-</strong> ditambah <strong>nomor unik (Contoh = 200.123)</strong> di rekening
         <strong>Bank BRI Syariah Kanca Magelang</strong> dengan <strong>No. [MENYUSUL]</strong> atas nama 
         <strong>BMT Makmur Gemilang</strong>.
     </p>
