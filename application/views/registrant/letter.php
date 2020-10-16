@@ -82,30 +82,39 @@
                             <td><strong>[[Sesuai Pilihan]]</strong></td>
                         </tr>
                         <tr>
-                            <td>d. Seragam</td>
-                            <td>Rp. 1.800.000,-</td>
-                        </tr>
-                        <tr>
-                            <td>e. Kesiswaan</td>
-                            <td>Rp. 1.650.000,-</td>
-                        </tr>
-                        <tr>
-                            <td>f. Biaya Kesehatan</td>
-                            <td>Rp. 150.000,-</td>
-                        </tr>
-                        <tr>
-                            <td>g. Biaya Buku</td>
-                            <td>Rp. 750.000,-</td>
-                        </tr>
-                        <tr>
-                            <td>h. Biaya Praktek</td>
-                            <td>Rp. 500.000,-</td>
-                        </tr>
+                    <tr>
+                    <td>d. Seragam</td>
+                        <td>Rp. 1.800.000,-</td>
+                    </tr>
+                    <tr>
+                        <td>e. Dana Kesiswaan</td>
+                        <td>Rp. 1.650.000,-</td>
+                    </tr>
+                    <tr>
+                        <td>f. Dana Kesehatan</td>
+                        <td>Rp. 150.000,-</td>
+                    </tr>
+                    <tr>
+                        <td>g. Dana Buku</td>
+                        <td>Rp. 750.000,-</td>
+                    </tr>
+                    <tr>
+                        <td>h. Biaya Praktik</td>
+                        <td>Rp. 500.000,-</td>
+                    </tr>
+                    <tr>
+                        <td>i. Majalah & Kalender</td>
+                        <td>Rp. 120.000,-</td>
+                    </tr>
+                    <tr>
+                        <td>k. Pembukaan Rekening BMT</td>
+                        <td>Rp. 300.000,-</td>
+                    </tr>
                     </table>
                     
                     <li class="pernyataan">
                         Bersedia mengikuti program Qurban minimal 1 kali selama menjadi siswa SMKIT Ihsanul 
-                        Fikri Mungkid pada Hari Raya Idul Adha tahun 2020/2021/2022 (Tahun dapat dipilih).
+                        Fikri Mungkid pada Hari Raya Idul Adha tahun 2021/2022/2023 (Tahun dapat dipilih).
                     </li>
                     <li class="pernyataan">
                         Apabila setelah pendaftaran ulang ternyata anak saya mengundurkan diri, maka saya 
@@ -370,7 +379,7 @@
                 <div class="col-sm-4 col-sm-offset-3">
                     <label class="text-center">
                         Bersedia mengikuti program Qurban minimal 1 kali selama menjadi siswa SMKIT 
-                        Ihsanul Fikri Mungkid pada Hari Raya Idul Adha tahun 2020/2021/2022.
+                        Ihsanul Fikri Mungkid pada Hari Raya Idul Adha tahun 2021/2022/2023.
                     </label>
                 </div>
             </div>

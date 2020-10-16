@@ -208,7 +208,7 @@
                 </tr>
                 <tr>
                     <td>f. Dana Kesehatan</td>
-                    <td>Rp. 250.000,-</td>
+                    <td>Rp. 150.000,-</td>
                 </tr>
                 <tr>
                     <td>g. Dana Buku</td>
@@ -219,9 +219,17 @@
                     <td>Rp. 500.000,-</td>
                 </tr>
                 <tr>
+                    <td>i. Majalah & Kalender</td>
+                    <td>Rp. 120.000,-</td>
+                </tr>
+                <tr>
+                    <td>k. Pembukaan Rekening BMT</td>
+                    <td>Rp. 300.000,-</td>
+                </tr>
+                <tr>
                     <td><strong>Total</strong></td>
                     <?php 
-                    $default = 4850000;
+                    $default = 5270000;
                     $total = $registrant->getInitialCost()+$registrant->getSubscriptionCost()
                             +$registrant->getLandDonation()+$default;
                     ?>

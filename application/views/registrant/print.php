@@ -59,7 +59,7 @@ img.foto-profil {
                         <div class="row">
                             <div class="col-sm-12">
                                 <p style="text-align: center;">
-                                    Registrasi PPDB SMKIT Ihsanul Fikri Mungkid TA:2020/2021 telah berhasil.<br />
+                                    Registrasi PPDB SMKIT Ihsanul Fikri Mungkid TA:2021/2022 telah berhasil.<br />
                                     Data yang ter-input adalah sebagai berikut :
                                 </p>
                                 <table class="table table-responsive table-condensed table-borderless">
@@ -95,12 +95,12 @@ img.foto-profil {
                                     <tr>
                                         <td>Gelombang </td>
                                         <td>&nbsp;:&nbsp;</td>
-                                        <td>2</td>
+                                        <td>1</td>
                                     </tr>
                                 </table>
                                 <p style="text-align: center; font-size: 0.85em;">
                                     Silahkan kartu ini dibawa saat tes seleksi sebagai kartu peserta dan bukti pendaftaran. <br>
-                                    Ujian di laksanakan pada tanggal 3 Mei 2020 Jam 08.00<br >
+                                    Ujian di laksanakan pada tanggal 24 Januari 2021 Jam 08.00<br >
                                     Di SMK IT Ihsanul Fikri. Jl Blabak - Mendut km 3 Tirto Paremono kec. Mungkid
                                 </p>
                             </div>

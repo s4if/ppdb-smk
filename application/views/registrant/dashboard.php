@@ -51,7 +51,7 @@
     <h1>Selamat, anda telah menyelesaikan pendaftaran!</h1>
     <p>
         Terimakasih telah mendaftar di SMKIT Ihsanul Fikri.<br/>
-        Tes gelombang 2 akan dilaksanakan tanggal 3 Mei 2020<br/>
+        Tes gelombang 1 akan dilaksanakan tanggal 24 Januari 2021<br/>
         Silahkan Unduh dan cetak form pendaftaran dan kartu pendaftaran.
     </p>        
     <a class="btn btn-primary" href="<?=  base_url().'pendaftar/print_data_pendaftaran/'.$id;?>">
@@ -62,8 +62,8 @@
         Ini adalah sistem pendaftaran peserta didik baru (PPDB) SMKIT Ihsanul Fikri Mungkid.
         Sebelum anda mengisi data pribadi, silahkan mentransfer telebih dahulu biaya pendaftaran peserta 
         sebesar <strong>Rp. 200.000,-</strong> ditambah <strong>nomor unik (Contoh = 200.123)</strong> di rekening 
-        <strong>Bank BRI Syariah Kanca Magelang</strong> dengan <strong>No. 10 33 88 13 43</strong> atas nama 
-        <strong>BMT Makmur Gemilang</strong>.
+        <strong>Bank Syariah Madiri KCP Muntilan</strong> dengan <strong>No. 7146 2114 98</strong> atas nama 
+        <strong>SMKIT Ihsanul Fikri</strong>.
     </p>
     <?php if (is_null($registrant->getUploadDir())):?>
     <p>Kode unik bisa diminta dengan mengeklik tombol :</p>
