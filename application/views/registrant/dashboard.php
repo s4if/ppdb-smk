@@ -61,9 +61,9 @@
     <p>
         Ini adalah sistem pendaftaran peserta didik baru (PPDB) SMKIT Ihsanul Fikri Mungkid.
         Sebelum anda mengisi data pribadi, silahkan mentransfer telebih dahulu biaya pendaftaran peserta 
-        sebesar <strong>Rp. 200.000,-</strong> ditambah <strong>nomor unik (Contoh = 200.123)</strong> di rekening 
-        <strong>Bank Syariah Madiri KCP Muntilan</strong> dengan <strong>No. 7146 2114 98</strong> atas nama 
-        <strong>SMKIT Ihsanul Fikri</strong>.
+        sebesar <strong>Rp. 200.000,-</strong> ditambah <strong>nomor unik (Contoh = 200.123)</strong> di rekening
+        <strong>Bank BRI Syariah Kanca Magelang</strong> dengan <strong>No. [MENYUSUL]</strong> atas nama 
+        <strong>BMT Makmur Gemilang</strong>.
     </p>
     <?php if (is_null($registrant->getUploadDir())):?>
     <p>Kode unik bisa diminta dengan mengeklik tombol :</p>
@@ -96,20 +96,8 @@
     <ul>
         <li>Data Diri</li>
         <li>Data Orang Tua</li>
+        <li>Data Kartu Keluarga & Akte Kelahiran</li>
         <li>Data Surat Pernyataan</li>
-        <li>Upload Dokumen yang dibutuhkan
-            <ol>
-                <li>Foto 3x4 portrait (Ukuran Max 4MB)</li>
-                <li>Scan Akte Kelahiran (dalam bentuk jpg/png)</li>
-                <li>Scan Surat Keterangan Siswa dari sekolah (dalam bentuk jpg/png)</li>
-                <li>Scan Surat Keterangan sehat (dalam bentuk jpg/png)</li>
-                <li>Scan Surat Keterangan Bebas Narkoba (dalam bentuk jpg/png)</li>
-                <li>Ijazah (tidak wajib, dalam bentuk PDF</li>
-                <li>SKHUN (tidak wajib, dalam bentuk PDF)</li>
-                <li>Scan KPS/KKS/KIP/KIS/SKTM (tidak wajib, dalam bentuk jpg/png)</li>
-                <li>Scan Jaminan Kesehatan (tidak wajib, dalam bentuk jpg/png)</li>
-            </ol>
-        </li>
     </ul>
     </p>
     <?php endif;?>
