@@ -126,29 +126,28 @@ body {
 	background-color: #1CA347;
 	border-color: #1CA347;
 }
-@media screen and (min-width: 680px) {
 .navbar-transparent {
-    background: rgba(255,255,255,1);
+    background: #fff;
     background-image: none;
-    border-color: rgba(255,255,255,1);
+    border-color: #fff;
 }
 .navbar-default .navbar-nav>.active>a,
 .navbar-default .navbar-nav>.active>a:focus,
 .navbar-default .navbar-nav>.active>a:hover {
-    background: rgba(255,255,255,1);
+    background: #fff;
     background-image: none;
-    border-color: rgba(255,255,255,1);
-}}
+    border-color: #fff;
+}
 #navbar ul li.active {
-    background:rgba(255,255,255,1);
+    background: #fff;
     background-image: none;
-    border-color: rgba(255,255,255,1);
+    border-color: #fff;
 }
 
 #navbar ul li:hover {
-    background:rgba(255,255,255,1);
+    background: #fff;
     background-image: none;
-    border-color: rgba(255,255,255,1);
+    border-color: #fff;
 }
 </style>
 
