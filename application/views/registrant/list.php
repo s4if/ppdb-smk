@@ -124,19 +124,6 @@ body {
 	background-color: #1CA347;
 	border-color: #1CA347;
 }
-@media screen and (min-width: 680px) {
-.navbar-transparent {
-    background: rgba(255,255,255,1);
-    background-image: none;
-    border-color: rgba(255,255,255,1);
-}
-.navbar-default .navbar-nav>.active>a,
-.navbar-default .navbar-nav>.active>a:focus,
-.navbar-default .navbar-nav>.active>a:hover {
-    background: rgba(255,255,255,1);
-    background-image: none;
-    border-color: rgba(255,255,255,1);
-}}
 #navbar ul li.active {
     background:rgba(255,255,255,1);
     background-image: none;
@@ -158,7 +145,7 @@ body {
 </head>
 
 <body>
-    <div class="navbar navbar-fixed-top navbar-transparent" role="navigation">
+    <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
