@@ -93,7 +93,7 @@ class Model_registrant extends CI_Model {
             $data = $regRepo->getDataByJurusan($program, null, $completed, false);
         }
         if (empty($vars)){
-            $vars = ['id','regId', 'username', 'name','gender','previousSchool','nisn', 'cp', 'program', 'finalized'];
+            $vars = ['id', 'kode','regId', 'username', 'name','gender','previousSchool','nisn', 'cp', 'program', 'finalized'];
         }
         $arrData = [];
         foreach ($data as $registrant){

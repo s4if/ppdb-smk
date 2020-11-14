@@ -71,10 +71,7 @@
             <tr>
                 <td> Nomor Pendaftaran </td>
                 <td> &nbsp;:&nbsp; </td>
-                <td> <?php 
-                $prefix = ($registrant->getProgram() == 'Kelas Industri') ? 'I' : 'R';
-                echo $prefix.$registrant->getKode();
-                ?> 
+                <td> <?=$registrant->getRegId() ?> 
                 </td>
             </tr>
             <tr>
