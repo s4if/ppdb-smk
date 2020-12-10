@@ -240,14 +240,14 @@
             //  Qurban dalam pengerjaan
             if (!($registrant->getQurban() == '-')) :
                 $arr_tahun = [];
-                if (strpos($registrant->getQurban(), '2020') !== false) {
-                    $arr_tahun[] = '2020';
-                }
                 if (strpos($registrant->getQurban(), '2021') !== false) {
                     $arr_tahun[] = '2021';
                 }
                 if (strpos($registrant->getQurban(), '2022') !== false) {
                     $arr_tahun[] = '2022';
+                }
+                if (strpos($registrant->getQurban(), '2023') !== false) {
+                    $arr_tahun[] = '2023';
                 }
                 $str_tahun = "";
                 if (count($arr_tahun) == 3) {
